@@ -26,5 +26,7 @@ Route::any('tools/viewsource.php', [ViewSourceController::class, 'show']);
 Route::get('tha-music.htm', [ProxyController::class, 'get']);
 Route::get('linux.htm', [ProxyController::class, 'get']);
 Route::get('bookmarks.htm', [ProxyController::class, 'get']);
+Route::get('images/{file}', [ProxyController::class, 'get'])->where('file', '.*');
 
-Route::get('troep', [FileListController::class, 'show']);
+Route::get('troep', [FileListController::class, 'index']);
+Route::get('troep/{file}', [FileListController::class, 'show'])->where('file', '.*');

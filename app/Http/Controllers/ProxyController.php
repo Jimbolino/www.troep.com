@@ -5,13 +5,14 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class ProxyController extends Controller
 {
-    public function get(Request $request)
+    public function get(Request $request): BinaryFileResponse
     {
         $file = __DIR__.'/../../../resources/static/'.$request->path();
 
-        return file_get_contents($file);
+        return new BinaryFileResponse($file);
     }
 }
