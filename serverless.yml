@@ -1,5 +1,5 @@
 service: troep
-useDotenv: false
+configValidationMode: error
 
 provider:
     name: aws
@@ -9,6 +9,11 @@ provider:
     stage: production
     runtime: provided.al2
     lambdaHashingVersion: 20201221
+    apiGateway:
+        binaryMediaTypes:
+            - '*/*'
+    environment:
+        BREF_BINARY_RESPONSES: '1'
 
 package:
     patterns:
