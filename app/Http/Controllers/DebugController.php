@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -9,7 +11,7 @@ class DebugController extends Controller
     public function get(Request $request)
     {
         $ips = explode(',', env('DEBUG_IPS'));
-        if (!in_array($request->ip(), $ips)) {
+        if (!\in_array($request->ip(), $ips, true)) {
             abort(403);
         }
 
@@ -26,4 +28,3 @@ class DebugController extends Controller
         ];
     }
 }
-
