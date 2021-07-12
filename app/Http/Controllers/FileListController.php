@@ -36,6 +36,10 @@ class FileListController extends Controller
             throw new NotFoundHttpException();
         }
 
+        if ('html' === $meta['extension']) {
+            $meta['mimetype'] = 'text/html';
+        }
+
         $headers = [
             'Content-Type' => $meta['mimetype'],
             'Content-Length' => $meta['size'],
