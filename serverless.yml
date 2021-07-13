@@ -19,9 +19,7 @@ package:
     patterns:
         # Directories to exclude from deployment
         - '!node_modules/**'
-        - '!public/storage'
-        - '!resources/assets/**'
-        - '!storage/**'
+        - '!database/**'
         - '!tests/**'
 
 functions:
