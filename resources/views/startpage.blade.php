@@ -148,7 +148,7 @@
     <tr>
         <td>
             <div class="smalltext">{{ config('app.timezone') }}: {{strftime ("%H:%M")}} -
-                Welcome: {{ request()->server('HTTP_X_FORWARDED_FOR') ?? request()->server('REMOTE_ADDR') }}</div>
+                Welcome: {{ request()->ip() }}</div>
         </td>
     </tr>
     </tbody>
