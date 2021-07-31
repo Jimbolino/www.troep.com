@@ -8,13 +8,16 @@ use Illuminate\Http\Request;
 
 class DebugController extends Controller
 {
-    public function get(Request $request)
+    public function __construct(Request $request)
     {
         $ips = explode(',', env('DEBUG_IPS'));
         if (!\in_array($request->ip(), $ips, true)) {
             abort(403);
         }
+    }
 
+    public function get()
+    {
         ksort($_ENV);
         ksort($_SERVER);
         ksort($_REQUEST);
@@ -25,6 +28,13 @@ class DebugController extends Controller
             'server' => $_SERVER,
             'request' => $_REQUEST,
             'cookie' => $_COOKIE,
+            'phpversion' => PHP_VERSION,
+            'get_loaded_extensions' => get_loaded_extensions(),
         ];
+    }
+
+    public function phpinfo(): void
+    {
+        phpinfo();
     }
 }
