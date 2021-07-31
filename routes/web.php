@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DebugController;
+use App\Http\Controllers\DecryptNavicatController;
 use App\Http\Controllers\FileListController;
 use App\Http\Controllers\IpController;
 use App\Http\Controllers\ProxyController;
@@ -33,3 +34,6 @@ Route::get('troep', [FileListController::class, 'index']);
 Route::get('troep/{file}', [FileListController::class, 'show'])->where('file', '.*');
 
 Route::get('debug', [DebugController::class, 'get']);
+
+Route::get('navicat', [DecryptNavicatController::class, 'show']);
+Route::get('navicat/decrypt/{version}/{password}', [DecryptNavicatController::class, 'decrypt']);

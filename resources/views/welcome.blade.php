@@ -16,6 +16,8 @@
     <br/><b>troep.com</b>
     <br/><a href="mailmij.php">submit quote</a>
     <br/><a href="startpage.php">startpage</a>
-    <br/><a href="https://jim.troep.com">jim.troep.com</a></div>
+    <hr>random troep:
+    <br/><a href="navicat">navicat password hash decrypter</a>
+</div>
 </body>
 </html>

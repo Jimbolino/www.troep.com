@@ -6,6 +6,8 @@
     "license": "proprietary",
     "require": {
         "php": "^7.4|^8.0",
+        "ext-json": "*",
+        "ext-openssl": "*",
         "bref/bref": "^1.2",
         "bref/laravel-bridge": "^1.0",
         "fideloper/proxy": "^4.4",
@@ -13,8 +15,7 @@
         "guzzlehttp/guzzle": "^7.3",
         "laravel/framework": "^8.49",
         "laravel/tinker": "^2.6",
-        "league/flysystem-aws-s3-v3": "^1.0",
-        "ext-json": "*"
+        "league/flysystem-aws-s3-v3": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.10",
