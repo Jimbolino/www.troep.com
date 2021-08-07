@@ -34,7 +34,11 @@ Route::get('troep', [FileListController::class, 'index']);
 Route::get('troep/{file}', [FileListController::class, 'show'])->where('file', '.*');
 
 Route::get('debug', [DebugController::class, 'get']);
+Route::get('debug/config', [DebugController::class, 'config']);
+Route::get('debug/cookie', [DebugController::class, 'cookie']);
 Route::get('debug/phpinfo', [DebugController::class, 'phpinfo']);
+Route::get('debug/request', [DebugController::class, 'request']);
+Route::get('debug/server', [DebugController::class, 'server']);
 
 Route::get('navicat', [DecryptNavicatController::class, 'show']);
 Route::get('navicat/decrypt/{version}/{password}', [DecryptNavicatController::class, 'decrypt']);
