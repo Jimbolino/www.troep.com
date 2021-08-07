@@ -68,18 +68,18 @@ class NavicatPassword
 
     protected function encryptBlock($block)
     {
-        return openssl_encrypt($block, 'BF-ECB', $this->blowKey, OPENSSL_RAW_DATA | OPENSSL_NO_PADDING);
+        return openssl_encrypt((string) $block, 'BF-ECB', $this->blowKey, OPENSSL_RAW_DATA | OPENSSL_NO_PADDING);
     }
 
     protected function decryptBlock($block)
     {
-        return openssl_decrypt($block, 'BF-ECB', $this->blowKey, OPENSSL_RAW_DATA | OPENSSL_NO_PADDING);
+        return openssl_decrypt((string) $block, 'BF-ECB', $this->blowKey, OPENSSL_RAW_DATA | OPENSSL_NO_PADDING);
     }
 
     protected function xorBytes($str1, $str2)
     {
         $result = '';
-        for ($i = 0; $i < \strlen($str1); ++$i) {
+        for ($i = 0; $i < \strlen((string) $str1); ++$i) {
             $result .= \chr(\ord($str1[$i]) ^ \ord($str2[$i]));
         }
 
@@ -88,14 +88,14 @@ class NavicatPassword
 
     protected function encryptTwelve($string)
     {
-        $result = openssl_encrypt($string, 'AES-128-CBC', $this->aesKey, OPENSSL_RAW_DATA, $this->aesIv);
+        $result = (string) openssl_encrypt((string) $string, 'AES-128-CBC', $this->aesKey, OPENSSL_RAW_DATA, $this->aesIv);
 
         return strtoupper(bin2hex($result));
     }
 
     protected function decryptEleven($upperString)
     {
-        $string = hex2bin(strtolower($upperString));
+        $string = (string) hex2bin(strtolower($upperString));
 
         $round = (int) (floor(\strlen($string) / 8));
         $leftLength = \strlen($string) % 8;
@@ -121,6 +121,6 @@ class NavicatPassword
     {
         $string = hex2bin(strtolower($upperString));
 
-        return openssl_decrypt($string, 'AES-128-CBC', $this->aesKey, OPENSSL_RAW_DATA, $this->aesIv);
+        return openssl_decrypt((string) $string, 'AES-128-CBC', $this->aesKey, OPENSSL_RAW_DATA, $this->aesIv);
     }
 }
