@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c54704cf6d23afd0c59dda7ef5362aa",
+    "content-hash": "328f8ad594faf334986cc194a8434b46",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -351,73 +351,6 @@
                 }
             ],
             "time": "2021-08-04T09:18:35+00:00"
-        },
-        {
-            "name": "bref/laravel-bridge",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/brefphp/laravel-bridge.git",
-                "reference": "5c85630bf8b8876f261ec0916d1d36081bd11eea"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/brefphp/laravel-bridge/zipball/5c85630bf8b8876f261ec0916d1d36081bd11eea",
-                "reference": "5c85630bf8b8876f261ec0916d1d36081bd11eea",
-                "shasum": ""
-            },
-            "require": {
-                "aws/aws-sdk-php": "^3.134",
-                "bref/bref": "^1.0",
-                "ext-json": "*",
-                "illuminate/queue": "^6.0|^7.0|^8.0",
-                "illuminate/support": "^6.0|^7.0|^8.0",
-                "php": ">=7.3"
-            },
-            "require-dev": {
-                "mnapoli/hard-mode": "^0.3.0",
-                "phpstan/phpstan": "^0.12.0",
-                "phpunit/phpunit": "^9.0",
-                "symfony/filesystem": "^5.0",
-                "symfony/process": "^5.0"
-            },
-            "type": "project",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Bref\\LaravelBridge\\BrefServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Bref\\LaravelBridge\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Package that makes Laravel work on AWS Lambda with Bref",
-            "homepage": "https://bref.sh/docs/frameworks/laravel.html",
-            "keywords": [
-                "aws",
-                "bref",
-                "faas",
-                "lambda",
-                "serverless"
-            ],
-            "support": {
-                "issues": "https://github.com/brefphp/laravel-bridge/issues",
-                "source": "https://github.com/brefphp/laravel-bridge/tree/1.1.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/mnapoli",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-07-21T13:34:02+00:00"
         },
         {
             "name": "brick/math",
