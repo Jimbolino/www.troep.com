@@ -11,5 +11,8 @@ composer install --classmap-authoritative --no-dev
 serverless deploy
 
 # switch back to develop mode
-./artisan optimize:clear
+./artisan config:clear
+./artisan route:clear
+./artisan view:clear
+
 composer install
