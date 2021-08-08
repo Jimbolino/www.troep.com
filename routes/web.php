@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index']);
 Route::get('startpage.php', [StartpageController::class, 'show']);
-Route::get('mailmij.php', [ContactController::class, 'show']);
-Route::post('mailmij.php', [ContactController::class, 'send']);
+Route::get('mailmij.php', [ContactController::class, 'show'])->middleware('csrf');
+Route::post('mailmij.php', [ContactController::class, 'send'])->middleware('csrf');
 
 Route::get('ip', [IpController::class, 'show']);
 Route::get('tools/time.php', [TimeController::class, 'show']);
