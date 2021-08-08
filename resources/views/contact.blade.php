@@ -8,11 +8,11 @@
     <table>
         <tr>
             <td>From: </td>
-            <td><input name="from" type="text"></td>
+            <td><input name="from" type="email" required="required"></td>
         </tr>
         <tr>
             <td>Message: </td>
-            <td><textarea name="message" cols="40" rows="10"></textarea></td>
+            <td><textarea name="message" cols="40" rows="10" required="required"></textarea></td>
         </tr>
         <tr>
             <td>
