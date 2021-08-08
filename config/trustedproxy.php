@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\HttpFoundation\Request;
+
 return [
 
     /*
@@ -15,7 +17,7 @@ return [
      * of your proxy (e.g. if using ELB or similar).
      *
      */
-    'proxies' => '*', // [<ip addresses>,], '*', '<ip addresses>,'
+    'proxies' => ['0.0.0.0/0', '2000:0:0:0:0:0:0:0/3'],
 
     /*
      * To trust one or more specific proxies that connect
@@ -45,6 +47,6 @@ return [
      *
      * @link https://symfony.com/doc/current/deployment/proxies.html
      */
-    'headers' => 0b1011110,
+    'headers' => Request::HEADER_X_FORWARDED_AWS_ELB,
 
 ];
