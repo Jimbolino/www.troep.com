@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 use Symfony\Component\HttpFoundation\Request;
 
 return [
-
     /*
      * Set trusted proxy IP addresses.
      *
@@ -48,5 +49,4 @@ return [
      * @link https://symfony.com/doc/current/deployment/proxies.html
      */
     'headers' => Request::HEADER_X_FORWARDED_AWS_ELB,
-
 ];

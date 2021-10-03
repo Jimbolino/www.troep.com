@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 $finder = PhpCsFixer\Finder::create()
     ->in([__DIR__, '.phan'])
-    ->exclude(['storage', 'bootstrap/cache'])
+    ->exclude([
+        'bootstrap/cache',
+        'node_modules',
+        'storage',
+    ])
     ->append([
         '.php-cs-fixer.dist.php',
         'artisan',
