@@ -4,22 +4,30 @@ declare(strict_types=1);
 
 namespace App\Http\Middleware;
 
-use Fideloper\Proxy\TrustProxies as Middleware;
+use Closure;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Http\Request;
 
-class TrustProxies extends Middleware
+class TrustProxies
 {
     /**
-     * The trusted proxies for this application.
-     *
-     * @var null|array|string
+     * The amount of trusted proxies for this setup.
      */
-    protected $proxies;
+    protected int $proxyCount;
 
-    /**
-     * The headers that should be used to detect proxies.
-     *
-     * @var int
-     */
-    protected $headers = Request::HEADER_X_FORWARDED_FOR | Request::HEADER_X_FORWARDED_HOST | Request::HEADER_X_FORWARDED_PORT | Request::HEADER_X_FORWARDED_PROTO | Request::HEADER_X_FORWARDED_AWS_ELB;
+    public function __construct(Repository $config)
+    {
+        $this->proxyCount = (int) $config->get('trustedproxy.count');
+    }
+
+    public function handle(Request $request, Closure $next)
+    {
+        $proxies = [];
+        for ($i = 0; $i < $this->proxyCount; ++$i) {
+            $proxies[] = $request->getClientIp();
+            $request->setTrustedProxies($proxies, Request::HEADER_X_FORWARDED_AWS_ELB);
+        }
+
+        return $next($request);
+    }
 }
