@@ -24,7 +24,7 @@ class ContactFormSubmit extends Mailable
         $this->data = $request->except(['_token', 'submit']);
 
         $this->data['userAgent'] = $request->server('HTTP_USER_AGENT');
-        $this->data['dateTime'] = strftime('%H:%M:%S - %b %d %Y');
+        $this->data['dateTime'] = date(DATE_COOKIE);
         $this->data['ip'] = $request->ip() ?? '';
         $this->data['hostname'] = gethostbyaddr($this->data['ip']);
     }

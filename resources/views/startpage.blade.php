@@ -147,7 +147,7 @@
     <tbody>
     <tr>
         <td>
-            <div class="smalltext">{{ config('app.timezone') }}: {{strftime ("%H:%M")}} -
+            <div class="smalltext">{{ config('app.timezone') }}: {{ date('H:i') }} -
                 Welcome: {{ request()->ip() }}</div>
         </td>
     </tr>
