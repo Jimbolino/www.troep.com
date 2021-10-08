@@ -13,7 +13,7 @@ class TimeController extends Controller
     {
         $data = [
             'time' => date(DATE_COOKIE),
-            'refresh' => max(1, abs((int)$request->input('refresh', 5))),
+            'refresh' => max(1, abs((int) $request->input('refresh', 5))),
         ];
 
         return $view->make('time', $data);
