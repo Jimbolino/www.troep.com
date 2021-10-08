@@ -17,7 +17,7 @@
         "league/flysystem-aws-s3-v3": "1.0.29"
     },
     "require-dev": {
-        "facade/ignition": "2.14.0",
+        "facade/ignition": "2.14.1",
         "fakerphp/faker": "1.16.0",
         "friendsofphp/php-cs-fixer": "3.2.1",
         "laravel/sail": "1.11.0",
