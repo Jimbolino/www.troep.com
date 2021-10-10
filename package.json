@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "axios": "0.22.0",
-        "laravel-mix": "6.0.31",
+        "laravel-mix": "6.0.32",
         "lodash": "4.17.21",
         "postcss": "8.3.9"
     }
