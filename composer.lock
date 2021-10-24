@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b81faab3be377a41d4285cab009ff49b",
+    "content-hash": "205ad1b7e68299dd5a3a48c81fc65c16",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -329,16 +329,16 @@
         },
         {
             "name": "bref/bref",
-            "version": "1.3.2",
+            "version": "1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brefphp/bref.git",
-                "reference": "2b8cdaf1ecffbfa15dbdea6ec9d7c3506d22f77b"
+                "reference": "b7ad134f4be53a8ed83600db636ad53306eea9fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brefphp/bref/zipball/2b8cdaf1ecffbfa15dbdea6ec9d7c3506d22f77b",
-                "reference": "2b8cdaf1ecffbfa15dbdea6ec9d7c3506d22f77b",
+                "url": "https://api.github.com/repos/brefphp/bref/zipball/b7ad134f4be53a8ed83600db636ad53306eea9fc",
+                "reference": "b7ad134f4be53a8ed83600db636ad53306eea9fc",
                 "shasum": ""
             },
             "require": {
@@ -349,7 +349,7 @@
                 "mnapoli/silly": "^1.7",
                 "nyholm/psr7": "^1.2",
                 "php": ">=7.3.0",
-                "psr/container": "^1.0",
+                "psr/container": "^1.0|^2.0",
                 "psr/http-message": "^1.0",
                 "psr/http-server-handler": "^1.0",
                 "riverline/multipart-parser": "^2.0.6",
@@ -391,7 +391,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brefphp/bref/issues",
-                "source": "https://github.com/brefphp/bref/tree/1.3.2"
+                "source": "https://github.com/brefphp/bref/tree/1.3.3"
             },
             "funding": [
                 {
@@ -403,7 +403,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-24T16:53:27+00:00"
+            "time": "2021-10-24T09:18:48+00:00"
         },
         {
             "name": "brick/math",
