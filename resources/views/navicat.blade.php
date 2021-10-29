@@ -7,9 +7,9 @@
 
 <form action="/navicat">
     <label for="version">Version:</label><br>
-    <input type="number" min="11" max="15" id="version" name="version" value="{{request('version', 11)}}"><br>
+    <input type="number" min="11" max="15" id="version" name="version" value="{{request('version', $defaultVersion)}}"><br>
     <label for="password">Password hash:</label><br>
-    <input type="text" id="password" name="password" value="{{request('password', 'E75BF077AB8BAA3AC2D5')}}"><br><br>
+    <input type="text" id="password" name="password" value="{{request('password', $defaultHash)}}"><br><br>
     <input type="submit" value="Submit">
 </form>
 

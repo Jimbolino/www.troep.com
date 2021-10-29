@@ -42,9 +42,14 @@ class DebugController extends Controller
         return $config->all();
     }
 
-    public function phpinfo(): void
+    public function phpinfo()
     {
+        ob_start();
         phpinfo();
+        $info = ob_get_contents();
+        ob_end_clean();
+
+        return $info;
     }
 
     public function cookie()

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
+use App\Http\Controllers\DecryptNavicatController;
 use Tests\TestCase;
 
 final class WebRoutesTest extends TestCase
@@ -60,5 +61,28 @@ final class WebRoutesTest extends TestCase
     {
         $response = $this->get('/troep');
         $response->assertStatus(200);
+
+        $response = $this->get('/troep/HEADER.html');
+        $response->assertStatus(200);
+
+    }
+
+    public function testNavicat(): void
+    {
+        $response = $this->get('/navicat');
+        $response->assertStatus(200);
+
+        $response = $this->get('/navicat?'.http_build_query(['version' => DecryptNavicatController::DEFAULT_VERSION, 'password' => DecryptNavicatController::DEFAULT_HASH]));
+        $response->assertStatus(200);
+    }
+
+    public function testDebug(): void
+    {
+        $this->get('/debug')->assertStatus(200);
+        $this->get('/debug/config')->assertStatus(200);
+        $this->get('/debug/cookie')->assertStatus(200);
+        $this->get('/debug/phpinfo')->assertStatus(200);
+        $this->get('/debug/request')->assertStatus(200);
+        $this->get('/debug/server')->assertStatus(200);
     }
 }
