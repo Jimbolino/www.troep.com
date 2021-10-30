@@ -18,7 +18,7 @@ provider:
         AWS_BUCKET: ${env:AWS_BUCKET}
         AWS_DEFAULT_REGION: ${env:AWS_DEFAULT_REGION}
         BREF_BINARY_RESPONSES: '1'
-        DEBUG_IPS=: ${env:DEBUG_IPS}
+        DEBUG_IPS: ${env:DEBUG_IPS}
         MAIL_FROM_ADDRESS: ${env:MAIL_FROM_ADDRESS}
         MAIL_TO_ADDRESS: ${env:MAIL_TO_ADDRESS}
         PROXY_COUNT: ${env:PROXY_COUNT}
