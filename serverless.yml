@@ -13,7 +13,18 @@ provider:
         binaryMediaTypes:
             - '*/*'
     environment:
+        APP_DEBUG: ${env:APP_DEBUG}
+        APP_KEY: ${env:APP_KEY}
+        APP_NAME: ${env:APP_NAME}
+        AWS_BUCKET: ${env:AWS_BUCKET}
+        AWS_DEFAULT_REGION: ${env:AWS_DEFAULT_REGION}
         BREF_BINARY_RESPONSES: '1'
+        DEBUG_IPS=: ${env:DEBUG_IPS}
+        MAIL_FROM_ADDRESS: ${env:MAIL_FROM_ADDRESS}
+        MAIL_TO_ADDRESS: ${env:MAIL_TO_ADDRESS}
+        PROXY_COUNT: ${env:PROXY_COUNT}
+        REAL_AWS_ACCESS_KEY_ID: ${env:REAL_AWS_ACCESS_KEY_ID}
+        REAL_AWS_SECRET_ACCESS_KEY: ${env:REAL_AWS_SECRET_ACCESS_KEY}
 
 package:
     patterns:
