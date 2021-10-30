@@ -13,7 +13,6 @@ provider:
         binaryMediaTypes:
             - '*/*'
     environment:
-        APP_DEBUG: ${env:APP_DEBUG}
         APP_KEY: ${env:APP_KEY}
         APP_NAME: ${env:APP_NAME}
         AWS_BUCKET: ${env:AWS_BUCKET}
