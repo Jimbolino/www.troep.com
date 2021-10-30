@@ -8,7 +8,7 @@ composer install --classmap-authoritative --no-dev
 ./artisan route:cache
 
 # deploy
-serverless deploy
+npx serverless deploy
 
 # switch back to develop mode
 ./artisan config:clear
