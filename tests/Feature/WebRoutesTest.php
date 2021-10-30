@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Tests\Feature;
 
 use App\Http\Controllers\DecryptNavicatController;
+use Illuminate\Contracts\Filesystem;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 final class WebRoutesTest extends TestCase
@@ -24,6 +26,9 @@ final class WebRoutesTest extends TestCase
     public function testContact(): void
     {
         $response = $this->get('/mailmij.php');
+        $response->assertStatus(200);
+
+        $response = $this->post('/mailmij.php');
         $response->assertStatus(200);
     }
 
@@ -62,9 +67,12 @@ final class WebRoutesTest extends TestCase
         $response = $this->get('/troep');
         $response->assertStatus(200);
 
+        Storage::disk('local')->put('troep/HEADER.html', 'testing');
+
         $response = $this->get('/troep/HEADER.html');
         $response->assertStatus(200);
 
+        Storage::disk('local')->delete('troep/HEADER.html');
     }
 
     public function testNavicat(): void

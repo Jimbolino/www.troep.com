@@ -28,5 +28,6 @@
         <server name="SESSION_DRIVER" value="array"/>
         <server name="TELESCOPE_ENABLED" value="false"/>
         <server name="DEBUG_IPS" value="127.0.0.1"/>
+        <server name="FILESYSTEM_DRIVER" value="local"/>
     </php>
 </phpunit>

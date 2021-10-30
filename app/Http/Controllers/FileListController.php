@@ -36,12 +36,12 @@ class FileListController extends Controller
             throw new NotFoundHttpException();
         }
 
-        if ('html' === $meta['extension']) {
+        if ('html' === ($meta['extension'] ?? '')) {
             $meta['mimetype'] = 'text/html';
         }
 
         $headers = [
-            'Content-Type' => $meta['mimetype'],
+            'Content-Type' => $meta['mimetype'] ?? 'text/plain',
             'Content-Length' => $meta['size'],
         ];
 
@@ -68,6 +68,7 @@ class FileListController extends Controller
             'txt' => 'text',
         ];
 
+
         foreach ($files as &$file) {
             if (!empty($file['size'])) {
                 $file['size'] = $this->niceSize($file['size']);
@@ -80,7 +81,7 @@ class FileListController extends Controller
 
                 continue;
             }
-            $icon = @$extensionToIcon[strtolower($file['extension'])];
+            $icon = @$extensionToIcon[strtolower($file['extension'] ?? '')];
             $file['icon'] = $icon ?? 'unknown';
         }
 
