@@ -68,7 +68,6 @@ class FileListController extends Controller
             'txt' => 'text',
         ];
 
-
         foreach ($files as &$file) {
             if (!empty($file['size'])) {
                 $file['size'] = $this->niceSize($file['size']);

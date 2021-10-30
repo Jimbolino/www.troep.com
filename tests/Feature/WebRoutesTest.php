@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tests\Feature;
 
 use App\Http\Controllers\DecryptNavicatController;
-use Illuminate\Contracts\Filesystem;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
