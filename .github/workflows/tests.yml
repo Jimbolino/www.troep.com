@@ -39,3 +39,10 @@ jobs:
 
     - name: Npm imstall
       run: npm install
+
+  deploy:
+    if: contains(github.ref, 'main')
+    runs-on: ubuntu-latest
+    needs: tests
+    steps:
+      - run: ./deploy.sh
