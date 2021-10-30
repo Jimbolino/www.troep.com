@@ -59,3 +59,10 @@ jobs:
     - name: Deploy
       if: contains(github.ref, 'main')
       run: ./deploy.sh
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        REAL_AWS_ACCESS_KEY_ID: ${{ secrets.REAL_AWS_ACCESS_KEY_ID }}
+        REAL_AWS_SECRET_ACCESS_KEY: ${{ secrets.REAL_AWS_SECRET_ACCESS_KEY }}
+        DEBUG_IPS: ${{ secrets.DEBUG_IPS }}
+        PROXY_COUNT: ${{ secrets.PROXY_COUNT }}
