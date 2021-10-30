@@ -16,7 +16,6 @@ provider:
         APP_KEY: ${env:APP_KEY}
         APP_NAME: ${env:APP_NAME}
         AWS_BUCKET: ${env:AWS_BUCKET}
-        AWS_DEFAULT_REGION: ${env:AWS_DEFAULT_REGION}
         BREF_BINARY_RESPONSES: '1'
         DEBUG_IPS: ${env:DEBUG_IPS}
         MAIL_FROM_ADDRESS: ${env:MAIL_FROM_ADDRESS}
