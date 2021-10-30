@@ -33,4 +33,4 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: ./run-test.sh
+      run: ./run-tests.sh
