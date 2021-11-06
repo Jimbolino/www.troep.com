@@ -92,4 +92,12 @@ final class WebRoutesTest extends TestCase
         $this->get('/debug/request')->assertStatus(200);
         $this->get('/debug/server')->assertStatus(200);
     }
+
+    public function testMeuktracker(): void
+    {
+        $this->get('/meuktracker')->assertStatus(200);
+        $this->get('/meuktracker/office')->assertStatus(200);
+        $this->get('/meuktracker/office?32')->assertStatus(200);
+        $this->get('/meuktracker/office?json')->assertStatus(200);
+    }
 }

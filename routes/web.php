@@ -7,6 +7,8 @@ use App\Http\Controllers\DebugController;
 use App\Http\Controllers\DecryptNavicatController;
 use App\Http\Controllers\FileListController;
 use App\Http\Controllers\IpController;
+use App\Http\Controllers\Meuktracker\Meuktracker;
+use App\Http\Controllers\Meuktracker\Office;
 use App\Http\Controllers\ProxyController;
 use App\Http\Controllers\StartpageController;
 use App\Http\Controllers\TimeController;
@@ -36,6 +38,9 @@ Route::middleware('cache.headers:public;max_age=3600')->group(function (): void 
 
     Route::get('navicat', [DecryptNavicatController::class, 'show']);
     Route::get('navicat/decrypt/{version}/{password}', [DecryptNavicatController::class, 'decrypt']);
+
+    Route::get('meuktracker', [Meuktracker::class, 'index']);
+    Route::get('meuktracker/office', [Office::class, 'show']);
 });
 
 Route::get('debug', [DebugController::class, 'get']);
