@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'default' => env('CACHE_DRIVER', 'dynamodb'),
+    'default' => env('CACHE_DRIVER', 'file'),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,7 +51,7 @@ return [
 
         'file' => [
             'driver' => 'file',
-            'path' => storage_path('framework/cache/data'),
+            'path' => '/tmp/cache_'.PHP_SAPI,
         ],
 
         'memcached' => [
