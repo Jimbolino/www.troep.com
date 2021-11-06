@@ -177,7 +177,7 @@ class Meuktracker extends Controller
             $context = stream_context_create([
                 'http' => [
                     'follow_location' => true,
-                    'timeout' => 2, // seconds
+                    'timeout' => 5, // seconds
                 ],
                 'ssl' => [
                     'verify_peer' => false,
