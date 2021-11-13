@@ -25,7 +25,7 @@
         "laravel/sail": "1.12.4",
         "mockery/mockery": "1.4.4",
         "nunomaduro/collision": "5.10.0",
-        "phan/phan": "5.2.1",
+        "phan/phan": "5.3.0",
         "phpunit/phpunit": "9.5.10"
     },
     "autoload": {

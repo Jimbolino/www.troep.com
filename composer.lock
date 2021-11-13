@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab21ffd09960147e2f1933d8a0532fdf",
+    "content-hash": "900acc2e9e24f1c257f7e5e8483ec7c8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6569,16 +6569,16 @@
     "packages-dev": [
         {
             "name": "composer/semver",
-            "version": "3.2.5",
+            "version": "3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "31f3ea725711245195f62e54ffa402d8ef2fdba9"
+                "reference": "83e511e247de329283478496f7a1e114c9517506"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/31f3ea725711245195f62e54ffa402d8ef2fdba9",
-                "reference": "31f3ea725711245195f62e54ffa402d8ef2fdba9",
+                "url": "https://api.github.com/repos/composer/semver/zipball/83e511e247de329283478496f7a1e114c9517506",
+                "reference": "83e511e247de329283478496f7a1e114c9517506",
                 "shasum": ""
             },
             "require": {
@@ -6630,7 +6630,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.2.5"
+                "source": "https://github.com/composer/semver/tree/3.2.6"
             },
             "funding": [
                 {
@@ -6646,7 +6646,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-24T12:41:47+00:00"
+            "time": "2021-10-25T11:34:17+00:00"
         },
         {
             "name": "composer/xdebug-handler",
@@ -7745,16 +7745,16 @@
         },
         {
             "name": "phan/phan",
-            "version": "5.2.1",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phan/phan.git",
-                "reference": "d724bbb8fc3ba89179868bb5220ecdf6a9c1636b"
+                "reference": "42ee10d1d456d4c26b72035a8051487c864d712b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phan/phan/zipball/d724bbb8fc3ba89179868bb5220ecdf6a9c1636b",
-                "reference": "d724bbb8fc3ba89179868bb5220ecdf6a9c1636b",
+                "url": "https://api.github.com/repos/phan/phan/zipball/42ee10d1d456d4c26b72035a8051487c864d712b",
+                "reference": "42ee10d1d456d4c26b72035a8051487c864d712b",
                 "shasum": ""
             },
             "require": {
@@ -7818,9 +7818,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phan/phan/issues",
-                "source": "https://github.com/phan/phan/tree/5.2.1"
+                "source": "https://github.com/phan/phan/tree/5.3.0"
             },
-            "time": "2021-09-15T00:08:40+00:00"
+            "time": "2021-11-13T16:53:42+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -8635,23 +8635,23 @@
         },
         {
             "name": "sabre/event",
-            "version": "5.1.2",
+            "version": "5.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sabre-io/event.git",
-                "reference": "c120bec57c17b6251a496efc82b732418b49d50a"
+                "reference": "d7da22897125d34d7eddf7977758191c06a74497"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sabre-io/event/zipball/c120bec57c17b6251a496efc82b732418b49d50a",
-                "reference": "c120bec57c17b6251a496efc82b732418b49d50a",
+                "url": "https://api.github.com/repos/sabre-io/event/zipball/d7da22897125d34d7eddf7977758191c06a74497",
+                "reference": "d7da22897125d34d7eddf7977758191c06a74497",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "~2.16.1",
+                "friendsofphp/php-cs-fixer": "~2.17.1",
                 "phpstan/phpstan": "^0.12",
                 "phpunit/phpunit": "^7.5 || ^8.5 || ^9.0"
             },
@@ -8697,7 +8697,7 @@
                 "issues": "https://github.com/sabre-io/event/issues",
                 "source": "https://github.com/fruux/sabre-event"
             },
-            "time": "2020-10-03T11:02:22+00:00"
+            "time": "2021-11-04T06:51:17+00:00"
         },
         {
             "name": "sebastian/cli-parser",
