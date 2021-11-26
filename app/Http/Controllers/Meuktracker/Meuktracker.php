@@ -47,12 +47,12 @@ class Meuktracker extends Controller
         ],
         'WinRAR 32' => [
             'download' => 'https://www.rarlab.com/download.htm',
-            'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[2]/td[1]/a',
+            'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[3]/td[1]/a',            
             //'xpath2' => '/html/body/table/tr/td[2]/table[3]/tr[2]/td[1]/a',
         ],
         'WinRAR 64' => [
             'download' => 'https://www.rarlab.com/download.htm',
-            'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[3]/td[1]/a',
+            'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[2]/td[1]/a',
             //'xpath2' => '/html/body/table/tr/td[2]/table[3]/tr[3]/td[1]/a',
         ],
         'Sumatra PDF 32' => [
