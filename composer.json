@@ -15,7 +15,7 @@
         "fruitcake/laravel-cors": "2.0.4",
         "guzzlehttp/guzzle": "7.4.1",
         "laravel/framework": "8.74.0",
-        "laravel/tinker": "2.6.2",
+        "laravel/tinker": "2.6.3",
         "league/flysystem-aws-s3-v3": "1.0.29"
     },
     "require-dev": {
