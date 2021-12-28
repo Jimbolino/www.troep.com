@@ -10,7 +10,7 @@
         "ext-json": "*",
         "ext-libxml": "*",
         "ext-openssl": "*",
-        "bref/bref": "1.4.1",
+        "bref/bref": "1.4.2",
         "fideloper/proxy": "4.4.1",
         "fruitcake/laravel-cors": "2.0.4",
         "guzzlehttp/guzzle": "7.4.1",
