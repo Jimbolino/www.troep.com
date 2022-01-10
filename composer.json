@@ -24,7 +24,7 @@
         "friendsofphp/php-cs-fixer": "3.4.0",
         "laravel/sail": "1.12.12",
         "mockery/mockery": "1.4.4",
-        "nunomaduro/collision": "5.10.0",
+        "nunomaduro/collision": "5.11.0",
         "phan/phan": "5.3.1",
         "phpunit/phpunit": "9.5.11"
     },
