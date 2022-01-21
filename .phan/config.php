@@ -364,7 +364,6 @@ return [
     // Thus, both first-party and third-party code being used by
     // your application should be included in this list.
     'directory_list' => [
-        '.phan',
         'app',
         'config',
         'database',
@@ -379,7 +378,6 @@ return [
     // with a path relative to the root directory of the
     // project.
     'file_list' => [
-        '.php-cs-fixer.dist.php',
         'artisan',
         'bootstrap/app.php',
         'server.php',
