@@ -21,11 +21,9 @@
     "require-dev": {
         "facade/ignition": "2.17.4",
         "fakerphp/faker": "1.17.0",
-        "friendsofphp/php-cs-fixer": "3.4.0",
         "laravel/sail": "1.13.1",
         "mockery/mockery": "1.5.0",
         "nunomaduro/collision": "5.11.0",
-        "phan/phan": "5.3.1",
         "phpunit/phpunit": "9.5.11"
     },
     "autoload": {
@@ -50,6 +48,11 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "update-tools": [
+            "curl -sS -L https://phpmd.org/static/latest/phpmd.phar -o vendor/bin/phpmd && chmod +x vendor/bin/phpmd",
+            "curl -sS -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/latest/download/php-cs-fixer.phar -o vendor/bin/php-cs-fixer && chmod +x vendor/bin/php-cs-fixer",
+            "curl -sS -L https://github.com/phan/phan/releases/latest/download/phan.phar -o vendor/bin/phan && chmod +x vendor/bin/phan"
         ]
     },
     "extra": {
