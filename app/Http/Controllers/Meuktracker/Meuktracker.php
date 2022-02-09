@@ -47,13 +47,13 @@ class Meuktracker extends Controller
         ],
         'WinRAR 32' => [
             'download' => 'https://www.rarlab.com/download.htm',
-            'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[3]/td[1]/a',
-            //'xpath2' => '/html/body/table/tr/td[2]/table[3]/tr[2]/td[1]/a',
+            //'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[3]/td[1]/a', // beta
+            'xpath' => '/html/body/table/tr/td[2]/table[3]/tr[2]/td[1]/a',
         ],
         'WinRAR 64' => [
             'download' => 'https://www.rarlab.com/download.htm',
-            'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[2]/td[1]/a',
-            //'xpath2' => '/html/body/table/tr/td[2]/table[3]/tr[3]/td[1]/a',
+            //'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[2]/td[1]/a', // beta
+            'xpath' => '/html/body/table/tr/td[2]/table[3]/tr[3]/td[1]/a',
         ],
         'Sumatra PDF 32' => [
             'download' => 'https://www.sumatrapdfreader.org/download-free-pdf-viewer',
@@ -134,10 +134,10 @@ class Meuktracker extends Controller
             'download' => 'https://www.microsoft.com/nl-nl/software-download/windows11',
             'file' => 'https://go.microsoft.com/fwlink/?linkid=2171764',
         ],
-        'Microsoft Windows and Office ISO Download Tool' => [
-            'download' => 'https://www.heidoc.net/joomla/technology-science/microsoft/67-microsoft-windows-and-office-iso-download-tool',
-            'file' => 'https://www.heidoc.net/php/Windows%20ISO%20Downloader.exe',
-        ],
+        //        'Microsoft Windows and Office ISO Download Tool' => [
+        //            'download' => 'https://www.heidoc.net/joomla/technology-science/microsoft/67-microsoft-windows-and-office-iso-download-tool',
+        //            'file' => 'https://www.heidoc.net/php/Windows%20ISO%20Downloader.exe',
+        //        ],
     ];
 
     private CacheManager $cache;
