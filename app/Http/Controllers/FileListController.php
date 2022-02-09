@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use Illuminate\Filesystem\AwsS3V3Adapter;
 use Illuminate\Filesystem\FilesystemManager;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -12,21 +11,19 @@ class FileListController extends Controller
 {
     private string $dir = 'troep';
     private FilesystemManager $storage;
-    private AwsS3V3Adapter $disk;
 
     public function __construct(FilesystemManager $storage)
     {
         $this->storage = $storage;
-        $this->disk = $storage->disk('s3');
     }
 
     public function show($file)
     {
-        if (!$this->disk->exists($this->dir.'/'.$file)) {
+        if (!$this->storage->exists($this->dir.'/'.$file)) {
             throw new NotFoundHttpException();
         }
 
-        if ($this->disk->directoryExists($this->dir.'/'.$file)) {
+        if ($this->storage->directoryExists($this->dir.'/'.$file)) {
             $this->dir .= '/'.$file;
 
             return $this->index();
@@ -37,12 +34,12 @@ class FileListController extends Controller
             $headers['Content-Type'] = 'text/html';
         }
 
-        return $this->disk->response($this->dir.'/'.$file, null, $headers);
+        return $this->storage->response($this->dir.'/'.$file, null, $headers);
     }
 
     public function index()
     {
-        $listContents = $this->disk->listContents($this->dir);
+        $listContents = $this->storage->listContents($this->dir);
 
         $extensionToIcon = [
             'exe' => 'binary',
