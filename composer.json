@@ -11,19 +11,16 @@
         "ext-libxml": "*",
         "ext-openssl": "*",
         "bref/bref": "1.5.3",
-        "fideloper/proxy": "4.4.1",
         "fruitcake/laravel-cors": "2.0.5",
         "guzzlehttp/guzzle": "7.4.1",
-        "laravel/framework": "8.83.0",
+        "laravel/framework": "9.0.0",
         "laravel/tinker": "2.7.0",
-        "league/flysystem-aws-s3-v3": "1.0.29"
+        "league/flysystem-aws-s3-v3": "3.0.2"
     },
     "require-dev": {
-        "facade/ignition": "2.17.4",
         "fakerphp/faker": "1.19.0",
         "laravel/sail": "1.13.2",
         "mockery/mockery": "1.5.0",
-        "nunomaduro/collision": "5.11.0",
         "phpunit/phpunit": "9.5.13"
     },
     "autoload": {
