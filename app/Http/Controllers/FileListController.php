@@ -4,55 +4,45 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use Illuminate\Filesystem\AwsS3V3Adapter;
 use Illuminate\Filesystem\FilesystemManager;
-use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class FileListController extends Controller
 {
     private string $dir = 'troep';
     private FilesystemManager $storage;
+    private AwsS3V3Adapter $disk;
 
     public function __construct(FilesystemManager $storage)
     {
         $this->storage = $storage;
+        $this->disk = $storage->disk('s3');
     }
 
     public function show($file)
     {
-        $exists = $this->storage->exists($this->dir.'/'.$file);
-        if (!$exists) {
+        if (!$this->disk->exists($this->dir.'/'.$file)) {
             throw new NotFoundHttpException();
         }
-        $meta = $this->storage->getMetadata($this->dir.'/'.$file);
-        if (false === $meta) {
+
+        if ($this->disk->directoryExists($this->dir.'/'.$file)) {
             $this->dir .= '/'.$file;
 
             return $this->index();
         }
 
-        $stream = $this->storage->readStream($this->dir.'/'.$file);
-        if (!\is_resource($stream)) {
-            throw new NotFoundHttpException();
+        $headers = [];
+        if ('html' === pathinfo($file, PATHINFO_EXTENSION)) {
+            $headers['Content-Type'] = 'text/html';
         }
 
-        if ('html' === ($meta['extension'] ?? '')) {
-            $meta['mimetype'] = 'text/html';
-        }
-
-        $headers = [
-            'Content-Type' => $meta['mimetype'] ?? 'text/plain',
-            'Content-Length' => $meta['size'],
-        ];
-
-        return new StreamedResponse(function () use ($stream): void {
-            fpassthru($stream);
-        }, 200, $headers);
+        return $this->disk->response($this->dir.'/'.$file, null, $headers);
     }
 
     public function index()
     {
-        $files = $this->storage->listContents($this->dir);
+        $listContents = $this->disk->listContents($this->dir);
 
         $extensionToIcon = [
             'exe' => 'binary',
@@ -68,20 +58,24 @@ class FileListController extends Controller
             'txt' => 'text',
         ];
 
-        foreach ($files as &$file) {
-            if (!empty($file['size'])) {
-                $file['size'] = $this->niceSize($file['size']);
-            } else {
-                $file['size'] = '-';
-            }
-
-            if ('dir' === $file['type']) {
-                $file['icon'] = 'folder';
-
+        $files = [];
+        foreach ($listContents as $file) {
+            if ($file['path'] === $this->dir) {
                 continue;
             }
-            $icon = @$extensionToIcon[strtolower($file['extension'] ?? '')];
-            $file['icon'] = $icon ?? 'unknown';
+            if ('dir' === $file['type']) {
+                $icon = 'folder';
+            } else {
+                $icon = $extensionToIcon[strtolower(pathinfo($file['path'], PATHINFO_EXTENSION))] ?? 'unknown';
+            }
+
+            $files[] = [
+                'basename' => pathinfo($file['path'], PATHINFO_BASENAME),
+                'icon' => $icon,
+                'path' => $file['path'],
+                'size' => $this->niceSize($file['fileSize'] ?? null),
+                'timestamp' => $file['lastModified'],
+            ];
         }
 
         $data = [
@@ -92,8 +86,12 @@ class FileListController extends Controller
         return view('filelist', $data);
     }
 
-    private function niceSize($bytes)
+    private function niceSize($bytes): string
     {
+        if (null === $bytes) {
+            return '-';
+        }
+
         $bytes = (float) $bytes;
         $unit = ['', 'K', 'M', 'G'];
         $exp = (int) floor(log($bytes, 1024)) | 0;
