@@ -15,6 +15,6 @@
         "laravel-mix": "6.0.43",
         "lodash": "4.17.21",
         "postcss": "8.4.7",
-        "serverless": "3.4.0"
+        "serverless": "3.5.1"
     }
 }
