@@ -28,7 +28,7 @@ class DebugController extends Controller
         return [
             'phpversion' => PHP_VERSION,
             'laravel_version' => app()->version(),
-            'variables_order' => ini_get('variables_order'),
+            'variables_order' => \ini_get('variables_order'),
             'ip' => $this->request->ip(),
             'ips' => $this->request->ips(),
             '_env' => $_ENV,

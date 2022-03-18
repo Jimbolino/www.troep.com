@@ -42,7 +42,7 @@ class TrustedProxiesTest extends TestCase
                 'count' => $count,
             ],
         ]));
-        $next = function (): void {}; //@phan-suppress-current-line PhanEmptyClosure
+        $next = function (): void {}; // @phan-suppress-current-line PhanEmptyClosure
         $middleware->handle($request, $next);
 
         return $request->getClientIp();
