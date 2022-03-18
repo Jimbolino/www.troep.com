@@ -39,11 +39,11 @@ class Meuktracker extends Controller
         ],
         'MPC-HC 32' => [
             'download' => 'https://github.com/clsid2/mpc-hc/releases/latest',
-            'xpath' => '//*[@id="repo-content-pjax-container"]/div/div/div[2]/div[1]/details/div/div/ul/li[3]/a',
+            'xpath' => '//*[@id="repo-content-pjax-container"]/div/div/div/div[2]/div[1]/details/div/div/ul/li[3]/a',
         ],
         'MPC-HC 64' => [
             'download' => 'https://github.com/clsid2/mpc-hc/releases/latest',
-            'xpath' => '////*[@id="repo-content-pjax-container"]/div/div/div[2]/div[1]/details/div/div/ul/li[1]/a',
+            'xpath' => '//*[@id="repo-content-pjax-container"]/div/div/div/div[2]/div[1]/details/div/div/ul/li[1]/a',
         ],
         'WinRAR 32' => [
             'download' => 'https://www.rarlab.com/download.htm',
@@ -104,7 +104,7 @@ class Meuktracker extends Controller
         ],
         'Transmission Remote GUI 2' => [
             'download' => 'https://github.com/transmission-remote-gui/transgui/releases/latest',
-            'xpath' => '//*[@id="repo-content-pjax-container"]/div/div/div[2]/div[1]/details/div/div/ul/li[6]/a',
+            'xpath' => '//*[@id="repo-content-pjax-container"]/div/div/div/div[2]/div[1]/details/div/div/ul/li[6]/a',
         ],
 
         'KeePass 1.xx' => [
