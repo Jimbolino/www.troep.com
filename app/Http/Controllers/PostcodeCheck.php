@@ -5,13 +5,9 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Postcode\BaseAdapter;
-use App\Http\Controllers\Postcode\BudgetAdapter;
-use App\Http\Controllers\Postcode\EdpNetAdapter;
-use App\Http\Controllers\Postcode\FiberAdapter;
 use App\Http\Controllers\Postcode\KpnAdapter;
 use App\Http\Controllers\Postcode\OnlineAdapter;
 use App\Http\Controllers\Postcode\SolconAdapter;
-use App\Http\Controllers\Postcode\StipteAdapter;
 use App\Http\Controllers\Postcode\YoufoneAdapter;
 use App\Http\Controllers\Postcode\ZiggoAdapter;
 use GuzzleHttp\Client;
@@ -27,13 +23,13 @@ class PostcodeCheck
     public function __construct(Client $client)
     {
         $this->adapters = [
-            new BudgetAdapter($client),
-            new EdpNetAdapter($client),
-            new FiberAdapter($client),
+            // new BudgetAdapter($client),
+            // new EdpNetAdapter($client),
+            // new FiberAdapter($client),
             new KpnAdapter($client),
             new OnlineAdapter($client),
             new SolconAdapter($client),
-            new StipteAdapter($client),
+            // new StipteAdapter($client),
             new YoufoneAdapter($client),
             new ZiggoAdapter($client),
         ];
