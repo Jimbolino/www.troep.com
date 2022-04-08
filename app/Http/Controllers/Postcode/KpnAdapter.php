@@ -12,7 +12,7 @@ class KpnAdapter extends BaseAdapter
     {
         $data = [
             'zip_code' => $this->postcode,
-            'house_number' => $this->houseNumber,
+            'house_number' => (string) $this->houseNumber,
         ];
 
         return [

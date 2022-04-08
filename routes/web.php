@@ -44,7 +44,7 @@ Route::middleware('cache.headers:public;max_age=3600')->group(function (): void 
     Route::get('meuktracker/office', [Office::class, 'show']);
 
     Route::get('postcode', [PostcodeCheck::class, 'show']);
-    Route::get('postcode/{postcode}/{number}', [PostcodeCheck::class, 'check']);
+    Route::get('postcode/{postcode}/{number}/{extension?}', [PostcodeCheck::class, 'check']);
 });
 
 Route::get('debug', [DebugController::class, 'get']);
