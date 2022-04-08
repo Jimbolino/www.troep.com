@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Postcode;
 
-class KpnAdapter extends BaseAdapter
+class KpnZakelijkAdapter extends KpnAdapter
 {
-    public const URL = 'https://www.kpn.com/shop/api/v1/offer/residential/activation/';
+    public const URL = 'https://www.kpn.com/shop/zakelijk/api/v1/small-business/offer/residential/activation/';
 
     public function check(): array
     {
@@ -22,6 +22,6 @@ class KpnAdapter extends BaseAdapter
 
     public function getName(): string
     {
-        return 'kpn';
+        return 'kpn-zakelijk';
     }
 }

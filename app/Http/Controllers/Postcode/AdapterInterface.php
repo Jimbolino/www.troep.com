@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Postcode;
 
 interface AdapterInterface
 {
-    public function check($postcode, $houseNumber): array;
+    public function check(): array;
 
     public function getName(): string;
 }

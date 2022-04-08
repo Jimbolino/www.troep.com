@@ -8,13 +8,13 @@ class BudgetAdapter extends BaseAdapter
 {
     public const URL = 'https://www.budgetthuis.nl/alles-in-1/xhr/checkAddress';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
         $data = [
             'address_check_form' => [
                 'address' => [
-                    'postalCode' => $postcode,
-                    'houseNumber' => $houseNumber,
+                    'postalCode' => $this->postcode,
+                    'houseNumber' => $this->houseNumber,
                     'houseNumberExtension' => '',
                 ],
                 'isEnergyClient' => 0,

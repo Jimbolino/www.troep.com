@@ -8,11 +8,11 @@ class JonazAdapter extends BaseAdapter
 {
     public const URL = 'https://www.jonaz.nl/producten/checker/';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
         $getData = [
-            'zipcode' => $postcode,
-            'number' => $houseNumber,
+            'zipcode' => $this->postcode,
+            'number' => $this->houseNumber,
         ];
 
         $request = $this->client->get(self::URL.'?'.http_build_query($getData));

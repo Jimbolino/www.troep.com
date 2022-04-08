@@ -8,12 +8,12 @@ class SolconAdapter extends BaseAdapter
 {
     public const URL = 'https://www.solcon.nl/particulier/wp-admin/admin-ajax.php';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
         $data = [
             'action' => 'spock_data',
-            'postcode' => $postcode,
-            'house_no' => $houseNumber,
+            'postcode' => $this->postcode,
+            'house_no' => $this->houseNumber,
             'house_no_ext' => '',
             'customer_type' => 'p',
         ];

@@ -8,16 +8,15 @@ class CheapConnectAdapter extends BaseAdapter
 {
     public const URL = 'https://www.cheapconnect.nl/ajax/getInternetCheck.php';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
         $data = [
-            'zipcode' => $postcode,
-            'housenr' => $houseNumber,
+            'zipcode' => $this->postcode,
+            'housenr' => $this->houseNumber,
             'housenrext' => '',
         ];
 
-        // TODO: parse html response
-        $html = $this->formPost(self::URL, $data);
+        $html = $this->formPostHTML(self::URL, $data);
 
         return [
             'url' => self::URL,

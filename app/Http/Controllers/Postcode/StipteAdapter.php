@@ -8,12 +8,12 @@ class StipteAdapter extends BaseAdapter
 {
     public const URL = 'https://www.stipte.nl/wp-admin/admin-ajax.php';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
         $data = [
             'action' => 'st_order_xml_getzip',
-            'zipcode' => $postcode,
-            'number' => $houseNumber,
+            'zipcode' => $this->postcode,
+            'number' => $this->houseNumber,
             'houseadd' => '',
             'campaign' => 'all',
         ];

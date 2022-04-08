@@ -8,11 +8,11 @@ class FiberAdapter extends BaseAdapter
 {
     public const URL = 'https://api.aika.fiber.nl/api/address/check';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
         $data = [
-            'postalCode' => $postcode,
-            'houseNumber' => $houseNumber,
+            'postalCode' => $this->postcode,
+            'houseNumber' => $this->houseNumber,
             'houseNumberExt' => '',
         ];
         $options = [

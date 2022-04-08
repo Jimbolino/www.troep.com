@@ -6,14 +6,22 @@ namespace App\Http\Controllers\Postcode;
 
 class FreedomAdapter extends BaseAdapter
 {
-    public const URL = 'https://freedom.nl/klant-worden/internet';
+    public const URL1 = 'https://freedom.nl/klant-worden/postcode'; // GET
+    public const URL2 = 'https://freedom.nl/klant-worden/post'; // POST
+    public const URL3 = 'https://freedom.nl/klant-worden/internet'; // GET
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
+        $data = [
+            'postcode' => $this->postcode,
+            'huisnummer' => $this->houseNumber,
+        ];
+
         return [
-            'url' => self::URL,
-            'postcode' => $postcode,
-            'houseNumber' => $houseNumber,
+            'data' => $data,
+            'url1' => self::URL1,
+            'url2' => self::URL2,
+            'url3' => self::URL3,
         ];
     }
 

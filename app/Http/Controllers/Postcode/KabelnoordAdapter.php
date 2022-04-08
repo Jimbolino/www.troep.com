@@ -8,17 +8,17 @@ class KabelnoordAdapter extends BaseAdapter
 {
     public const URL = 'https://www.kabelnoord.nl/bestellen';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
         $data = [
-            'zipcode' => $postcode,
-            'number' => $houseNumber,
+            'zipcode' => $this->postcode,
+            'number' => $this->houseNumber,
             'addition' => '',
             'room' => '',
             'check-zipcode' => 'check-zipcode',
         ];
 
-        $html = $this->formPost(self::URL, $data);
+        $html = $this->formPostHTML(self::URL, $data);
 
         return [
             'url' => self::URL,

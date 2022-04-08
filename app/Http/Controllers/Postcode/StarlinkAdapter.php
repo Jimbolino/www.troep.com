@@ -8,12 +8,12 @@ class StarlinkAdapter extends BaseAdapter
 {
     public const URL = 'https://www.starlink.com/';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
         return [
             'url' => self::URL,
-            'postcode' => $postcode,
-            'houseNumber' => $houseNumber,
+            'postcode' => $this->postcode,
+            'houseNumber' => $this->houseNumber,
         ];
     }
 

@@ -8,12 +8,12 @@ class TweakAdapter extends BaseAdapter
 {
     public const URL = 'https://tweak.nl/bestellen/';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
         return [
             'url' => self::URL,
-            'postcode' => $postcode,
-            'houseNumber' => $houseNumber,
+            'postcode' => $this->postcode,
+            'houseNumber' => $this->houseNumber,
         ];
     }
 

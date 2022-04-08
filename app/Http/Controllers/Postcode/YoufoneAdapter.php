@@ -8,12 +8,12 @@ class YoufoneAdapter extends BaseAdapter
 {
     public const URL = 'https://www.youfone.nl/prov/order/PostcodeCheckCoverage';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
         $data = [
             'request' => [
-                'Zipcode' => $postcode,
-                'HouseNr' => $houseNumber,
+                'Zipcode' => $this->postcode,
+                'HouseNr' => $this->houseNumber,
                 'HouseNrExtension' => '',
             ],
         ];

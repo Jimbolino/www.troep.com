@@ -8,11 +8,11 @@ class EdpNetAdapter extends BaseAdapter
 {
     public const URL = 'https://www.edpnet.nl/nl/prive/internet.html';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
         $data = [
-            'linetest_zip' => $postcode,
-            'linetest_nr' => $houseNumber,
+            'linetest_zip' => $this->postcode,
+            'linetest_nr' => $this->houseNumber,
             'linetest_ext' => '',
         ];
 

@@ -8,11 +8,11 @@ class OnlineAdapter extends BaseAdapter
 {
     public const URL = 'https://www.online.nl/actions.online.nl/m7actions/addresscheck/checkaddress/';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
         $data = [
-            'PostalCode' => $postcode,
-            'HouseNumber' => $houseNumber,
+            'PostalCode' => $this->postcode,
+            'HouseNumber' => $this->houseNumber,
             'IsUnverified' => 'false',
             'BasketId' => '6e2c353d-c3d3-4647-959d-fd35016dd33e',
             'LoadCompleteAddress' => 'false',

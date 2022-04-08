@@ -6,15 +6,19 @@ namespace App\Http\Controllers\Postcode;
 
 class CaiwayAdapter extends BaseAdapter
 {
-    public const URL = 'https://www.caiway.nl/';
+    public const URL = 'https://www.caiway.nl/api/addresscheck';
 
-    public function check($postcode, $houseNumber): array
+    public function check(): array
     {
-        return [
-            'url' => self::URL,
-            'postcode' => $postcode,
-            'houseNumber' => $houseNumber,
+        $data = [
+            'address' => [
+                'zipcode' => $this->postcode,
+                'housenumber' => $this->houseNumber,
+                'addition' => '',
+            ],
         ];
+
+        return $this->jsonPost(self::URL, $data);
     }
 
     public function getName(): string

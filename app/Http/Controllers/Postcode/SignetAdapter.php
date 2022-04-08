@@ -4,22 +4,21 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Postcode;
 
-class DeltaAdapter extends BaseAdapter
+class SignetAdapter extends BaseAdapter
 {
-    public const URL = 'https://www.delta.nl/bestellen/';
+    public const URL = 'https://www.signet.nl/aanbod/internet/results/';
 
     public function check(): array
     {
-        $getData = [
-            'reset' => 'true',
+        $data = [
             'postalCode' => $this->postcode,
             'houseNumber' => $this->houseNumber,
         ];
 
-        $url = self::URL.'?'.http_build_query($getData);
+        $url = self::URL.'?'.http_build_query($data);
 
-        $request = $this->client->get($url);
-        $html = $request->getBody()->getContents();
+        $response = $this->client->get($url);
+        $html = $response->getBody()->getContents();
 
         return [
             'url' => $url,
@@ -29,6 +28,6 @@ class DeltaAdapter extends BaseAdapter
 
     public function getName(): string
     {
-        return 'delta';
+        return 'signet';
     }
 }
