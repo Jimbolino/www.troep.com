@@ -27,6 +27,7 @@ class PostcodeCheck
             // new \App\Http\Controllers\Postcode\FiberAdapter($client),
             // new \App\Http\Controllers\Postcode\FreedomAdapter($client),
             // new \App\Http\Controllers\Postcode\GlasnetAdapter($client),
+            // new \App\Http\Controllers\Postcode\HeldenVanNuAdapter($client),
             // new \App\Http\Controllers\Postcode\JonazAdapter($client),
             // new \App\Http\Controllers\Postcode\KabelnoordAdapter($client),
             // new \App\Http\Controllers\Postcode\KabeltexAdapter($client),
@@ -34,6 +35,7 @@ class PostcodeCheck
             new \App\Http\Controllers\Postcode\KpnAdapter($client),
             // new \App\Http\Controllers\Postcode\KpnZakelijkAdapter($client),
             // new \App\Http\Controllers\Postcode\MultifiberAdapter($client),
+            // new \App\Http\Controllers\Postcode\NetrebelAdapter($client),
             new \App\Http\Controllers\Postcode\OnlineAdapter($client),
             // new \App\Http\Controllers\Postcode\OnviAdapter($client),
             // new \App\Http\Controllers\Postcode\PlinqAdapter($client),
@@ -47,6 +49,7 @@ class PostcodeCheck
             // new \App\Http\Controllers\Postcode\StipteAdapter($client),
             // new \App\Http\Controllers\Postcode\TMobileAdapter($client),
             // new \App\Http\Controllers\Postcode\TriNedAdapter($client),
+            // new \App\Http\Controllers\Postcode\TweakAdapter($client),
             // new \App\Http\Controllers\Postcode\YoufoneAdapter($client),
             new \App\Http\Controllers\Postcode\ZiggoAdapter($client),
         ];
