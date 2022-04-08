@@ -15,7 +15,7 @@ class BudgetAdapter extends BaseAdapter
                 'address' => [
                     'postalCode' => $this->postcode,
                     'houseNumber' => $this->houseNumber,
-                    'houseNumberExtension' => '',
+                    'houseNumberExtension' => $this->extension,
                 ],
                 'isEnergyClient' => 0,
             ],

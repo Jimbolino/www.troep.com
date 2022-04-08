@@ -17,7 +17,7 @@ class SkpAdapter extends BaseAdapter
             'field_id' => '83',
             'postcode' => $this->postcode,
             'huisnummer' => $this->houseNumber,
-            'toevoeging' => '',
+            'toevoeging' => $this->extension,
         ];
 
         $url = self::URL.'?'.http_build_query($data);

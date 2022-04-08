@@ -14,9 +14,14 @@ class ZiggoAdapter extends BaseAdapter
     {
         [$post, $code] = str_split($this->postcode, 4);
 
+        $ext = null;
+        if ($this->extension) {
+            $ext = $this->extension;
+        }
+
         $response1 = $this->client->get(self::FOOTPRINT_URL.$post.'/'.$code.'/'.$this->houseNumber);
-        $response2 = $this->client->get(self::AVAIL_URL.$this->postcode.$this->houseNumber);
-        $response3 = $this->client->get(self::GIGA_URL.$this->postcode.'/'.$this->houseNumber);
+        $response2 = $this->client->get(self::AVAIL_URL.implode('', [$this->postcode, $this->houseNumber, $this->extension.$this->extension])); // need better solution
+        $response3 = $this->client->get(self::GIGA_URL.implode('/', array_filter([$this->postcode, $this->houseNumber, $ext])));
 
         return [
             'footprint' => json_decode($response1->getBody()->getContents()),

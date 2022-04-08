@@ -14,7 +14,7 @@ class CaiwayAdapter extends BaseAdapter
             'address' => [
                 'zipcode' => $this->postcode,
                 'housenumber' => $this->houseNumber,
-                'addition' => '',
+                'addition' => $this->extension,
             ],
         ];
 

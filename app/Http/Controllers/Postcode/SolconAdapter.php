@@ -14,7 +14,7 @@ class SolconAdapter extends BaseAdapter
             'action' => 'spock_data',
             'postcode' => $this->postcode,
             'house_no' => $this->houseNumber,
-            'house_no_ext' => '',
+            'house_no_ext' => $this->extension,
             'customer_type' => 'p',
         ];
 

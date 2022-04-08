@@ -13,7 +13,7 @@ class CheapConnectAdapter extends BaseAdapter
         $data = [
             'zipcode' => $this->postcode,
             'housenr' => $this->houseNumber,
-            'housenrext' => '',
+            'housenrext' => $this->extension,
         ];
 
         $html = $this->formPostHTML(self::URL, $data);

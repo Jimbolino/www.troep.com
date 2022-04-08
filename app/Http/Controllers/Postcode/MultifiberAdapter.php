@@ -13,7 +13,7 @@ class MultifiberAdapter extends BaseAdapter
         $data = [
             'zipcode' => $this->postcode,
             'houseNumber' => $this->houseNumber,
-            'addition' => '',
+            'addition' => $this->extension,
             'extraInfo' => '',
         ];
 

@@ -13,7 +13,7 @@ class KabelnoordAdapter extends BaseAdapter
         $data = [
             'zipcode' => $this->postcode,
             'number' => $this->houseNumber,
-            'addition' => '',
+            'addition' => $this->extension,
             'room' => '',
             'check-zipcode' => 'check-zipcode',
         ];

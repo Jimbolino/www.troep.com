@@ -15,7 +15,7 @@ class KliksafeAdapter extends BaseAdapter
             'query' => [
                 'postcode' => $this->postcode,
                 'huisnr' => $this->houseNumber,
-                'toev' => '',
+                'toev' => $this->extension,
             ],
             'headers' => [
                 'X-Requested-With' => 'XMLHttpRequest',

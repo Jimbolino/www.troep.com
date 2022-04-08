@@ -13,7 +13,7 @@ class FiberAdapter extends BaseAdapter
         $data = [
             'postalCode' => $this->postcode,
             'houseNumber' => $this->houseNumber,
-            'houseNumberExt' => '',
+            'houseNumberExt' => $this->extension,
         ];
         $options = [
             'http_errors' => false,

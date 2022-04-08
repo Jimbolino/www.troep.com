@@ -12,8 +12,6 @@ class StarlinkAdapter extends BaseAdapter
     {
         return [
             'url' => self::URL,
-            'postcode' => $this->postcode,
-            'houseNumber' => $this->houseNumber,
         ];
     }
 

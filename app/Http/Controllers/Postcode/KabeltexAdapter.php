@@ -14,7 +14,7 @@ class KabeltexAdapter extends BaseAdapter
             'action' => 'inschrijving_postcode_check',
             'inschrijving_postcode' => $this->postcode,
             'inschrijving_huisnummer' => $this->houseNumber,
-            'inschrijving_huisnummertoevoeging' => '',
+            'inschrijving_huisnummertoevoeging' => $this->extension,
         ];
         $options = [
             'headers' => [

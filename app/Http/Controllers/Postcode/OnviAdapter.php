@@ -13,7 +13,7 @@ class OnviAdapter extends BaseAdapter
         $data = [
             'postalcode' => $this->postcode,
             'housenumber' => $this->houseNumber,
-            'extension' => '',
+            'extension' => $this->extension,
         ];
 
         $response = $this->client->get(self::URL, ['query' => $data]);

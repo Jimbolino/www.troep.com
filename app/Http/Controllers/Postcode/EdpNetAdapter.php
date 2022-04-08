@@ -13,7 +13,7 @@ class EdpNetAdapter extends BaseAdapter
         $data = [
             'linetest_zip' => $this->postcode,
             'linetest_nr' => $this->houseNumber,
-            'linetest_ext' => '',
+            'linetest_ext' => $this->extension,
         ];
 
         return $this->formPost(self::URL, $data);

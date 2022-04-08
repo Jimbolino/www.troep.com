@@ -14,7 +14,7 @@ class PlinqAdapter extends BaseAdapter
             'action' => 'plinqapi',
             'zipcode' => $this->postcode,
             'houseno' => $this->houseNumber,
-            'houseno_ext' => '',
+            'houseno_ext' => $this->extension,
             'type' => 'thuis',
         ];
 

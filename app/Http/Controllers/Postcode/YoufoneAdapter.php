@@ -14,7 +14,7 @@ class YoufoneAdapter extends BaseAdapter
             'request' => [
                 'Zipcode' => $this->postcode,
                 'HouseNr' => $this->houseNumber,
-                'HouseNrExtension' => '',
+                'HouseNrExtension' => $this->extension,
             ],
         ];
 
