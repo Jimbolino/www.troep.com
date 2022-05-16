@@ -11,6 +11,7 @@ use DOMXpath;
 use Exception;
 use Illuminate\Cache\CacheManager;
 use Illuminate\Http\Client\Factory;
+use stdClass;
 
 class Meuktracker extends Controller
 {
@@ -210,6 +211,7 @@ class Meuktracker extends Controller
 
     public function index()
     {
+        // $this->cache->forget('meuktracker');
         $items = $this->cache->remember('meuktracker', self::CACHE_TTL, function () {
             $items = $this->loopProducts();
 
@@ -245,21 +247,24 @@ class Meuktracker extends Controller
         }
 
         if (empty($product['file'])) {
-            throw new Exception('no file found for '.$name);
-        }
-
-        $headers = $this->cacheHeaders($product['file']);
-        if (!empty($headers['location'])) {
-            if (\is_array($headers['location'])) {
-                $headers['location'] = end($headers['location']);
+            $headers = [
+                'last-modified' => '',
+                'content-length' => '',
+            ];
+        } else {
+            $headers = $this->cacheHeaders($product['file']);
+            if (!empty($headers['location'])) {
+                if (\is_array($headers['location'])) {
+                    $headers['location'] = end($headers['location']);
+                }
+                $product['file'] = (string) $headers['location'];
             }
-            $product['file'] = (string) $headers['location'];
         }
 
-        $obj = new \stdClass();
+        $obj = new stdClass();
         $obj->category = 'Software';
         $obj->catId = 'Software';
-        $obj->version = $this->extractVersionFromUrl($product['file']);
+        $obj->version = $this->extractVersionFromUrl((string) $product['file']);
         $obj->name = $name;
         $obj->date = date('d-m-Y', (int) strtotime(last((array) $headers['last-modified'])));
         $obj->size = $this->formatBytes((int) last((array) $headers['content-length']));
