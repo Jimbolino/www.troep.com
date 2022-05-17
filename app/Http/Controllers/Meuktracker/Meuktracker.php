@@ -233,42 +233,43 @@ class Meuktracker extends Controller
 
     public function getProduct($name, $product)
     {
+        $file = $product['file'] ?? '';
         if (!empty($product['json'])) {
-            $product['file'] = $this->getFileFromJson($product['json'], $product['jpath']);
+            $file = $this->getFileFromJson($product['json'], $product['jpath']);
         }
 
         if (!empty($product['download'])) {
             if (!empty($product['xpath'])) {
-                $product['file'] = $this->getFileFromXpath($product['download'], $product['xpath']);
+                $file = $this->getFileFromXpath($product['download'], $product['xpath']);
                 if (!empty($product['xpath2'])) {
-                    $product['file'] = $this->getFileFromXpath($product['file'], $product['xpath2']);
+                    $file = $this->getFileFromXpath($file, $product['xpath2']);
                 }
             }
         }
 
-        if (empty($product['file'])) {
+        if (empty($file)) {
             $headers = [
                 'last-modified' => '',
                 'content-length' => '',
             ];
         } else {
-            $headers = $this->cacheHeaders($product['file']);
+            $headers = $this->cacheHeaders($file);
             if (!empty($headers['location'])) {
                 if (\is_array($headers['location'])) {
                     $headers['location'] = end($headers['location']);
                 }
-                $product['file'] = (string) $headers['location'];
+                $file = (string) $headers['location'];
             }
         }
 
         $obj = new stdClass();
         $obj->category = 'Software';
         $obj->catId = 'Software';
-        $obj->version = $this->extractVersionFromUrl((string) $product['file']);
+        $obj->version = $this->extractVersionFromUrl((string) $file);
         $obj->name = $name;
         $obj->date = date('d-m-Y', (int) strtotime(last((array) $headers['last-modified'])));
         $obj->size = $this->formatBytes((int) last((array) $headers['content-length']));
-        $obj->file = $product['file'];
+        $obj->file = $file;
         $obj->url = $product['download'] ?? '';
         $obj->product = $product;
         $obj->headers = $headers;
