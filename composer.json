@@ -13,7 +13,7 @@
         "bref/bref": "1.5.8",
         "fruitcake/laravel-cors": "3.0.0",
         "guzzlehttp/guzzle": "7.4.5",
-        "laravel/framework": "9.18.0",
+        "laravel/framework": "9.19.0",
         "laravel/tinker": "2.7.2",
         "league/flysystem-aws-s3-v3": "3.0.21"
     },
