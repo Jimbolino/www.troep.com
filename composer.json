@@ -10,7 +10,7 @@
         "ext-json": "*",
         "ext-libxml": "*",
         "ext-openssl": "*",
-        "bref/bref": "1.6.0",
+        "bref/bref": "1.7.0",
         "fruitcake/laravel-cors": "3.0.0",
         "guzzlehttp/guzzle": "7.4.5",
         "laravel/framework": "9.19.0",
