@@ -148,7 +148,7 @@ class Office extends Controller
             'url' => $url,
             'filename' => $filename,
             'date' => strtotime($headers['last-modified']),
-            'size' => $this->meuktracker->formatBytes((int) ($headers['content-length'])),
+            'size' => $this->meuktracker->formatBytes((int) $headers['content-length']),
         ];
     }
 

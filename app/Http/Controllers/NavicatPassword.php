@@ -47,7 +47,7 @@ class NavicatPassword
 
     protected function encryptEleven($string)
     {
-        $round = (int) (floor(\strlen($string) / 8));
+        $round = (int) floor(\strlen($string) / 8);
         $leftLength = \strlen($string) % 8;
         $result = '';
         $currentVector = $this->blowIv;
@@ -97,7 +97,7 @@ class NavicatPassword
     {
         $string = (string) hex2bin(strtolower($upperString));
 
-        $round = (int) (floor(\strlen($string) / 8));
+        $round = (int) floor(\strlen($string) / 8);
         $leftLength = \strlen($string) % 8;
         $result = '';
         $currentVector = $this->blowIv;
