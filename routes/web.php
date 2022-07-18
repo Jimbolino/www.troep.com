@@ -45,6 +45,9 @@ Route::middleware('cache.headers:public;max_age=3600')->group(function (): void 
 
     Route::get('postcode', [PostcodeCheck::class, 'show']);
     Route::get('postcode/{postcode}/{number}/{extension?}', [PostcodeCheck::class, 'check']);
+
+    Route::redirect('setup', 'setup.html');
+    Route::get('setup.html', [ProxyController::class, 'get']);
 });
 
 Route::get('debug', [DebugController::class, 'get']);
