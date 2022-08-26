@@ -48,6 +48,8 @@ Route::middleware('cache.headers:public;max_age=3600')->group(function (): void 
 
     Route::redirect('setup', 'setup.html');
     Route::get('setup.html', [ProxyController::class, 'get']);
+
+    Route::get('passwordsgenerator.html', [ProxyController::class, 'get']);
 });
 
 Route::get('debug', [DebugController::class, 'get']);
