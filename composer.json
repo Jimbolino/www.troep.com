@@ -12,7 +12,7 @@
         "ext-openssl": "*",
         "bref/bref": "1.7.4",
         "fruitcake/laravel-cors": "3.0.0",
-        "guzzlehttp/guzzle": "7.4.5",
+        "guzzlehttp/guzzle": "7.5.0",
         "laravel/framework": "9.26.1",
         "laravel/tinker": "2.7.2",
         "league/flysystem-aws-s3-v3": "3.2.0"
