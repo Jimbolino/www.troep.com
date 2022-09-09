@@ -15,7 +15,7 @@
         "guzzlehttp/guzzle": "7.5.0",
         "laravel/framework": "9.27.0",
         "laravel/tinker": "2.7.2",
-        "league/flysystem-aws-s3-v3": "3.2.0"
+        "league/flysystem-aws-s3-v3": "3.3.0"
     },
     "require-dev": {
         "fakerphp/faker": "1.20.0",
