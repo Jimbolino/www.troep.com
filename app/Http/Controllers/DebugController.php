@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Config\Repository;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class DebugController extends Controller
 {
@@ -13,23 +14,25 @@ class DebugController extends Controller
 
     public function __construct(Request $request)
     {
-        $this->throwIfNotDebugIp($request->ip(), env('DEBUG_IPS'));
+        if ($request->ip()) {
+            $this->throwIfNotDebugIp((string) $request->ip(), env('DEBUG_IPS'));
+        }
         $this->request = $request;
     }
 
-    public function throwIfNotDebugIp($requestIp, $debugIps): bool
+    public function throwIfNotDebugIp(string $requestIp, string $debugIps): void
     {
         $ips = explode(',', $debugIps);
         if (\in_array($requestIp, $ips, true)) {
-            return true;
+            return;
         }
         foreach ($ips as $ip) {
             if (str_starts_with($requestIp, $ip)) {
-                return true;
+                return;
             }
         }
 
-        abort(403);
+        throw new HttpException(403);
     }
 
     public function get()

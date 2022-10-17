@@ -6,6 +6,7 @@ namespace Tests\Feature;
 
 use App\Http\Controllers\DebugController;
 use App\Http\Controllers\DecryptNavicatController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
@@ -96,9 +97,9 @@ final class WebRoutesTest extends TestCase
 
     public function testDebugAllowed(): void
     {
-        $debugController = new DebugController(request());
-        static::assertTrue($debugController->throwIfNotDebugIp('127.0.0.1', '127.0.0.1'));
-        static::assertTrue($debugController->throwIfNotDebugIp('192.168.0.1', '192.168.'));
+        $debugController = new DebugController(new Request());
+        $debugController->throwIfNotDebugIp('127.0.0.1', '127.0.0.1');
+        $debugController->throwIfNotDebugIp('192.168.0.1', '192.168.');
         static::assertThrows(function () use ($debugController): void {$debugController->throwIfNotDebugIp('100::1', '::1'); });
     }
 
