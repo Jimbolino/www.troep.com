@@ -13,11 +13,23 @@ class DebugController extends Controller
 
     public function __construct(Request $request)
     {
-        $ips = explode(',', env('DEBUG_IPS'));
-        if (!\in_array($request->ip(), $ips, true)) {
-            abort(403);
-        }
+        $this->throwIfNotDebugIp($request->ip(), env('DEBUG_IPS'));
         $this->request = $request;
+    }
+
+    public function throwIfNotDebugIp($requestIp, $debugIps): bool
+    {
+        $ips = explode(',', $debugIps);
+        if (\in_array($requestIp, $ips, true)) {
+            return true;
+        }
+        foreach ($ips as $ip) {
+            if (str_starts_with($requestIp, $ip)) {
+                return true;
+            }
+        }
+
+        abort(403);
     }
 
     public function get()

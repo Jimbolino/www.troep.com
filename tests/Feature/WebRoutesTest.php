@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
+use App\Http\Controllers\DebugController;
 use App\Http\Controllers\DecryptNavicatController;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
@@ -91,6 +92,14 @@ final class WebRoutesTest extends TestCase
         $this->get('/debug/phpinfo')->assertStatus(200);
         $this->get('/debug/request')->assertStatus(200);
         $this->get('/debug/server')->assertStatus(200);
+    }
+
+    public function testDebugAllowed(): void
+    {
+        $debugController = new DebugController(request());
+        static::assertTrue($debugController->throwIfNotDebugIp('127.0.0.1', '127.0.0.1'));
+        static::assertTrue($debugController->throwIfNotDebugIp('192.168.0.1', '192.168.'));
+        static::assertThrows(function () use ($debugController): void {$debugController->throwIfNotDebugIp('100::1', '::1'); });
     }
 
     public function testMeuktracker(): void
