@@ -23,9 +23,9 @@ $config->setFinder($finder)
         '@PHP80Migration' => true,
         '@PHP80Migration:risky' => true,
         '@PHPUnit84Migration:risky' => true,
+        '@PSR12:risky' => true,
         '@PhpCsFixer' => true,
         '@PhpCsFixer:risky' => true,
-        '@PSR12:risky' => true,
         'php_unit_internal_class' => false,
         'php_unit_test_class_requires_covers' => false,
     ])
