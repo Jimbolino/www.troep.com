@@ -7,7 +7,7 @@ namespace App\Http\Controllers\Meuktracker;
 use App\Http\Controllers\Controller;
 use DOMDocument;
 use DOMNodeList;
-use DOMXpath;
+use DOMXPath;
 use Exception;
 use Illuminate\Cache\CacheManager;
 use Illuminate\Http\Client\Factory;
@@ -199,7 +199,7 @@ class Meuktracker extends Controller
         $doc = new DOMDocument();
         libxml_use_internal_errors(true);
         $doc->loadHTML($page);
-        $domXpath = new DOMXpath($doc);
+        $domXpath = new DOMXPath($doc);
 
         $res = $domXpath->query($xpath);
         if (!$res) {
