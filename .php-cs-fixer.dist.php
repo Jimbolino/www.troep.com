@@ -26,6 +26,7 @@ $config->setFinder($finder)
         '@PSR12:risky' => true,
         '@PhpCsFixer' => true,
         '@PhpCsFixer:risky' => true,
+        'global_namespace_import' => true,
         'php_unit_internal_class' => false,
         'php_unit_test_class_requires_covers' => false,
     ])
