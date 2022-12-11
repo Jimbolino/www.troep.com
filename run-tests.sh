@@ -7,6 +7,6 @@ PHAN_DISABLE_XDEBUG_WARN=1 ./vendor/bin/phan --no-progress-bar
 
 XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text --colors=never
 
-./vendor/bin/php-cs-fixer fix --dry-run
+PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --dry-run
 
 echo 'all tests passed!'
