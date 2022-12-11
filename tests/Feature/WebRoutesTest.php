@@ -80,9 +80,6 @@ final class WebRoutesTest extends TestCase
     {
         $response = $this->get('/navicat');
         $response->assertStatus(200);
-
-        $response = $this->get('/navicat?'.http_build_query(['version' => DecryptNavicatController::DEFAULT_VERSION, 'password' => DecryptNavicatController::DEFAULT_HASH]));
-        $response->assertStatus(200);
     }
 
     public function testDebug(): void
