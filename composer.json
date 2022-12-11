@@ -10,10 +10,10 @@
         "ext-json": "*",
         "ext-libxml": "*",
         "ext-openssl": "*",
-        "bref/bref": "1.7.12",
+        "bref/bref": "1.7.14",
         "fruitcake/laravel-cors": "3.0.0",
         "guzzlehttp/guzzle": "7.5.0",
-        "laravel/framework": "9.42.2",
+        "laravel/framework": "9.43.0",
         "laravel/tinker": "2.7.3",
         "league/flysystem-aws-s3-v3": "3.10.3"
     },
@@ -21,7 +21,7 @@
         "fakerphp/faker": "1.20.0",
         "laravel/sail": "1.16.3",
         "mockery/mockery": "1.5.1",
-        "phpunit/phpunit": "9.5.26"
+        "phpunit/phpunit": "9.5.27"
     },
     "autoload": {
         "psr-4": {
