@@ -280,7 +280,7 @@ class Meuktracker extends Controller
     public function getFileFromJson(string $url, string $jpath)
     {
         $json = $this->cachePage($url);
-        $json = json_decode($json, true);
+        $json = json_decode((string) $json, true);
         $jpath = explode(',', $jpath);
 
         foreach ($jpath as $j) {

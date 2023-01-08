@@ -58,7 +58,7 @@ class Office extends Controller
         $html = $this->meuktracker->cachePage($url);
 
         $doc = new DOMDocument();
-        $doc->loadHTML($html);
+        $doc->loadHTML((string) $html);
 
         $return = [];
 
@@ -147,7 +147,7 @@ class Office extends Controller
             'name' => $name,
             'url' => $url,
             'filename' => $filename,
-            'date' => strtotime($headers['last-modified']),
+            'date' => strtotime((string) $headers['last-modified']),
             'size' => $this->meuktracker->formatBytes((int) $headers['content-length']),
         ];
     }
@@ -172,7 +172,7 @@ class Office extends Controller
         $page = $this->meuktracker->cachePage($url);
 
         $doc = new DOMDocument();
-        $doc->loadHTML($page);
+        $doc->loadHTML((string) $page);
         $return = [];
         $aHrefs = $doc->getElementsByTagName('a');
         foreach ($aHrefs as $a) {
