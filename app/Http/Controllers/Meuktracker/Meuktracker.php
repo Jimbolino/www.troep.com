@@ -40,11 +40,13 @@ class Meuktracker extends Controller
         ],
         'MPC-HC 32' => [
             'download' => 'https://github.com/clsid2/mpc-hc/releases/latest',
-            'xpath' => '//*[@id="repo-content-pjax-container"]/div/div/div/div[2]/div[1]/details/div/div/ul/li[3]/a',
+            'json' => 'https://api.github.com/repos/clsid2/mpc-hc/releases/latest',
+            'jpath' => 'assets.2.browser_download_url',
         ],
         'MPC-HC 64' => [
             'download' => 'https://github.com/clsid2/mpc-hc/releases/latest',
-            'xpath' => '//*[@id="repo-content-pjax-container"]/div/div/div/div[2]/div[1]/details/div/div/ul/li[1]/a',
+            'json' => 'https://api.github.com/repos/clsid2/mpc-hc/releases/latest',
+            'jpath' => 'assets.0.browser_download_url',
         ],
         'WinRAR 32' => [
             'download' => 'https://www.rarlab.com/download.htm',
@@ -58,11 +60,11 @@ class Meuktracker extends Controller
         ],
         'Sumatra PDF 32' => [
             'download' => 'https://www.sumatrapdfreader.org/download-free-pdf-viewer',
-            'xpath' => '//*[@id="center"]/div/table[2]/tbody/tr[1]/td[2]/a',
+            'xpath' => '/html/body/div[2]/table[2]/tbody/tr[2]/td[2]/a',
         ],
         'Sumatra PDF 64' => [
             'download' => 'https://www.sumatrapdfreader.org/download-free-pdf-viewer',
-            'xpath' => '//*[@id="center"]/div/table[1]/tbody/tr[1]/td[2]/a',
+            'xpath' => '/html/body/div[2]/table[1]/tbody/tr[2]/td[2]/a',
         ],
         'Beyond Compare' => [
             'download' => 'https://www.scootersoftware.com/download.php?zz=kb_dl4_winalternate',
@@ -71,7 +73,7 @@ class Meuktracker extends Controller
         'PhpStorm' => [
             'download' => 'https://www.jetbrains.com/phpstorm/download/',
             'json' => 'https://data.services.jetbrains.com/products/releases?code=PS&latest=true&type=release',
-            'jpath' => 'PS,0,downloads,windows,link',
+            'jpath' => 'PS.0.downloads.windows.link',
         ],
         'Mozilla Thunderbird 64' => [
             'download' => 'https://www.thunderbird.net/en-US/thunderbird/all/',
@@ -91,13 +93,6 @@ class Meuktracker extends Controller
             'file' => 'https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=nl',
         ],
 
-        //        'Navicat for MySQL' => [
-        //            'download' => 'https://navicat.com/en/download/navicat-for-mysql',
-        //            'file' => 'https://navicat.com/download/direct-download?product=navicat_mysql_en_x64.exe&location=1',
-        //            'xpath' => '*[@id="win"]/div[1]/div[1]/a',
-        //            'xpath2' => '/html/body/div[1]/div[6]/div/div/div[2]/div[1]/div/p[1]/a',
-        //        ],
-
         'Transmission Remote GUI 1' => [
             'download' => 'https://sourceforge.net/projects/transgui/files/',
             'xpath' => '//*[@id="files_list"]/tbody/tr[1]/th/a',
@@ -105,7 +100,8 @@ class Meuktracker extends Controller
         ],
         'Transmission Remote GUI 2' => [
             'download' => 'https://github.com/transmission-remote-gui/transgui/releases/latest',
-            'xpath' => '//*[@id="repo-content-pjax-container"]/div/div/div/div[2]/div[1]/details/div/div/ul/li[6]/a',
+            'json' => 'https://api.github.com/repos/transmission-remote-gui/transgui/releases/latest',
+            'jpath' => 'assets.5.browser_download_url',
         ],
 
         'KeePass 1.xx' => [
@@ -174,19 +170,11 @@ class Meuktracker extends Controller
 
     public function cachePage(string $url)
     {
+        // $this->cache->forget('page'.$url);
         return $this->cache->remember('page'.$url, self::CACHE_TTL, function () use ($url) {
-            $context = stream_context_create([
-                'http' => [
-                    'follow_location' => true,
-                    'timeout' => 5, // seconds
-                ],
-                'ssl' => [
-                    'verify_peer' => false,
-                    'verify_peer_name' => false,
-                ],
-            ]);
+            $response = $this->client->get($url);
 
-            return @file_get_contents($url, false, $context);
+            return $response->body();
         });
     }
 
@@ -281,7 +269,7 @@ class Meuktracker extends Controller
     {
         $json = $this->cachePage($url);
         $json = json_decode((string) $json, true);
-        $jpath = explode(',', $jpath);
+        $jpath = explode('.', $jpath);
 
         foreach ($jpath as $j) {
             $json = $json[$j] ?? null;
