@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba9d57e0e688d2df688d81a8f95589a6",
+    "content-hash": "8f3006fb94e383e3be1aee4e2491f1f3",
     "packages": [
         {
             "name": "async-aws/core",
@@ -1378,16 +1378,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.1.3",
+            "version": "v10.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "12256504186326a9d02b2ab3b43a4031a59b52d1"
+                "reference": "da95415a83fe6216dc78efebfc311365cf4cade0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/12256504186326a9d02b2ab3b43a4031a59b52d1",
-                "reference": "12256504186326a9d02b2ab3b43a4031a59b52d1",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/da95415a83fe6216dc78efebfc311365cf4cade0",
+                "reference": "da95415a83fe6216dc78efebfc311365cf4cade0",
                 "shasum": ""
             },
             "require": {
@@ -1574,7 +1574,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-02-22T14:38:35+00:00"
+            "time": "2023-02-23T12:25:38+00:00"
         },
         {
             "name": "laravel/serializable-closure",
