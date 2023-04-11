@@ -12,7 +12,7 @@
         "ext-openssl": "*",
         "bref/bref": "2.0.2",
         "guzzlehttp/guzzle": "7.5.0",
-        "laravel/framework": "10.6.2",
+        "laravel/framework": "10.7.1",
         "league/flysystem-aws-s3-v3": "3.12.2"
     },
     "require-dev": {
