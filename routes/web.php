@@ -52,7 +52,6 @@ Route::middleware('cache.headers:public;max_age=3600')->group(function (): void 
     Route::get('passwordsgenerator.html', [ProxyController::class, 'get']);
 
     Route::get('belasting.html', [ProxyController::class, 'get']);
-    Route::get('belasting/{file}', [ProxyController::class, 'get']);
 });
 
 Route::get('debug', [DebugController::class, 'get']);
