@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Zoekhulp betalingskenmerk en aangifte-, aanslag- of beschikkingsnummer</title>
+    <meta name="description"
+          content="Betalingskenmerk kwijt van uw Nederlandse belastingaanslag? Met de zoekhulp van de Belastingdienst hebt u het betalingskenmerk zo gevonden. ">
+    <meta name="keywords" content="">
+    <meta name="distribution" content="global">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="nl">
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./belasting/all.js"></script>
+</head>
+<body id="home" data-pagetype="bld-rekenhulp-v1" class="rekenmodule" onload="initReken();">
+<div id="bd-wrapper" class="container light_blue">
+    <div class="content_wrapper1">
+        <div class="content_wrapper2">
+            <div class="content">
+                <div class="line margin_top_5">
+                </div>
+                <form id="frmBerekening" action="#" method="post" onsubmit="return false">
+                    <div class="line">
+                        <div class="unit size34">
+                            <h1>Zoekhulp betalingskenmerk en aangifte-, aanslag- of beschikkingsnummer</h1>
+                            <div id="divVragen" class="clBGFormulier" style="display: block;">
+                                <fieldset id="fsKeuze">
+                                    <legend>Wat wilt u weten?</legend>
+                                    <p><input type="radio" name="radioWelke" id="radioNaarKenmerk"
+                                              value="aanslagNAARkenmerk" class="clRadioBtn"
+                                              onclick="doKeuzeChange(this.value)"> uw betalingskenmerk</p>
+                                    <p><input type="radio" name="radioWelke" id="radioNaarAanslag"
+                                              value="kenmerkNAARaanslag" class="clRadioBtn"
+                                              onclick="doKeuzeChange(this.value)"> uw aangifte-, aanslag- of
+                                        beschikkingsnummer</p>
+                                </fieldset>
+                                <fieldset id="fsInvoer1" style="display: none;">
+                                    <legend>Hoe wilt u het betalingskenmerk opzoeken?</legend>
+                                    <p><input type="radio" name="radioAangifteOfBtwLh" id="radioAangifte"
+                                              value="aangifteNAARkenmerk" class="clRadioBtn"
+                                              onclick="doKeuzeNaarKenmerkChange(this)"> van aangifte-,
+                                        aanslag- of beschikkingsnummer naar betalingskenmerk</p>
+                                    <p><input type="radio" name="radioAangifteOfBtwLh" id="radioBtwLh"
+                                              value="btwlhNAARkenmerk" class="clRadioBtn"
+                                              onclick="doKeuzeNaarKenmerkChange(this)"> van btw-nummer of
+                                        loonheffingennummer naar betalingskenmerk</p>
+                                </fieldset>
+                                <fieldset id="fsBtwLhNaarKenmerk" style="display: none;">
+                                    <legend>Van btw-nummer of loonheffingennummer naar betalingskenmerk</legend>
+                                    <p>
+                                        <label>Btw- of loonheffingennummer</label>
+                                        <input type="text" value="" name="inputBtwLh" id="inputBtwLh" class="inputFinr"
+                                               size="12" maxlength="12" onblur="CheckBtwLh(this, false);"
+                                               onkeyup="event.keyCode == 13 ? CheckBtwLh(this, true) : this.value = CheckBtwLh(this, false)">
+                                        <a href="javascript:void(0)" class="clBtnInfo"
+                                           onclick="doHelp(&#39;divHelpBtwLh&#39;, this)"><img
+                                            src="./belasting/bttn_help_normal.gif"
+                                            alt="Klik hier voor help over deze vraag."></a>
+                                    </p>
+                                    <p id="BtwLhJaar" style="display: none;">
+                                        <label>Aangiftejaar</label>
+                                        <select name="selectBtwLhJaar" id="selectBtwLhJaar" class="selectMiddelcode"
+                                                onchange="doBtwLhJaar(this)">
+                                            <option value="">Wordt gevuld vanuit JS</option>
+                                        </select>
+                                        <a href="javascript:void(0)" class="clBtnInfo"
+                                           onclick="doHelp(&#39;divHelpBtwLhJaar&#39;, this)"><img
+                                            src="./belasting/bttn_help_normal.gif"
+                                            alt="Klik hier voor help over deze vraag."></a>
+                                    </p>
+                                    <p id="BtwLhFrequentie" style="display: none;">
+                                        <label>Selecteer aangiftefrequentie</label>
+                                        <select name="selectBtwLhFrequentie" id="selectBtwLhFrequentie"
+                                                class="selectWide" onchange="doBtwLhFrequentie(this)">
+                                            <option value="">Maak een keuze...</option>
+                                        </select>
+                                        <a href="javascript:void(0)" class="clBtnInfo"
+                                           onclick="doHelp(&#39;divHelpBtwLhFrequentie&#39;, this)"><img
+                                            src="./belasting/bttn_help_normal.gif"
+                                            alt="Klik hier voor help over deze vraag."></a>
+                                    </p>
+                                    <p id="BtwLhAangiftetijdvak" style="display: none;">
+                                        <label>Selecteer aangiftetijdvak</label>
+                                        <select name="selectBtwLhAangiftetijdvak" id="selectBtwLhAangiftetijdvak"
+                                                class="selectWide" onchange="doBtwLhAangiftetijdvak(this)">
+                                            <option value="">Wordt gevuld vanuit JS</option>
+                                        </select>
+                                        <a href="javascript:void(0)" class="clBtnInfo"
+                                           onclick="doHelp(&#39;divHelpBtwLhAangiftetijdvak&#39;, this)"><img
+                                            src="./belasting/bttn_help_normal.gif"
+                                            alt="Klik hier voor help over deze vraag."></a>
+                                    </p>
+                                    <p id="BtwLhGenereer" class="clButtonLine" style="display: none;">
+                                        <label>&nbsp;</label>
+                                        <input type="button" value="Geef betalingskenmerk" class="submit"
+                                               onclick="Bereken(2)">
+                                    </p>
+                                </fieldset>
+
+                                <fieldset id="fsAangifteNaarKenmerk" style="display: none;">
+                                    <legend>Van aangifte-, aanslag- of beschikkingsnummer naar betalingskenmerk</legend>
+                                    <p>
+                                        <label>BSN of RSIN</label>
+                                        <input type="text" value="" name="inputSofi" id="inputSofi" class="inputFinr"
+                                               size="9" maxlength="9" onblur="CheckSofi_onblur(this.value, false);"
+                                               onkeyup="event.keyCode == 13 ? CheckSofi_onblur(this.value, true) : this.value = CheckSofi(this.value)">
+                                        <a href="javascript:void(0)" class="clBtnInfo"
+                                           onclick="doHelp(&#39;divHelpSofinummer&#39;, this)"><img
+                                            src="./belasting/bttn_help_normal.gif"
+                                            alt="Klik hier voor help over deze vraag."></a>
+                                    </p>
+                                    <p id="pMiddelCode" style="display: block;">
+                                        <label>Selecteer een letter:</label>
+                                        <select name="selectMiddelcode" id="selectMiddelcode" class="selectMiddelcode"
+                                                onchange="CheckMiddelcode(this.value)">
+                                            <option value="">Maak een keuze...</option>
+                                            <option value="a">A</option>
+                                            <option value="b">B</option>
+                                            <option value="d">D</option>
+                                            <option value="e">E</option>
+                                            <option value="f">F</option>
+                                            <option value="h">H</option>
+                                            <option value="l">L</option>
+                                            <option value="m">M</option>
+                                            <option value="n">N</option>
+                                            <option value="s">S</option>
+                                            <option value="t">T</option>
+                                            <option value="v">V</option>
+                                            <option value="w">W</option>
+                                            <option value="y">Y</option>
+                                            <option value="z">Z</option>
+                                        </select>
+                                        <a href="javascript:void(0)" class="clBtnInfo"
+                                           onclick="doHelp(&#39;divHelpMiddelcode&#39;, this)"><img
+                                            src="./belasting/bttn_help_normal.gif"
+                                            alt="Klik hier voor help over deze vraag."></a>
+                                    </p>
+                                    <p id="restant" style="display: none;">
+                                        <label>Slotcijfers:</label>
+                                        <input type="text" name="inputSofiMiddel" class="inputSofiMiddel" size="12"
+                                               readonly="readonly">
+                                        <a href="javascript:void(0)" class="clBtnInfo"
+                                           onclick="doKeuzeHelpRestant(this)"><img
+                                            src="./belasting/bttn_help_normal.gif"
+                                            alt="Klik hier voor help over deze vraag."></a>
+                                        <input type="text" name="A" id="A" class="restant" size="6" maxlength="6"
+                                               onkeyup="checkRestant(this.value, this.maxLength)"
+                                               onchange="RegExpAllNumeric(this.value, 6, &#39;A&#39;)"
+                                               style="display: inline;">
+                                        <input type="text" name="H" id="H" class="restant" size="4" maxlength="4"
+                                               onkeyup="checkRestant(this.value, this.maxLength)"
+                                               onchange="RegExpAllNumeric(this.value, this.maxLength, &#39;H&#39;)"
+                                               style="display: none;">
+                                        <input type="text" name="M" id="M" class="restant" size="6" maxlength="6"
+                                               onkeyup="checkRestant(this.value, 1)"
+                                               onchange="RegExpNumeric(this.value, 6, &#39;M&#39;)"
+                                               style="display: none;">
+                                        <input type="text" name="Y" id="Y" class="restant" size="6" maxlength="6"
+                                               onkeyup="checkRestant(this.value, 1)"
+                                               onchange="RegExpNumeric(this.value, 6, &#39;Y&#39;)"
+                                               style="display: none;">
+                                        <input type="text" name="T" id="T" class="restant" size="7" maxlength="7"
+                                               onkeyup="checkRestant(this.value, 6)"
+                                               onchange="RegExpAllNumeric(this.value, 6, &#39;T&#39;)"
+                                               style="display: none;">
+                                        <input type="text" name="V" id="V" class="restant" size="6" maxlength="6"
+                                               onkeyup="checkRestant(this.value, this.maxLength)"
+                                               onchange="RegExpAllNumeric(this.value, 6, &#39;V&#39;)"
+                                               style="display: none;">
+                                        <input type="text" name="W" id="W" class="restant" size="3" maxlength="3"
+                                               onkeyup="checkRestant(this.value, 2)"
+                                               onchange="RegExpAllNumeric(this.value, 2, &#39;W&#39;)"
+                                               style="display: none;">
+                                        <input type="text" name="Z" id="Z" class="restant" size="6" maxlength="6"
+                                               onkeyup="checkRestant(this.value, this.maxLength)"
+                                               onchange="RegExpAllNumeric(this.value, 6, &#39;Z&#39;)"
+                                               style="display: none;">
+                                    </p>
+                                    <p id="genereer" class="clButtonLine" style="display: none;">
+                                        <label>&nbsp;</label>
+                                        <input type="button" value="Geef betalingskenmerk" class="submit"
+                                               onclick="Bereken(0)">
+                                    </p>
+                                </fieldset>
+                                <fieldset id="fsInvoer2" style="display: block;">
+                                    <legend>Van betalingskenmerk naar aangifte-, aanslag- of beschikkingsnummer</legend>
+                                    <p>
+                                        <label>Betalingskenmerk:</label>
+                                        <input type="text" value="" name="bkVeld0" id="bkVeld0" class="kenmerk"
+                                               maxlength="4"
+                                               onkeyup="ChechBetKenm(this.value, 4, &#39;bkVeld1&#39;, event)">
+                                        <input type="text" value="" name="bkVeld1" id="bkVeld1" class="kenmerk"
+                                               maxlength="4"
+                                               onkeyup="ChechBetKenm(this.value, 4, &#39;bkVeld2&#39;, event)">
+                                        <input type="text" value="" name="bkVeld2" id="bkVeld2" class="kenmerk"
+                                               maxlength="4"
+                                               onkeyup="ChechBetKenm(this.value, 4, &#39;bkVeld3&#39;, event)">
+                                        <input type="text" value="" name="bkVeld3" id="bkVeld3" class="kenmerk"
+                                               maxlength="4"
+                                               onkeyup="ChechBetKenm(this.value, 4, &#39;ok_but&#39;, event)">
+                                    </p>
+                                    <p id="genereer2" class="clButtonLine">
+                                        <label>&nbsp;</label>
+                                        <input name="ok_but" type="button"
+                                               value="Geef aangifte-, aanslag- of beschikkingsnummer"
+                                               onclick="Bereken(1)" class="submit">
+                                    </p>
+                                </fieldset>
+                            </div>
+                            <div id="divResultaat" class="clBGFormulier"
+                                 style="display: none; visibility: hidden; top: -220px;">
+                                <fieldset id="fsUitvoer" style="display: none; visibility: hidden;">
+                                    <legend>Resultaat</legend>
+                                    <div id="divResult" class="clResult" style="display: none; visibility: hidden;">
+                                        <div class="clUitkomst">
+                                            <span
+                                                id="spanAanslagnummer"><h2>Aangifte-, aanslag- of beschikkingsnummer</h2><p>1111.11.110.A.12.3456</p></span>
+                                            <span id="spanBetalingsKenmerk"></span>
+                                        </div>
+                                        <p class="clButtonLine">
+                                            <input type="button" value="Wijzigen invoer" class="submit"
+                                                   onclick="doOpnieuw(&#39;&#39;)">
+                                        </p>
+                                    </div>
+                                    <div id="divResultGeenAanslagnummer" class="clResult"
+                                         style="display: none; visibility: hidden;">
+                                        <div class="clUitkomst">
+                                            <h2>Het aangifte-, aanslag- of beschikkingsnummer kan niet worden
+                                                vastgesteld.</h2>
+                                        </div>
+                                        <div class="clUitkomstExtra">
+                                            <p>Neem contact op met de BelastingTelefoon: 0800-0543. Belt u vanuit het
+                                                buitenland? Dan is het telefoonnummer +31 55 5 385 385.</p>
+                                        </div>
+                                        <p class="clButtonLine">
+                                            <input type="button" value="Wijzigen invoer" class="submit"
+                                                   onclick="doOpnieuw(&#39;&#39;)">
+                                        </p>
+                                    </div>
+                                    <div id="divResultGeenBetalingskenmerk" class="clResult"
+                                         style="display: none; visibility: hidden;">
+                                        <div class="clUitkomst">
+                                            <h2>Het betalingskenmerk kan niet worden vastgesteld.</h2>
+                                        </div>
+                                        <div class="clUitkomstExtra">
+                                            <p>Neem contact op met de BelastingTelefoon: 0800-0543. Belt u vanuit het
+                                                buitenland? Dan is het telefoonnummer +31 55 5 385 385.</p>
+                                        </div>
+                                        <p class="clButtonLine">
+                                            <input type="button" value="Wijzigen invoer" class="submit"
+                                                   onclick="doOpnieuw(&#39;&#39;)">
+                                        </p>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div id="divVersie" style="display: none;"></div>
+                        </div>
+
+                        <div class="unit size14">
+                            <div id="divHelpBtwLh" class="clHelp" style="display: none; visibility: hidden;">
+                                <div class="clTopClose">
+                                    <div class="clHelpAanwijzer"></div>
+                                    <img src="./belasting/bttn_help_close.png" alt="Klik om dit helpvenster te sluiten."
+                                         class="clBtnClose" onclick="SluitHelp()"><a href="javascript://"
+                                                                                     class="clCloseText"
+                                                                                     onclick="SluitHelp()">sluiten</a>
+                                </div>
+                                <div class="clHelpText">
+                                    <h2>Btw- of loonheffingennummer</h2>
+                                    <p>Vul uw loonheffingennummer of btw-nummer in. Voor het btw-nummer zijn dit de
+                                        posities na de landcode.</p>
+                                    <h2>Voorbeeld</h2>
+                                    <p>Het btw-nummer is NL111111110B03, dan vult u 111111110B03 in.</p>
+                                </div>
+                            </div>
+                            <div id="divHelpBtwLhJaar" class="clHelp" style="display: none; visibility: hidden;">
+                                <div class="clTopClose">
+                                    <div class="clHelpAanwijzer"></div>
+                                    <img src="./belasting/bttn_help_close.png" alt="Klik om dit helpvenster te sluiten."
+                                         class="clBtnClose" onclick="SluitHelp()"><a href="javascript://"
+                                                                                     class="clCloseText"
+                                                                                     onclick="SluitHelp()">sluiten</a>
+                                </div>
+                                <div class="clHelpText">
+                                    <h2>Aangiftejaar</h2>
+                                    <p>Het jaar waarin de beginmaand ligt van het betreffende aangiftetijdvak
+                                        omzetbelasting of loonheffing.</p>
+                                    <h2>Voorbeeld</h2>
+                                    <p>Het jaar is 2015, dan vult u 2015 in.</p>
+                                </div>
+                            </div>
+                            <div id="divHelpBtwLhFrequentie" class="clHelp" style="display: none; visibility: hidden;">
+                                <div class="clTopClose">
+                                    <div class="clHelpAanwijzer"></div>
+                                    <img src="./belasting/bttn_help_close.png" alt="Klik om dit helpvenster te sluiten."
+                                         class="clBtnClose" onclick="SluitHelp()"><a href="javascript://"
+                                                                                     class="clCloseText"
+                                                                                     onclick="SluitHelp()">sluiten</a>
+                                </div>
+                                <div class="clHelpText">
+                                    <h2>Aangiftefrequentie</h2>
+                                    <p>Kies hier hoe vaak u aangifte doet voor het betreffende middel. Voor een aangifte
+                                        omzetbelasting beginnen boekjaarkwartalen in de 2e of 3e maand van een
+                                        kalenderkwartaal.</p>
+                                </div>
+                            </div>
+                            <div id="divHelpBtwLhAangiftetijdvak" class="clHelp"
+                                 style="display: none; visibility: hidden;">
+                                <div class="clTopClose">
+                                    <div class="clHelpAanwijzer"></div>
+                                    <img src="./belasting/bttn_help_close.png" alt="Klik om dit helpvenster te sluiten."
+                                         class="clBtnClose" onclick="SluitHelp()"><a href="javascript://"
+                                                                                     class="clCloseText"
+                                                                                     onclick="SluitHelp()">sluiten</a>
+                                </div>
+                                <div class="clHelpText">
+                                    <h2>Aangiftetijdvak</h2>
+                                    <p>Het aangiftetijdvak voor de omzetbelasting of loonheffing waarover u een betaling
+                                        moet doen.</p>
+                                    <h2>Voorbeeld</h2>
+                                    <p>Voorbeeld 1<br>Betreft het een maandaangifte loonheffing over het tijdvak april?
+                                        Dan kiest u voor april.</p>
+                                    <p>Voorbeeld 2<br>Het door u gekozen aangiftejaar is 2015. Wilt u een overzicht van
+                                        de boekjaarkwartalen beginnend in de 3e maand van kalenderkwartaal 2015? Dan
+                                        kiest u voor alle boekjaarkwartalen die beginnen in de 3e maand van een
+                                        kalenderkwartaal.</p>
+                                </div>
+                            </div>
+
+                            <div id="divHelpSofinummer" class="clHelp"
+                                 style="display: none; visibility: hidden; margin-top: 337.781px;">
+                                <div class="clTopClose">
+                                    <div class="clHelpAanwijzer" style="margin-top: 0px;"></div>
+                                    <img src="./belasting/bttn_help_close.png" alt="Klik om dit helpvenster te sluiten."
+                                         class="clBtnClose" onclick="SluitHelp()"><a href="javascript://"
+                                                                                     class="clCloseText"
+                                                                                     onclick="SluitHelp()">sluiten</a>
+                                </div>
+                                <div class="clHelpText">
+                                    <h2>BSN of RSIN</h2>
+                                    <p>Vul uw BSN of RSIN in.</p>
+                                    <p>Dit zijn cijfers die voor de letter in het aangifte-, aanslag- of
+                                        beschikkingsnummer staan.</p>
+                                    <h2>Voorbeeld</h2>
+                                    <p>Het aangifte-, aanslag- of beschikkingsnummer is 1111.11.110.F.01.2050, dan vult
+                                        u 111111110 in.</p>
+                                </div>
+                            </div>
+                            <div id="divHelpMiddelcode" class="clHelp" style="display: none; visibility: hidden;">
+                                <div class="clTopClose">
+                                    <div class="clHelpAanwijzer"></div>
+                                    <img src="./belasting/bttn_help_close.png" alt="Klik om dit helpvenster te sluiten."
+                                         class="clBtnClose" onclick="SluitHelp()"><a href="javascript://"
+                                                                                     class="clCloseText"
+                                                                                     onclick="SluitHelp()">sluiten</a>
+                                </div>
+                                <div class="clHelpText">
+                                    <h2>Selecteer een letter</h2>
+                                    <p>Dit is de letter in het aangifte-, aanslag- of beschikkingsnummer.</p>
+                                    <h2>Voorbeeld</h2>
+                                    <p>Het aangifte-, aanslag- of beschikkingsnummer is 1111.11.110.F.01.2050, dan vult
+                                        u F in.</p>
+                                </div>
+                            </div>
+                            <div id="divHelpRestantABDEFLVZ" class="clHelp" style="display: none; visibility: hidden;">
+                                <div class="clTopClose">
+                                    <div class="clHelpAanwijzer"></div>
+                                    <img src="./belasting/bttn_help_close.png" alt="Klik om dit helpvenster te sluiten."
+                                         class="clBtnClose" onclick="SluitHelp()"><a href="javascript://"
+                                                                                     class="clCloseText"
+                                                                                     onclick="SluitHelp()">sluiten</a>
+                                </div>
+                                <div class="clHelpText">
+                                    <h2>Slotcijfers</h2>
+                                    <p>Vul de 6 cijfers in die na de letter in het aangifte-, aanslag- of
+                                        beschikkingsnummer staan.</p>
+                                    <h2>Staan er minder dan 6 slotcijfers?</h2>
+                                    <p>Doe dan het volgende:</p>
+                                    <ol>
+                                        <li>Typ de slotcijfers in.</li>
+                                        <li>Zet de cursor achter het 1e cijfer.</li>
+                                        <li>Typ nullen achter het 1e cijfer, tot er 6 cijfers staan.</li>
+                                    </ol>
+                                    <h2>Voorbeelden</h2>
+                                    <ul>
+                                        <li>01 wordt 000001</li>
+                                        <li>91 wordt 900001</li>
+                                        <li>012 wordt 000012</li>
+                                        <li>912 wordt 900012</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="divHelpRestantHNS" class="clHelp" style="display: none; visibility: hidden;">
+                                <div class="clTopClose">
+                                    <div class="clHelpAanwijzer"></div>
+                                    <img src="./belasting/bttn_help_close.png" alt="Klik om dit helpvenster te sluiten."
+                                         class="clBtnClose" onclick="SluitHelp()"><a href="javascript://"
+                                                                                     class="clCloseText"
+                                                                                     onclick="SluitHelp()">sluiten</a>
+                                </div>
+                                <div class="clHelpText">
+                                    <h2>Slotcijfers</h2>
+                                    <p>Vul de cijfers in die na de letter in het aangifte-, aanslag- of
+                                        beschikkingsnummer staan. Het gaat om 2 of 4 cijfers.</p>
+                                </div>
+                            </div>
+                            <div id="divHelpRestantMY" class="clHelp" style="display: none; visibility: hidden;">
+                                <div class="clTopClose">
+                                    <div class="clHelpAanwijzer"></div>
+                                    <img src="./belasting/bttn_help_close.png" alt="Klik om dit helpvenster te sluiten."
+                                         class="clBtnClose" onclick="SluitHelp()"><a href="javascript://"
+                                                                                     class="clCloseText"
+                                                                                     onclick="SluitHelp()">sluiten</a>
+                                </div>
+                                <div class="clHelpText">
+                                    <h2>Slotcijfers</h2>
+                                    <p>Vul de cijfers in die na de letter in het aangifte-, aanslag- of
+                                        beschikkingsnummer staan. Het gaat om 1 tot maximaal 6 cijfers.</p>
+                                </div>
+                            </div>
+                            <div id="divHelpRestantT" class="clHelp" style="display: none; visibility: hidden;">
+                                <div class="clTopClose">
+                                    <div class="clHelpAanwijzer"></div>
+                                    <img src="./belasting/bttn_help_close.png" alt="Klik om dit helpvenster te sluiten."
+                                         class="clBtnClose" onclick="SluitHelp()"><a href="javascript://"
+                                                                                     class="clCloseText"
+                                                                                     onclick="SluitHelp()">sluiten</a>
+                                </div>
+                                <div class="clHelpText">
+                                    <h2>Slotcijfers</h2>
+                                    <p>Vul de cijfers in die na de letter in het aangifte-, aanslag- of
+                                        beschikkingsnummer staan. Het gaat om 6 of 7 cijfers.</p>
+                                </div>
+                            </div>
+                            <div id="divHelpRestantW" class="clHelp" style="display: none; visibility: hidden;">
+                                <div class="clTopClose">
+                                    <div class="clHelpAanwijzer"></div>
+                                    <img src="./belasting/bttn_help_close.png" alt="Klik om dit helpvenster te sluiten."
+                                         class="clBtnClose" onclick="SluitHelp()"><a href="javascript://"
+                                                                                     class="clCloseText"
+                                                                                     onclick="SluitHelp()">sluiten</a>
+                                </div>
+                                <div class="clHelpText">
+                                    <h2>Slotcijfers</h2>
+                                    <p>Vul de 5 cijfers in die na de letter in het aangifte-, aanslag- of
+                                        beschikkingsnummer staan. Soms staan er maar 3 cijfers. Zet in dat geval 2
+                                        nullen achter het 1e cijfer na de letter. Voorbeeld: 012345678W256 wordt
+                                        012345678W20056.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
