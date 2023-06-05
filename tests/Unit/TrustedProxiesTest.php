@@ -14,19 +14,19 @@ class TrustedProxiesTest extends TestCase
     public function testProxyCount(): void
     {
         $ip = $this->runWithCount(0);
-        static::assertSame('1.1.1.1', $ip);
+        self::assertSame('1.1.1.1', $ip);
 
         $ip = $this->runWithCount(1);
-        static::assertSame('2.2.2.2', $ip);
+        self::assertSame('2.2.2.2', $ip);
 
         $ip = $this->runWithCount(2);
-        static::assertSame('3.3.3.3', $ip);
+        self::assertSame('3.3.3.3', $ip);
 
         $ip = $this->runWithCount(3);
-        static::assertSame('4.4.4.4', $ip);
+        self::assertSame('4.4.4.4', $ip);
 
         $ip = $this->runWithCount(4);
-        static::assertSame('4.4.4.4', $ip);
+        self::assertSame('4.4.4.4', $ip);
     }
 
     private function runWithCount($count): ?string

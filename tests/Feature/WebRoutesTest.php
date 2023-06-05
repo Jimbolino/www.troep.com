@@ -96,12 +96,12 @@ final class WebRoutesTest extends TestCase
         $debugController = new DebugController(new Request());
         $debugController->throwIfNotDebugIp('127.0.0.1', '127.0.0.1');
         $debugController->throwIfNotDebugIp('192.168.0.1', '192.168.');
-        static::assertThrows(function () use ($debugController): void {$debugController->throwIfNotDebugIp('100::1', '::1'); });
+        self::assertThrows(function () use ($debugController): void {$debugController->throwIfNotDebugIp('100::1', '::1'); });
     }
 
     public function testMeuktracker(): void
     {
-        static::markTestSkipped();
+        self::markTestSkipped();
         // $this->get('/meuktracker')->assertStatus(200);
         // $this->get('/meuktracker/office')->assertStatus(200);
         // $this->get('/meuktracker/office?32')->assertStatus(200);
