@@ -21,6 +21,9 @@
     <br/><a href="https://onedrive.live.com?invref=94126f13eb747cb8&invscr=90">OneDrive</a>
     <br/><a href="passwordsgenerator.html">passwordsgenerator.net</a>
     <br/><a href="belasting.html">belasting.html</a>
+    <br/><a href="https://www.amazon.nl/?&_encoding=UTF8&tag=troep0e-21&linkCode=ur2&linkId=82fcba4ff8e5e92e78254bb066c3dfaa&camp=247&creative=1211">amazon</a>
+    <a href="https://www.amazon.nl/probeerprime?tag=troep0e-21">prime</a>
+    <a href="https://www.primevideo.com/region/eu/gp/video/offers/nonprimehomepage/ref=atv_nb_lcl_nl_NL?tag=troep0e-21">video</a>
 </div>
 </body>
 </html>
