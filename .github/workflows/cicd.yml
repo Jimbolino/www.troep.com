@@ -49,9 +49,6 @@ jobs:
         mkdir -p database
         touch database/database.sqlite
 
-    - name: OSKAR-PHP-CS-Fixer
-      uses: OskarStark/php-cs-fixer-ga@3.25.0
-
     - name: Execute tests
       env:
         DB_CONNECTION: sqlite
