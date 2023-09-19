@@ -148,7 +148,7 @@ class Meuktracker extends Controller
 
     public function cacheHeaders(string $url)
     {
-        return $this->cache->remember('get_headers'.$url, self::CACHE_TTL, function () use ($url) {
+        return $this->cache->remember('get_headers'.$url, self::CACHE_TTL, static function () use ($url) {
             $context = stream_context_create([
                 'http' => [
                     'timeout' => 2, // seconds

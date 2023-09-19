@@ -28,7 +28,7 @@ Route::any('tools/viewsource.php', [ViewSourceController::class, 'show']);
 Route::get('startpage.php', [StartpageController::class, 'show']);
 
 // cacheable routes
-Route::middleware('cache.headers:public;max_age=3600')->group(function (): void {
+Route::middleware('cache.headers:public;max_age=3600')->group(static function (): void {
     Route::get('tha-music.htm', [ProxyController::class, 'get']);
     Route::get('linux.htm', [ProxyController::class, 'get']);
     Route::get('bookmarks.htm', [ProxyController::class, 'get']);

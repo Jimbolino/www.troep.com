@@ -96,7 +96,7 @@ final class WebRoutesTest extends TestCase
         $debugController = new DebugController(new Request());
         $debugController->throwIfNotDebugIp('127.0.0.1', '127.0.0.1');
         $debugController->throwIfNotDebugIp('192.168.0.1', '192.168.');
-        self::assertThrows(function () use ($debugController): void {$debugController->throwIfNotDebugIp('100::1', '::1'); });
+        self::assertThrows(static function () use ($debugController): void {$debugController->throwIfNotDebugIp('100::1', '::1'); });
     }
 
     public function testMeuktracker(): void
