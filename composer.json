@@ -13,7 +13,7 @@
         "bref/bref": "2.1.9",
         "guzzlehttp/guzzle": "7.8.0",
         "laravel/framework": "10.34.2",
-        "league/flysystem-aws-s3-v3": "3.21.0"
+        "league/flysystem-aws-s3-v3": "3.22.0"
     },
     "require-dev": {
         "phpunit/phpunit": "10.5.1"
