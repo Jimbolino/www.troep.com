@@ -18,12 +18,13 @@
     <br/><a href="startpage.php">startpage</a>
     <hr>random troep:
     <br/><a href="navicat">navicat password hash decrypter</a>
-    <br/><a href="https://onedrive.live.com?invref=94126f13eb747cb8&invscr=90">OneDrive</a>
     <br/><a href="passwordsgenerator.html">passwordsgenerator.net</a>
     <br/><a href="belasting.html">belasting.html</a>
-    <br/><a href="https://www.amazon.nl/?&_encoding=UTF8&tag=troep0e-21&linkCode=ur2&linkId=82fcba4ff8e5e92e78254bb066c3dfaa&camp=247&creative=1211">amazon</a>
-    <a href="https://www.amazon.nl/probeerprime?tag=troep0e-21">prime</a>
-    <a href="https://www.primevideo.com/region/eu/gp/video/offers/nonprimehomepage/ref=atv_nb_lcl_nl_NL?tag=troep0e-21">video</a>
+    <hr/>referrals:
+    <br/><a href="https://onedrive.live.com?invref=94126f13eb747cb8&invscr=90">OneDrive</a>
+    <br/><a href="https://www.dropbox.com/referrals/AAC2ZevNVgJMm9f-fOct6slqjP9OS1n4qa8?src=global9">Dropbox</a>
+    <br/><a href="https://www.cashbackxl.nl?share=jimborst-6af2">CashbackXL</a>
+    <br/><a href="https://www.shopbuddies.nl/u/REF4ecc4fd9b16">ShopBuddies</a>
 </div>
 </body>
 </html>
