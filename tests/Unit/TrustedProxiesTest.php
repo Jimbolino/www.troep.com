@@ -13,27 +13,27 @@ class TrustedProxiesTest extends TestCase
 {
     public function testProxyCount(): void
     {
-        $ip = $this->runWithCount(0);
+        $ip = $this->runWithCount(0, '9.9.9.9');
         self::assertSame('1.1.1.1', $ip);
 
-        $ip = $this->runWithCount(1);
+        $ip = $this->runWithCount(1, '2.2.2.2');
         self::assertSame('2.2.2.2', $ip);
 
-        $ip = $this->runWithCount(2);
+        $ip = $this->runWithCount(2, '3.3.3.3, 2.2.2.2');
         self::assertSame('3.3.3.3', $ip);
 
-        $ip = $this->runWithCount(3);
+        $ip = $this->runWithCount(3, '4.4.4.4, 3.3.3.3, 2.2.2.2');
         self::assertSame('4.4.4.4', $ip);
 
-        $ip = $this->runWithCount(4);
-        self::assertSame('4.4.4.4', $ip);
+        self::expectExceptionMessage('proxyCount mismatch: 3 !== 4');
+        $this->runWithCount(4, '4.4.4.4, 3.3.3.3, 2.2.2.2');
     }
 
-    private function runWithCount($count): ?string
+    private function runWithCount($count, $proxies): ?string
     {
         $server = [
             'REMOTE_ADDR' => '1.1.1.1',
-            'HTTP_X-FORWARDED-FOR' => '4.4.4.4, 3.3.3.3, 2.2.2.2',
+            'HTTP_X_FORWARDED_FOR' => $proxies,
         ];
         $request = new Request([], [], [], [], [], $server);
 
