@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Postcode\BaseAdapter;
+use App\Http\Controllers\Postcode\KpnAdapter;
+use App\Http\Controllers\Postcode\OnlineAdapter;
+use App\Http\Controllers\Postcode\ZiggoAdapter;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
@@ -32,11 +35,11 @@ class PostcodeCheck
             // new \App\Http\Controllers\Postcode\KabelnoordAdapter($client),
             // new \App\Http\Controllers\Postcode\KabeltexAdapter($client),
             // new \App\Http\Controllers\Postcode\KliksafeAdapter($client),
-            new \App\Http\Controllers\Postcode\KpnAdapter($client),
+            new KpnAdapter($client),
             // new \App\Http\Controllers\Postcode\KpnZakelijkAdapter($client),
             // new \App\Http\Controllers\Postcode\MultifiberAdapter($client),
             // new \App\Http\Controllers\Postcode\NetrebelAdapter($client),
-            new \App\Http\Controllers\Postcode\OnlineAdapter($client),
+            new OnlineAdapter($client),
             // new \App\Http\Controllers\Postcode\OnviAdapter($client),
             // new \App\Http\Controllers\Postcode\PlinqAdapter($client),
             // new \App\Http\Controllers\Postcode\RapidXSAdapter($client),
@@ -51,7 +54,7 @@ class PostcodeCheck
             // new \App\Http\Controllers\Postcode\TriNedAdapter($client),
             // new \App\Http\Controllers\Postcode\TweakAdapter($client),
             // new \App\Http\Controllers\Postcode\YoufoneAdapter($client),
-            new \App\Http\Controllers\Postcode\ZiggoAdapter($client),
+            new ZiggoAdapter($client),
         ];
     }
 
