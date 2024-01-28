@@ -1,5 +1,13 @@
 #!/usr/bin/env php
-<?php // @phan-file-suppress PhanPluginRemoveDebugEcho
+<?php
+
+// @phan-file-suppress PhanPluginRemoveDebugEcho
+
+declare(strict_types=1);
+
+use Illuminate\Contracts\Console\Kernel;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 define('LARAVEL_START', microtime(true));
 
@@ -30,11 +38,11 @@ $app = require_once __DIR__.'/bootstrap/app.php';
 |
 */
 
-$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+$kernel = $app->make(Kernel::class);
 
 $status = $kernel->handle(
-    $input = new Symfony\Component\Console\Input\ArgvInput(),
-    new Symfony\Component\Console\Output\ConsoleOutput()
+    $input = new ArgvInput(),
+    new ConsoleOutput()
 );
 
 /*

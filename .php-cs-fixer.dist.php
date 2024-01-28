@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-$finder = PhpCsFixer\Finder::create()
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+
+$finder = Finder::create()
     ->in([__DIR__, '.phan'])
     ->exclude([
         'bootstrap/cache',
@@ -16,7 +19,7 @@ $finder = PhpCsFixer\Finder::create()
     ])
 ;
 
-$config = new PhpCsFixer\Config();
+$config = new Config();
 $config->setFinder($finder)
     ->setRiskyAllowed(true)
     ->setRules([
