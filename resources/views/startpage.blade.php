@@ -97,8 +97,18 @@
                     <input class="text" type="text" name="q"><input class="submit" type="submit" value="G"></div>
             </form>
         </td>
-        <td class="zoekveld"></td>
-        <td class="zoekveld"></td>
+        <td class="zoekveld">
+            <form method="get" action="https://googlethatforyou.com/">
+                <div>LMGTFY<br>
+                    <input class="text" type="text" name="q"><input class="submit" type="submit" value="L"></div>
+            </form>
+        </td>
+        <td class="zoekveld">
+            <form method="get" action="https://duckduckgo.com/">
+                <div>DuckDuckGo<br>
+                    <input class="text" type="text" name="q"><input class="submit" type="submit" value="D"></div>
+            </form>
+        </td>
         <td class="zoekveld">
             <form action="https://www.wikipedia.org/search-redirect.php">
                 <div>wikipedia
@@ -113,27 +123,17 @@
     </tr>
     <tr>
         <td class="zoekveld">
-            <form method="get" action="https://subscene.com/subtitles/title">
+            <form method="post" action="https://subscene.com/subtitles/searchbytitle">
                 <div>subscene<br>
-                    <input class="text" type="text" name="q"><input class="submit" type="submit" value="S"></div>
+                    <input class="text" type="text" name="query"><input class="submit" type="submit" value="S"></div>
             </form>
         </td>
         <td class="zoekveld">
         </td>
         <td class="zoekveld"></td>
         <td class="zoekveld"></td>
-        <td class="zoekveld">
-            <form method="get" action="https://torrentproject.se/">
-                <div>torrentproject.se<br>
-                    <input class="text" type="text" name="t"><input class="submit" type="submit" value="T"></div>
-            </form>
-        </td>
-        <td class="zoekveld">
-            <form method="get" action="https://torrentz2.is/search">
-                <div>torrentz2.is<br>
-                    <input class="text" type="text" name="f"><input class="submit" type="submit" value="T"></div>
-            </form>
-        </td>
+        <td class="zoekveld"></td>
+        <td class="zoekveld"></td>
         <td class="zoekveld"></td>
     </tr>
     </tbody>
@@ -142,8 +142,11 @@
     <tbody>
     <tr>
         <td>
-            <div class="smalltext">{{ config('app.timezone') }}: {{ date('H:i') }} -
-                Welcome: {{ request()->ip() }}</div>
+            <div class="smalltext">
+                {{ config('app.timezone') }}: {{ date('H:i') }} -
+                Welcome: {{ $ip }} -
+                {{ $flag }}
+            </div>
         </td>
     </tr>
     </tbody>
@@ -151,10 +154,10 @@
 <table class="maintable">
     <tbody>
     <tr>
-        <td><p><a href="/tha-music.htm"><b>Music</b></a></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p><a href="https://www.nu.nl/"><b>NU.NL</b></a></p></td>
+        <td><p><a href="/tha-music.htm"><b>MUSIC</b></a></p></td>
+        <td><p><b>VIDEO</b></p></td>
+        <td><p><b>TRAVEL</b></p></td>
+        <td><p><b>NEWS</b></p></td>
         <td><p><a href="/troep"><b>/TROEP</b></a></p></td>
         <td><p><a href="https://tweakers.net/">TWEAKERS.NET</a></p></td>
         <td><p><a href="https://gathering.tweakers.net">GoT</a></p></td>
@@ -163,11 +166,10 @@
                     href="https://en.wikipedia.org/wiki/Thai_solar_calendar#Weeks">{{ date('l') }}</a></p></td>
     </tr>
     <tr>
-        <td><p>Frequence3 <a href="http://hd.stream.frequence3.net/frequence3.flac.m3u">flac</a> <a
-                    href="http://hd.stream.frequence3.net/frequence3-256.mp3.m3u">256</a></p></td>
-        <td><p><a href="https://trailers.apple.com/trailers/">trailers.apple.com</a></p></td>
-        <td><p></p></td>
-        <td><p><a href="https://frontpage.fok.nl/">fok.nl</a></p></td>
+        <td><p><a href="https://luisteren.nl/">Luisteren.nl</a></p></td>
+        <td><p><a href="https://www.youtube.com/feed/subscriptions">YouTube</a></p></td>
+        <td><p><a href="https://www.skyscanner.nl/">Skyscanner</a></p></td>
+        <td><p><a href="https://www.nu.nl/">NU.nl</a></p></td>
         <td><p><a href="/tools/time.php?refresh=5">phptime</a></p></td>
         <td><p><a href="https://www.tweakers.net/meuktracker">t.net/meuktracker</a></p></td>
         <td><p><a href="https://gathering.tweakers.net/forum/list_bookmarks">BM</a></p></td>
@@ -175,10 +177,10 @@
         <td><p></p></td>
     </tr>
     <tr>
-        <td><p><a href="http://play.deep.fm/deepfm.pls">DeepFM</a></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
+        <td><p><a href="https://weareone.fm/">WeAreOne.FM</a></p></td>
+        <td><p><a href="https://www.netflix.com/browse">Netflix</a></p></td>
+        <td><p><a href="https://www.tickettipper.nl/vliegticketdeals/">TicketTipper</a></p></td>
+        <td><p><a href="https://frontpage.fok.nl/">FOK.nl</a></p></td>
         <td><p><a href="/tools/viewsource.php">viewsource</a></p></td>
         <td><p><a href="https://www.tweakers.net/pricewatch">t.net/pricewatch</a></p></td>
         <td><p><a href="https://gathering.tweakers.net/forum/find">find</a></p></td>
@@ -186,10 +188,10 @@
         <td><p><a href="https://www.knmi.nl/">knmi.nl</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="http://www.fresh.fm/media/audio/ListenHigh.pls">Fresh FM</a></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p><a href="http://www.p2000-online.net/middenenwestbrabantf.html">p2000-online</a></p></td>
+        <td><p><a href="https://open.spotify.com/">Spotify</a></p></td>
+        <td><p><a href="https://www.primevideo.com/">Prime Video</a></p></td>
+        <td><p><a href="https://esimdb.com/">esimdb</a></p></td>
+        <td><p><a href="https://www.bd.nl/">BD.nl</a></p></td>
         <td><p></p></td>
         <td><p><a href="https://tweakers.net/aanbod/zoeken/">t.net/aanbod</a></p></td>
         <td><p><a href="https://gathering.tweakers.net/forum/list_activetopics">AT</a></p></td>
@@ -197,10 +199,10 @@
         <td><p><a href="https://www.weer.nl/">weer.nl</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="http://stream.slam.nl/slam">SlamFM</a></p></td>
-        <td><p></p></td>
+        <td><p><a href="https://music.youtube.com/">YT Music</a></p></td>
+        <td><p><a href="https://tv.apple.com/nl">Apple TV+</a></p></td>
         <td><p><a href="https://translate.google.nl/">google translate</a></p></td>
-        <td><p></p></td>
+        <td><p><a href="https://www.omroepbrabant.nl/">Omroep Brabant</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
@@ -208,18 +210,18 @@
         <td><p><a href="https://www.buienradar.nl/">buienradar</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="http://www.decibel.nl/streams/Radio_Decibel_Nederland.asx">Decibel 1</a></p></td>
         <td><p></p></td>
+        <td><p><a href="https://www.npostart.nl/live">NPO live</a></p></td>
         <td><p></p></td>
-        <td><p></p></td>
+        <td><p><a href="https://www.bredavandaag.nl/">Breda Vandaag</a></p></td>
         <td><p></p></td>
         <td><p><a href="https://www.marktplaats.nl/">marktplaats</a></p></td>
         <td><p><a href="https://gathering.tweakers.net/forum/list_topics/19">N&amp;T</a></p></td>
-        <td><p><a href="https://login.binck.nl/klanten/">Binck</a></p></td>
+        <td><p></p></td>
         <td><p></p></td>
     </tr>
     <tr>
-        <td><p><a href="http://www.radiodecibel.nl/listen.pls">Decibel 2</a></p></td>
+        <td><p></p></td>
         <td><p></p></td>
         <td><p><a href="https://9292.nl/">9292.nl</a></p></td>
         <td><p></p></td>
@@ -227,57 +229,52 @@
         <td><p><a href="https://www.ebay.com/">ebay</a> <a href="https://www.ebay.nl/">.nl</a> <a
                     href="https://www.benl.ebay.be/">.be</a> <a href="https://www.ebay.de/">.de</a></p></td>
         <td><p><a href="https://gathering.tweakers.net/forum/list_topics/11">WOS</a></p></td>
-        <td><p><a href="https://www.argenta.nl/nl/">Argenta</a></p></td>
+        <td><p></p></td>
         <td><p></p></td>
     </tr>
     <tr>
-        <td><p><a href="http://playerservices.streamtheworld.com/api/livestream-redirect/RADIO538.mp3">Radio 538</a></p>
-        </td>
-        <td><p><a href="http://www.nummerzoeker.com/">zoekopnummer</a></p></td>
-        <td><p><a href="https://www.ns.nl/">ns.nl</a> - <a
-                    href="https://www.prorail.nl/werkzaamheden-storingen">prorail</a></p></td>
         <td><p></p></td>
+        <td><p><a href="https://www.nummerzoeker.com/?agreecookies=1">zoekopnummer</a></p></td>
+        <td><p><a href="https://www.ns.nl/">ns.nl</a> - <a href="https://www.prorail.nl/werkzaamheden-storingen">prorail</a></p></td>
+        <td><p><a href="https://www.p2000-online.net/middenenwestbrabantf.html">p2000-online</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p><a href="https://gathering.tweakers.net/forum/list_topics/23">NOS</a></p></td>
-        <td><p><a href="https://www.robeco.nl/">Robeco</a></p></td>
+        <td><p></p></td>
         <td><p><a href="https://www.sligro.nl/aanbiedingen.html">sligro</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="http://icecast.omroep.nl/3fm-bb-mp3.m3u">Radio3FM</a></p></td>
+        <td><p></p></td>
         <td><p><a href="https://www.goudengids.nl/">goudengids</a></p></td>
         <td><p><a href="https://www.anwb.nl/verkeer/routeplanner">anwb</a> - <a href="https://www.routenet.nl/">routenet</a></p></td>
+        <td><p><a href="https://www.watwasdieknal.nl/">wat was die knal</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
-        <td><p><a href="http://www.webkoop.nl/">webkoop.nl</a></p></td>
         <td><p><a href="https://gathering.tweakers.net/forum/list_topics/10">SA</a></p></td>
-        <td><p><a href="https://bankieren.rabobank.nl/klanten/">Rabobank</a></p></td>
+        <td><p><a href="https://bankieren.rabobank.nl/welcome">Rabobank</a></p></td>
         <td><p><a href="https://www.aldi.nl/">aldi</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="http://stream.pro-fm.net:8200/listen.pls">Pro FM</a></p></td>
+        <td><p></p></td>
         <td><p></p></td>
         <td><p><a href="https://maps.here.com/">here</a> - <a href="https://www.google.nl/maps">google</a></p></td>
         <td><p><a href="https://www.facebook.com/">facebook</a></p></td>
         <td><p><a href="https://www.whatismyip.com/">whatismyip</a></p></td>
         <td><p><a href="https://www.jouwaanbieding.nl/">jouwaanbieding.nl</a></p></td>
         <td><p><a href="https://gathering.tweakers.net/forum/list_topics/4">I&amp;T</a></p></td>
-        <td><p><a href="https://mijn.ing.nl/internetbankieren/">mijn.ING</a></p></td>
+        <td><p><a href="https://mijn.ing.nl/">Mijn ING</a></p></td>
         <td><p><a href="https://www.lidl.nl/">lidl</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="http://www.etn.fm/">ETN</a> <a href="http://ch1relay1.etn.fm:8130/listen.pls?sid=1">1</a> <a
-                    href="http://www.etn.fm:8200/house-mp3-320">2</a> <a
-                    href="http://omega.etn.fm:9300/dnb-mp3-320">3</a></p></td>
         <td><p></p></td>
-        <td><p><a href="https://flitsservice.nl/">flitsservice</a> - <a
-                    href="https://www.anwb.nl/verkeer">anwb</a></p></td>
-        <td><p><a href="https://www.youtube.com/feed/subscriptions">youtube</a></p></td>
+        <td><p></p></td>
+        <td><p><a href="https://flitsservice.nl/">flitsservice</a> - <a href="https://www.anwb.nl/verkeer">anwb</a></p></td>
+        <td><p></p></td>
         <td><p><a href="/ip">ip.troep.com</a></p></td>
         <td><p><a href="https://nl.pepper.com/nieuw">pepper</a></p></td>
         <td><p><a href="https://gathering.tweakers.net/forum/list_topics/31">HK</a></p></td>
-        <td><p><a href="https://www.knab.nl/">Knab</a></p></td>
-        <td><p><a href="https://www.action.nl/">Action</a></p></td>
+        <td><p><a href="https://www.raisin.nl/referral/?raf=413f3e75450ffefeecff15a2ec73288161f69aae">Raisin</a></p></td>
+        <td><p><a href="https://www.action.com/nl-nl/">Action</a></p></td>
     </tr>
     </tbody>
 </table>
@@ -285,7 +282,7 @@
     <tbody>
     <tr>
         <td>
-            <div class="smalltext">set this page as startpage or bookmark it !</div>
+            <div id="clock" class="smalltext"></div>
         </td>
     </tr>
     </tbody>
@@ -293,67 +290,66 @@
 <table class="maintable">
     <tbody>
     <tr>
-        <td><p><b>CLIENTS</b></p></td>
         <td><p><b>TORRENT (priv)</b></p></td>
         <td><p><b>TORRENT (pub)</b></p></td>
         <td><p><b>MUSIC</b></p></td>
         <td><p><b>SUBS</b></p></td>
         <td><p><b>SERIALS</b></p></td>
         <td><p><b>COVERS</b></p></td>
-        <td><p><b>GSM</b></p></td>
+        <td><p><b>TELECOM</b></p></td>
+        <td><p><b>CASHBACKS</b></p></td>
     </tr>
     <tr>
-        <td><p><a href="https://www.qbittorrent.org/">qBittorrent</a></p></td>
         <td><p><a href="https://alpharatio.cc/torrents.php">alpharatio</a></p></td>
         <td><p><a href="https://1337x.to/">1337x.to</a></p></td>
         <td><p><a href="https://player.spotify.com">spotify</a></p></td>
         <td><p><a href="https://subscene.com/">subscene</a></p></td>
         <td><p><a href="https://astalavista.box.sk/">astalavista</a></p></td>
-        <td><p></p></td>
-        <td><p><a href="https://www.telecomvergelijker.nl/">tc-vergelijker</a></p></td>
+        <td><p><a href="https://www.covercentury.com/">Cover Century</a></p></td>
+        <td><p><a href="https://www.bellen.com/">bellen.com</a></p></td>
+        <td><p><a href="https://www.cashbacksvergelijken.nl/">CBvergelijken</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="https://www.frostwire.com/download/">FrostWire</a></p></td>
         <td><p><a href="https://torrentsurf.net/browse.php">torrentsurf</a></p></td>
         <td><p><a href="https://yts.mx/">yts.mx</a></p></td>
         <td><p><a href="https://8tracks.com/">8tracks</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
-        <td><p><a href="https://covertarget.com/ct/1/0.html">covertarget.com</a></p></td>
-        <td><p><a href="https://www.gsmstunter.nl/">gsmstunter</a></p></td>
+        <td><p><a href="https://covertarget.com/ct/1/0.html">CoverTarget</a></p></td>
+        <td><p><a href="https://www.internetten.nl/">internetten.nl</a></p></td>
+        <td><p><a href="https://www.cashbackxl.nl/?share=jimborst-6af2">CashbackXL</a></p></td>
     </tr>
     <tr>
-        <td><p></p></td>
         <td><p><a href="https://torrentbytes.net/browse.php">torrentbytes</a></p></td>
         <td><p><a href="https://www.limetorrents.cc/">limetorrents.cc</a></p></td>
         <td><p><a href="https://youdj.online/">YouDJ</a></p></td>
         <td><p><a href="https://www.opensubtitles.org/">opensubtitles</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
-        <td><p><a href="https://www.gsmweb.nl/">gsmweb</a></p></td>
+        <td><p><a href="https://www.pricewise.nl/internet/">Pricewise</a></p></td>
+        <td><p><a href="https://www.shopbuddies.nl/u/REF4ecc4fd9b16">ShopBuddies</a></p></td>
     </tr>
     <tr>
-        <td><p></p></td>
         <td><p><a href="https://www.torrentleech.org/torrents/browse">torrentleech</a></p></td>
         <td><p><a href="https://www.torrentfunk.com/">torrentfunk.com</a></p></td>
         <td><p><a href="https://www.audiotool.com/">audiotool</a></p></td>
         <td><p></p></td>
         <td><p><b>WAREZ</b></p></td>
         <td><p></p></td>
-        <td><p></p></td>
+        <td><p><a href="https://www.breedbandwinkel.nl/">Breedbandwinkel</a></p></td>
+        <td><p><a href="https://www.wissel.nl/">wissel.nl</a></p></td>
     </tr>
     <tr>
-        <td><p></p></td>
         <td><p></p></td>
         <td><p><a href="https://eztv.re/">eztv.re</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
+        <td><p><a href="https://www.mobiel.nl/">mobiel.nl</a></p></td>
         <td><p></p></td>
     </tr>
     <tr>
-        <td><p><b>IRC</b></p></td>
         <td><p></p></td>
         <td><p><a href="https://yourbittorrent.com/">yourbittorrent.com</a></p></td>
         <td><p></p></td>
@@ -361,14 +357,15 @@
         <td><p><a href="https://www.theisonews.com/">isonews</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
+        <td><p></p></td>
     </tr>
     <tr>
-        <td><p><a href="https://www.mirc.com/get.html">mIRC</a></p></td>
         <td><p></p></td>
-        <td><p><a href="https://rarbg.to/torrents.php">rarbg.to</a></p></td>
+        <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p><a href="http://www.etplanet.com/">Etplanet</a></p></td>
+        <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
     </tr>
@@ -378,7 +375,7 @@
     <tbody>
     <tr>
         <td>
-            <div class="smalltext">(c) <a href="/mailmij.php">Jimbolino</a> - <a href="/">http://troep.com/</a></div>
+            <div class="smalltext">(c) <a href="/mailmij.php">Jimbolino</a> - <a href="/">https://troep.com/</a></div>
         </td>
     </tr>
     </tbody>
@@ -388,34 +385,34 @@
     <tr>
         <td colspan="2"><p><b>Software Essentials</b></p></td>
         <td colspan="2"><p><b>Software Less Essentials</b></p></td>
-        <td colspan="2"><p><b>Codec Essentials</b></p></td>
+        <td colspan="2"><p><b>Linux Essentials</b></p></td>
         <td colspan="2"><p><b>Driver Essentials</b></p></td>
     </tr>
     <tr>
         <td><p><a href="https://www.rarlab.com/download.htm">WinRAR</a></p></td>
+        <td><p><a href="https://www.troep.com/meuktracker">latest</a></p></td>
+        <td><p><a href="https://www.qbittorrent.org/">qBittorrent</a></p></td>
+        <td><p><a href="https://sourceforge.net/projects/qbittorrent/files/latest/download">latest</a></p></td>
+        <td><p><a href="https://ubuntu.com/download/desktop">Ubuntu Desktop</a></p></td>
+        <td><p><a href="https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-desktop-amd64.iso>">22.04.3</a></p></td>
         <td><p></p></td>
-        <td><p><a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a></p></td>
-        <td><p><a href="https://www.mozilla.org/en-US/firefox/new/">latest</a></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-    </tr>
-    <tr>
-        <td><p><a href="https://unchecky.com/">unchecky</a></p></td>
-        <td><p><a href="https://unchecky.com/files/unchecky_setup.exe">latest</a></p></td>
-        <td><p><a href="https://disc-tools.com/">daemontools</a></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p><a href="https://www.intel.com/content/www/us/en/download-center/home.html">Intel chipset</a></p></td>
         <td><p></p></td>
     </tr>
     <tr>
         <td><p><a href="https://www.google.nl/chrome/">Google Chrome</a></p></td>
         <td><p><a href="https://chromeenterprise.google/intl/nl_nl/browser/download/">msi</a></p></td>
+        <td><p><a href="https://www.reddit.com/r/software/comments/1yez7l/win_utorrent_221_last_utorrent_version_without/">uTorrent</a></p></td>
+        <td><p><a href="/troep/ut221.exe">2.2.1</a></p></td>
+        <td><p><a href="https://ubuntu.com/download/server">Ubuntu Server</a></p></td>
+        <td><p><a href="https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-live-server-amd64.iso">22.04.3</a></p></td>
+        <td><p><a href="https://www.intel.com/content/www/us/en/download-center/home.html">Intel chipset</a></p></td>
         <td><p></p></td>
-        <td><p></p></td>
+    </tr>
+    <tr>
+        <td><p><a href="https://github.com/clsid2/mpc-hc/releases/latest">MPC-HC</a></p></td>
+        <td><p><a href="https://www.troep.com/meuktracker">latest</a></p></td>
+        <td><p><a href="https://www.frostwire.com/">FrostWire</a></p></td>
+        <td><p><a href="https://www.frostwire.com/download">latest</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p><a href="https://www.intel.com/content/www/us/en/download-center/home.html">Intel old chipset</a></p></td>
@@ -423,44 +420,27 @@
     </tr>
     <tr>
         <td><p><a href="https://www.foobar2000.org/">foobar2000</a></p></td>
-        <td><p><a href="https://www.foobar2000.org/download">1.3.10</a></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
+        <td><p><a href="https://www.troep.com/meuktracker">latest</a></p></td>
+        <td><p><a href="https://www.mirc.com/">mIRC</a></p></td>
+        <td><p><a href="https://www.mirc.com/get.php">latest</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
     </tr>
     <tr>
-        <td><p><a href="https://www.sumatrapdfreader.org/download-free-pdf-viewer.html">Sumatra PDF</a></p></td>
-        <td><p><a href="https://kjkpub.s3.amazonaws.com/sumatrapdf/rel/SumatraPDF-3.1.1-64-install.exe">3.1.1</a></p>
-        </td>
+        <td><p><a href="https://www.scootersoftware.com/download">Beyond Compare</a></p></td>
+        <td><p><a href="https://www.scootersoftware.com/files/BCompare-4.4.7.28397.exe">4.4.7</a></p></td>
         <td><p><a href="https://www.quicksfv.org/">QuickSFV</a></p></td>
         <td><p><a href="https://www.quicksfv.org/qsfv236.exe">2.36</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
-        <td><p><a href="https://www.realtek.com/en/">Realtek</a> <a
-                    href="http://www.realtek.com.tw/downloads/downloadsView.aspx?Langid=1&amp;PNid=23&amp;PFid=23&amp;Level=4&amp;Conn=3&amp;DownTypeID=3&amp;GetDown=false#AC">ac97</a>
-            </p></td>
-        <td><p><a href="ftp://152.104.238.19/pc/audio/WDM_A401.exe">4.01</a></p></td>
+        <td><p><a href="https://www.realtek.com/en/">Realtek</a></p></td>
+        <td><p></p></td>
     </tr>
     <tr>
-        <td><p><a href="https://mpc-hc.org/downloads/">MPC-HC</a></p></td>
-        <td><p>
-                <a href="https://binaries.mpc-hc.org/MPC%20HomeCinema%20-%20x64/MPC-HC_v1.7.10_x64/MPC-HC.1.7.10.x64.exe">1.7.10</a>
-            </p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p><a href="https://www.realtek.com/en/">Realtek</a> <a
-                    href="http://www.realtek.com.tw/downloads/downloadsView.aspx?Langid=1&amp;PNid=24&amp;PFid=24&amp;Level=4&amp;Conn=3&amp;DownTypeID=3&amp;GetDown=false#High%20Definition%20Audio%20Codecs">HD</a>
-            </p></td>
-        <td><p><a href="ftp://152.104.238.19/pc/audio/WDM_R179.exe">1.79</a></p></td>
-    </tr>
-    <tr>
-        <td><p><a href="https://www.scootersoftware.com/download.php">Beyond Compare</a></p></td>
-        <td><p><a href="https://www.scootersoftware.com/BCompare-4.4.5.27371.exe">4.4.5</a></p></td>
+        <td><p><a href="https://www.sumatrapdfreader.org/download-free-pdf-viewer">Sumatra PDF</a></p></td>
+        <td><p><a href="https://www.sumatrapdfreader.org/dl/rel/3.5.2/SumatraPDF-3.5.2-64-install.exe">3.5.2</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
@@ -469,8 +449,8 @@
         <td><p></p></td>
     </tr>
     <tr>
-        <td><p><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a></p></td>
-        <td><p><a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe">latest</a></p></td>
+        <td><p><a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a></p></td>
+        <td><p><a href="https://www.mozilla.org/en-US/firefox/new/">latest</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
@@ -479,10 +459,8 @@
         <td><p></p></td>
     </tr>
     <tr>
-        <td><p>
-                <a href="https://www.reddit.com/r/software/comments/1yez7l/win_utorrent_221_last_utorrent_version_without/">uTorrent</a>
-            </p></td>
-        <td><p><a href="/troep/ut221.exe">2.2.1</a></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
         <td><p><a href="http://noclone.net/downloadx.asp">NoClone</a></p></td>
         <td><p><a href="http://noclone.net/noclone-enterprise.exe">2007</a></p></td>
         <td><p></p></td>
@@ -507,8 +485,8 @@
         <td><p><a href="https://www.nero.com/eng/downloads/index.php?vlang=en">Nero</a></p></td>
         <td><p><a href="http://jim.troep.com/troep/Nero-8.3.20.0/Nero-8.3.20.0_all_update.exe">8.3.20</a> <a
                     href="http://jim.troep.com/troep/Nero-8.3.20.0/keygen.exe">kg</a></p></td>
-        <td><p><a href="https://www.gfi.com/lannetscan/">Languard</a></p></td>
-        <td><p><a href="ftp://ftp.gfi.com/lannetscan.exe">7.0</a></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
@@ -532,65 +510,70 @@
         <td><p><b><a href="http://update.microsoft.com/microsoftupdate/">Microsoft Update</a></b></p></td>
         <td colspan="2"><p><b>Troubleshooters</b></p></td>
         <td><p><b>VIRUSSCAN</b></p></td>
-        <td><p><b>EXPLOITS</b></p></td>
+        <td><p><b>DEVELOP</b></p></td>
+        <td><p><b>WORK</b></p></td>
     </tr>
     <tr>
         <td><p><a href="https://www.microsoft.com/downloads">microsoft.com / downloads</a></p></td>
         <td><p><a href="http://www.seagate.com/nl/nl/support/downloads/item/seatools-dos-master/">SeaTools</a></p></td>
-        <td><p>
-                <a href="http://www.seagate.com/files/www-content/support-content/downloads/seatools/_shared/downloads/SeaToolsDOS223ALL.ISO">2.33</a>
-            </p></td>
+        <td><p><a href="http://www.seagate.com/files/www-content/support-content/downloads/seatools/_shared/downloads/SeaToolsDOS223ALL.ISO">2.33</a></p></td>
         <td><p><a href="https://virusscan.jotti.org/">jotti</a></p></td>
-        <td><p><a href="https://www.securityfocus.com/">securityfocus</a></p></td>
+        <td><p><a href="https://gitlab.com/">Gitlab</a></p></td>
+        <td><p><a href="https://teams.microsoft.com/">Teams</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
-        <td><p><a href="https://www.memtest86.com/">memtest86</a> <a href="https://www.memtest.org/">+</a></p>
-        </td>
-        <td><p><a href="http://www.memtest86.com/downloads/memtest86-iso.zip">6.00 iso</a> - <a
-                    href="http://www.memtest86.com/downloads/memtest86-usb.zip">usb</a></p></td>
+        <td><p><a href="https://www.memtest86.com/">memtest86</a> <a href="https://www.memtest.org/">+</a></p></td>
+        <td><p><a href="http://www.memtest86.com/downloads/memtest86-iso.zip">6.00 iso</a> - <a href="http://www.memtest86.com/downloads/memtest86-usb.zip">usb</a></p></td>
         <td><p><a href="https://www.virustotal.com/">virustotal</a></p></td>
-        <td><p></p></td>
+        <td><p><a href="https://github.com/">Github</a></p></td>
+        <td><p><a href="https://outlook.office.com/mail/">Outlook</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
         <td><p><a href="http://www.dposoft.net/">HDD Regenerator</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
-        <td><p><a href="https://packetstormsecurity.com/">packetstormsecurity</a></p></td>
+        <td><p><a href="https://www.npmjs.com/">NPM</a></p></td>
+        <td><p><a href="https://app.clickup.com/">ClickUp</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
         <td><p><a href="https://www.jam-software.com/treesize_free">treesize</a></p></td>
         <td><p><a href="https://downloads.jam-software.de/treesize_free/TreeSizeFreeSetup.exe">4.63</a></p></td>
-        <td><p></p></td>
-        <td><p><a href="http://www.governmentsecurity.org/">governmentsec.</a></p></td>
+        <td><p><a href="https://packetstormsecurity.com/">packetstormsecurity</a></p></td>
+        <td><p><a href="https://packagist.org/">packagist</a></p></td>
+        <td><p><a href="https://sentry.io/">Sentry</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
         <td><p><a href="https://www.netchain.com/netcps/">netcps</a></p></td>
         <td><p><a href="https://www.netchain.com/netcps/NetCPS.exe">1.0</a></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
+        <td><p><a href="https://www.security.nl/">security.nl</a></p></td>
+        <td><p><a href="https://3v4l.org/">3v4l</a></p></td>
+        <td><p><a href="https://app.crisp.chat/">Crisp</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
         <td><p><a href="https://www.hhdsoftware.com/free-hex-editor">hdd-hexeditor</a></p></td>
         <td><p><a href="https://www.hhdsoftware.com/download/free-hex-editor-neo.exe">7.25</a></p></td>
         <td><p></p></td>
-        <td><p></p></td>
+        <td><p><a href="https://chat.openai.com/">ChatGPT</a></p></td>
+        <td><p><a href="https://dash.cloudflare.com/">Cloudflare</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
         <td><p><a href="https://www.nirsoft.net/utils/web_browser_password.html">Web browser passview</a></p></td>
         <td><p><a href="https://www.nirsoft.net/toolsdownload/webbrowserpassview.zip">1.58</a></p></td>
         <td><p></p></td>
-        <td><p></p></td>
+        <td><p><a href="https://laravel-news.com/blog">Laravel News</a></p></td>
+        <td><p><a href="https://console.aws.amazon.com/">AWS</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
         <td><p><a href="https://www.nirsoft.net/utils/wireless_key.html">Wireless key view</a></p></td>
         <td><p><a href="https://www.nirsoft.net/toolsdownload/wirelesskeyview.zip">2.05</a></p></td>
+        <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
     </tr>
@@ -600,9 +583,19 @@
         <td><p><a href="https://www.hdtune.com/files/hdtune_255.exe">2.55</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
+        <td><p></p></td>
     </tr>
     </tbody>
 </table>
 <p>I've moved my bookmarks to <a href="/bookmarks.htm">a new page</a></p>
+
+<script>
+    function updateClock() {
+        document.getElementById("clock").innerText = (new Date()).toString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+
 </body>
 </html>
