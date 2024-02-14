@@ -11,6 +11,7 @@ use App\Http\Controllers\Meuktracker\Meuktracker;
 use App\Http\Controllers\Meuktracker\Office;
 use App\Http\Controllers\PostcodeCheck;
 use App\Http\Controllers\ProxyController;
+use App\Http\Controllers\SpotifyController;
 use App\Http\Controllers\StartpageController;
 use App\Http\Controllers\TimeController;
 use App\Http\Controllers\ViewSourceController;
@@ -52,6 +53,8 @@ Route::middleware('cache.headers:public;max_age=3600')->group(static function ()
     Route::get('passwordsgenerator.html', [ProxyController::class, 'get']);
 
     Route::get('belasting.html', [ProxyController::class, 'get']);
+
+    Route::apiResource('spotify', SpotifyController::class);
 });
 
 Route::get('debug', [DebugController::class, 'get']);

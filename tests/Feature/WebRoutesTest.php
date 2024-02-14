@@ -107,4 +107,10 @@ final class WebRoutesTest extends TestCase
         // $this->get('/meuktracker/office?32')->assertStatus(200);
         // $this->get('/meuktracker/office?json')->assertStatus(200);
     }
+
+    public function testSpotify(): void
+    {
+        $this->get('/spotify')->assertStatus(200);
+        $this->get('/spotify/nl')->assertStatus(200);
+    }
 }
