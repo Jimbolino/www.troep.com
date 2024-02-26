@@ -2482,5 +2482,11 @@
         "text": "If you're always trying to be normal, you will never know how amazing you can be.",
         "copyright": "Maya Angelou",
         "html": null
+    },
+    {
+        "id": 418,
+        "text": "There are only two hard problems in computer science: cache invalidation, naming things, and off-by-one errors.",
+        "copyright": null,
+        "html": null
     }
 ]
