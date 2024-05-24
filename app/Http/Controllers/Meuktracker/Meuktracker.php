@@ -17,6 +17,16 @@ class Meuktracker extends Controller
 {
     private const CACHE_TTL = 24 * 60 * 60;
     public array $products = [
+        'Beyond Compare' => [
+            'download' => 'https://www.scootersoftware.com/download.php',
+            'xpath' => '//*[@id="content"]/div[2]/div[1]/div/div[1]/a',
+        ],
+        'Foobar2000' => [
+            'download' => 'https://www.foobar2000.org/download',
+            'xpath' => '/html/body/div[2]/div/div[2]/a[1]',
+            'xpath2' => '/html/body/div[2]/div/p[2]/a',
+        ],
+
         'Google Chrome 32' => [
             'download' => 'https://www.google.com/chrome/',
             'file' => 'https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi',
@@ -24,89 +34,6 @@ class Meuktracker extends Controller
         'Google Chrome 64' => [
             'download' => 'https://www.google.com/chrome/',
             'file' => 'https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi',
-        ],
-        'PuTTY 32' => [
-            'download' => 'https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html',
-            'file' => 'https://the.earth.li/~sgtatham/putty/latest/w32/putty.exe',
-        ],
-        'PuTTY 64' => [
-            'download' => 'https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html',
-            'file' => 'https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe',
-        ],
-        'Foobar2000' => [
-            'download' => 'https://www.foobar2000.org/download',
-            'xpath' => '/html/body/div[2]/div/div[2]/a[1]',
-            'xpath2' => '/html/body/div[2]/div/p[2]/a',
-        ],
-        'MPC-HC 32' => [
-            'download' => 'https://github.com/clsid2/mpc-hc/releases/latest',
-            'json' => 'https://api.github.com/repos/clsid2/mpc-hc/releases/latest',
-            'jpath' => 'assets.2.browser_download_url',
-        ],
-        'MPC-HC 64' => [
-            'download' => 'https://github.com/clsid2/mpc-hc/releases/latest',
-            'json' => 'https://api.github.com/repos/clsid2/mpc-hc/releases/latest',
-            'jpath' => 'assets.0.browser_download_url',
-        ],
-        'WinRAR 32' => [
-            'download' => 'https://www.rarlab.com/download.htm',
-            // 'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[3]/td[1]/a', // beta
-            'xpath' => '/html/body/table/tr/td[2]/table[3]/tr[2]/td[1]/a',
-        ],
-        'WinRAR 64' => [
-            'download' => 'https://www.rarlab.com/download.htm',
-            // 'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[2]/td[1]/a', // beta
-            'xpath' => '/html/body/table/tr/td[2]/table[3]/tr[3]/td[1]/a',
-        ],
-        'Popcorn Time' => [
-            'download' => 'https://github.com/popcorn-official/popcorn-desktop/releases/latest',
-            'json' => 'https://api.github.com/repos/popcorn-official/popcorn-desktop/releases/latest',
-            'jpath' => 'assets.9.browser_download_url',
-        ],
-        'Sumatra PDF 32' => [
-            'download' => 'https://www.sumatrapdfreader.org/download-free-pdf-viewer',
-            'xpath' => '/html/body/div[2]/table[2]/tbody/tr[2]/td[2]/a',
-        ],
-        'Sumatra PDF 64' => [
-            'download' => 'https://www.sumatrapdfreader.org/download-free-pdf-viewer',
-            'xpath' => '/html/body/div[2]/table[1]/tbody/tr[2]/td[2]/a',
-        ],
-        'Beyond Compare' => [
-            'download' => 'https://www.scootersoftware.com/download.php',
-            'xpath' => '//*[@id="content"]/div[2]/div[1]/div/div[1]/a',
-        ],
-        'PhpStorm' => [
-            'download' => 'https://www.jetbrains.com/phpstorm/download/',
-            'json' => 'https://data.services.jetbrains.com/products/releases?code=PS&latest=true&type=release',
-            'jpath' => 'PS.0.downloads.windows.link',
-        ],
-        'Mozilla Thunderbird 64' => [
-            'download' => 'https://www.thunderbird.net/en-US/thunderbird/all/',
-            'file' => 'https://download.mozilla.org/?product=thunderbird-latest-ssl&os=win64&lang=nl',
-        ],
-        'Mozilla Thunderbird 64 MSI' => [
-            'download' => 'https://www.thunderbird.net/en-US/thunderbird/all/',
-            'file' => 'https://download.mozilla.org/?product=thunderbird-msi-latest-ssl&os=win64&lang=nl',
-        ],
-
-        'Mozilla Firefox 64' => [
-            'download' => 'https://www.mozilla.org/en-US/firefox/all/',
-            'file' => 'https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=nl',
-        ],
-        'Mozilla Firefox 64 MSI' => [
-            'download' => 'https://www.mozilla.org/en-US/firefox/all/',
-            'file' => 'https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=nl',
-        ],
-
-        'Transmission Remote GUI 1' => [
-            'download' => 'https://sourceforge.net/projects/transgui/files/',
-            'xpath' => '//*[@id="files_list"]/tbody/tr[1]/th/a',
-            'xpath2' => '//*[@id="files_list"]/tbody/tr[1]/th/a',
-        ],
-        'Transmission Remote GUI 2' => [
-            'download' => 'https://github.com/transmission-remote-gui/transgui/releases/latest',
-            'json' => 'https://api.github.com/repos/transmission-remote-gui/transgui/releases/latest',
-            'jpath' => 'assets.5.browser_download_url',
         ],
 
         'KeePass 1.xx' => [
@@ -118,6 +45,79 @@ class Meuktracker extends Controller
             'download' => 'https://sourceforge.net/projects/keepass/files/KeePass%202.x/',
             'xpath' => '//*[@id="files_list"]/tbody/tr[1]/th/a',
             'xpath2' => '//*[@id="files_list"]/tbody/tr[1]/th/a',
+        ],
+
+        'Mozilla Firefox 64' => [
+            'download' => 'https://www.mozilla.org/en-US/firefox/all/',
+            'file' => 'https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=nl',
+        ],
+        'Mozilla Firefox 64 MSI' => [
+            'download' => 'https://www.mozilla.org/en-US/firefox/all/',
+            'file' => 'https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=nl',
+        ],
+        'Mozilla Thunderbird 64' => [
+            'download' => 'https://www.thunderbird.net/en-US/thunderbird/all/',
+            'file' => 'https://download.mozilla.org/?product=thunderbird-latest-ssl&os=win64&lang=nl',
+        ],
+        'Mozilla Thunderbird 64 MSI' => [
+            'download' => 'https://www.thunderbird.net/en-US/thunderbird/all/',
+            'file' => 'https://download.mozilla.org/?product=thunderbird-msi-latest-ssl&os=win64&lang=nl',
+        ],
+
+        'MPC-HC 32' => [
+            'download' => 'https://github.com/clsid2/mpc-hc/releases/latest',
+            'json' => 'https://api.github.com/repos/clsid2/mpc-hc/releases/latest',
+            'jpath' => 'assets.2.browser_download_url',
+        ],
+        'MPC-HC 64' => [
+            'download' => 'https://github.com/clsid2/mpc-hc/releases/latest',
+            'json' => 'https://api.github.com/repos/clsid2/mpc-hc/releases/latest',
+            'jpath' => 'assets.0.browser_download_url',
+        ],
+
+        'Office 2021 Professional Plus NL' => [
+            'download' => 'https://www.heidoc.net/joomla/technology-science/microsoft/16-office-2021-direct-download-links',
+            'file' => 'https://officecdn.microsoft.com/db/492350F6-3A01-4F97-B9C0-C7C6DDF67D60/media/nl-NL/ProPlus2021Retail.img',
+        ],
+
+        'PuTTY 32' => [
+            'download' => 'https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html',
+            'file' => 'https://the.earth.li/~sgtatham/putty/latest/w32/putty.exe',
+        ],
+        'PuTTY 64' => [
+            'download' => 'https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html',
+            'file' => 'https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe',
+        ],
+
+        'PhpStorm' => [
+            'download' => 'https://www.jetbrains.com/phpstorm/download/',
+            'json' => 'https://data.services.jetbrains.com/products/releases?code=PS&latest=true&type=release',
+            'jpath' => 'PS.0.downloads.windows.link',
+        ],
+        'Popcorn Time' => [
+            'download' => 'https://github.com/popcorn-official/popcorn-desktop/releases/latest',
+            'json' => 'https://api.github.com/repos/popcorn-official/popcorn-desktop/releases/latest',
+            'jpath' => 'assets.9.browser_download_url',
+        ],
+
+        'Sumatra PDF 32' => [
+            'download' => 'https://www.sumatrapdfreader.org/download-free-pdf-viewer',
+            'xpath' => '/html/body/div[2]/table[2]/tbody/tr[2]/td[2]/a',
+        ],
+        'Sumatra PDF 64' => [
+            'download' => 'https://www.sumatrapdfreader.org/download-free-pdf-viewer',
+            'xpath' => '/html/body/div[2]/table[1]/tbody/tr[2]/td[2]/a',
+        ],
+
+        'Transmission Remote GUI 1' => [
+            'download' => 'https://sourceforge.net/projects/transgui/files/',
+            'xpath' => '//*[@id="files_list"]/tbody/tr[1]/th/a',
+            'xpath2' => '//*[@id="files_list"]/tbody/tr[1]/th/a',
+        ],
+        'Transmission Remote GUI 2' => [
+            'download' => 'https://github.com/transmission-remote-gui/transgui/releases/latest',
+            'json' => 'https://api.github.com/repos/transmission-remote-gui/transgui/releases/latest',
+            'jpath' => 'assets.5.browser_download_url',
         ],
 
         'Windows 10 Media Creation Tool' => [
@@ -136,10 +136,17 @@ class Meuktracker extends Controller
             'download' => 'https://www.microsoft.com/nl-nl/software-download/windows11',
             'file' => 'https://go.microsoft.com/fwlink/?linkid=2171764',
         ],
-        //        'Microsoft Windows and Office ISO Download Tool' => [
-        //            'download' => 'https://www.heidoc.net/joomla/technology-science/microsoft/67-microsoft-windows-and-office-iso-download-tool',
-        //            'file' => 'https://www.heidoc.net/php/Windows%20ISO%20Downloader.exe',
-        //        ],
+
+        'WinRAR 32' => [
+            'download' => 'https://www.rarlab.com/download.htm',
+            // 'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[3]/td[1]/a', // beta
+            'xpath' => '/html/body/table/tr/td[2]/table[3]/tr[2]/td[1]/a',
+        ],
+        'WinRAR 64' => [
+            'download' => 'https://www.rarlab.com/download.htm',
+            // 'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[2]/td[1]/a', // beta
+            'xpath' => '/html/body/table/tr/td[2]/table[3]/tr[3]/td[1]/a',
+        ],
     ];
 
     private CacheManager $cache;
