@@ -9,8 +9,8 @@ composer install --classmap-authoritative --no-dev
 
 # deploy
 env | grep SERVERLESS_ACCESS_KEY
-npx serverless login --debug
-npx serverless deploy --debug
+npx serverless login
+npx serverless deploy
 
 # switch back to develop mode
 ./artisan config:clear
