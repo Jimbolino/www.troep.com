@@ -58,6 +58,11 @@ class Meuktracker extends Controller
             // 'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[2]/td[1]/a', // beta
             'xpath' => '/html/body/table/tr/td[2]/table[3]/tr[3]/td[1]/a',
         ],
+        'Popcorn Time' => [
+            'download' => 'https://github.com/popcorn-official/popcorn-desktop/releases/latest',
+            'json' => 'https://api.github.com/repos/popcorn-official/popcorn-desktop/releases/latest',
+            'jpath' => 'assets.9.browser_download_url',
+        ],
         'Sumatra PDF 32' => [
             'download' => 'https://www.sumatrapdfreader.org/download-free-pdf-viewer',
             'xpath' => '/html/body/div[2]/table[2]/tbody/tr[2]/td[2]/a',
@@ -67,8 +72,8 @@ class Meuktracker extends Controller
             'xpath' => '/html/body/div[2]/table[1]/tbody/tr[2]/td[2]/a',
         ],
         'Beyond Compare' => [
-            'download' => 'https://www.scootersoftware.com/download.php?zz=kb_dl4_winalternate',
-            'xpath' => '//*[@id="content"]/p[4]/a',
+            'download' => 'https://www.scootersoftware.com/download.php',
+            'xpath' => '//*[@id="content"]/div[2]/div[1]/div/div[1]/a',
         ],
         'PhpStorm' => [
             'download' => 'https://www.jetbrains.com/phpstorm/download/',
@@ -255,8 +260,8 @@ class Meuktracker extends Controller
         $obj->catId = 'Software';
         $obj->version = $this->extractVersionFromUrl((string) $file);
         $obj->name = $name;
-        $obj->date = date('d-m-Y', (int) strtotime(last((array) $headers['last-modified'])));
-        $obj->size = $this->formatBytes((int) last((array) $headers['content-length']));
+        $obj->date = date('d-m-Y', (int) strtotime(last((array) ($headers['last-modified'] ?? ''))));
+        $obj->size = $this->formatBytes((int) last((array) ($headers['content-length'] ?? 0)));
         $obj->file = $file;
         $obj->url = $product['download'] ?? '';
         $obj->product = $product;
