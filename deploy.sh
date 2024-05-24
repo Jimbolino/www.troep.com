@@ -8,7 +8,6 @@ composer install --classmap-authoritative --no-dev
 ./artisan route:cache
 
 # deploy
-env | grep SERVERLESS_ACCESS_KEY
 npx serverless login
 npx serverless deploy
 
