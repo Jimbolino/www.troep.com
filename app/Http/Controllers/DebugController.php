@@ -42,7 +42,7 @@ class DebugController extends Controller
 
         return [
             'phpversion' => PHP_VERSION,
-            'laravel_version' => app()->version(),
+            'laravel_version' => app()->version(), // @phan-suppress-current-line PhanUndeclaredMethod
             'variables_order' => \ini_get('variables_order'),
             'ip' => $this->request->ip(),
             'ips' => $this->request->ips(),
