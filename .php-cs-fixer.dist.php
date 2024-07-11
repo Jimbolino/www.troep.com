@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
+use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
 $finder = Finder::create()
     ->in([__DIR__, '.phan'])
@@ -21,6 +22,7 @@ $finder = Finder::create()
 
 $config = new Config();
 $config->setFinder($finder)
+    ->setParallelConfig(ParallelConfigFactory::detect())
     ->setRiskyAllowed(true)
     ->setRules([
         '@PHP80Migration' => true,
