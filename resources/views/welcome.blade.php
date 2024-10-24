@@ -11,20 +11,37 @@
 </head>
 <body>
 <div>
-    {!! $randomQuote !!} <br/>
-    <br/>
-    <br/><b>troep.com</b>
-    <br/><a href="mailmij.php">submit quote</a>
-    <br/><a href="startpage.php">startpage</a>
-    <hr>random troep:
-    <br/><a href="navicat">navicat password hash decrypter</a>
-    <br/><a href="passwordsgenerator.html">passwordsgenerator.net</a>
-    <br/><a href="belasting.html">belasting.html</a>
-    <hr/>referrals:
-    <br/><a href="https://onedrive.live.com?invref=94126f13eb747cb8&invscr=90">OneDrive</a>
-    <br/><a href="https://www.dropbox.com/referrals/AAC2ZevNVgJMm9f-fOct6slqjP9OS1n4qa8?src=global9">Dropbox</a>
-    <br/><a href="https://www.cashbackxl.nl?share=jimborst-6af2">CashbackXL</a>
-    <br/><a href="https://www.shopbuddies.nl/u/REF4ecc4fd9b16">ShopBuddies</a>
+{!! $randomQuote !!} <br/>
+<br/>
+
+<h2>Troep.com</h2>
+<ul>
+    <li><a href="/mailmij.php">submit quote</a></li>
+    <li><a href="/startpage.php">startpage</a></li>
+    <li><a href="/meuktracker">meuktracker</a></li>
+</ul>
+
+<h3>Random tools:</h3>
+<ul>
+    <li><a href="/belasting.html">belasting.html</a></li>
+    <li><a href="/navicat">navicat password hash decrypter</a></li>
+    <li><a href="/passwordsgenerator.html">passwordsgenerator.net</a></li>
+    <li><a href="/yt.html">yt.html</a></li>
+</ul>
+
+<h3>Referrals:</h3>
+<ul>
+    <li><a rel="nofollow noreferrer" href="https://felyx.onelink.me/skG9/ur2jptjy?af_force_deeplink=true">Felyx - €15 gratis</a></li>
+    <li><a rel="nofollow noreferrer" href="https://googleopinionrewardsrefer.page.link/U7NoEMKA4TsxpAr76">Google Opinion Rewards - €0,50 gratis google play tegoed</a></li>
+    <li><a rel="nofollow noreferrer" href="https://n26.com/r/jimb3214">N26 - €25 bij registratie</a></li>
+    <li><a rel="nofollow noreferrer" href="https://onedrive.live.com?invref=94126f13eb747cb8&invscr=90">OneDrive - 500mb gratis opslag</a></li>
+    <li><a rel="nofollow noreferrer" href="https://refnocode.trade.re/33dl2r75">Trade Republic - €10 gratis aandelen</a></li>
+    <li><a rel="nofollow noreferrer" href="https://www.cashbackxl.nl?share=jimborst-6af2">CashbackXL - gratis €2,50 tegoed</a></li>
+    <li><a rel="nofollow noreferrer" href="https://www.dropbox.com/referrals/AAC2ZevNVgJMm9f-fOct6slqjP9OS1n4qa8?src=global9">Dropbox - 500mb gratis opslag</a></li>
+    <li><a rel="nofollow noreferrer" href="https://www.raisin.nl/referral/?raf=413f3e75450ffefeecff15a2ec73288161f69aae&utm_source=transactional&utm_campaign=mandrill_customer-referral">Raisin - €50 bonus bij een nieuwe rekening</a></li>
+    <li><a rel="nofollow noreferrer" href="https://www.thoorn.nl/26410/">Thoorn - beltegoed omzetten in cash</a></li>
+    <li><a rel="nofollow noreferrer" href="https://www.trading212.com/invite/1ARwe6Gmpz">Trading212 - gratis aandeel</a></li>
+</ul>
 </div>
 </body>
 </html>
