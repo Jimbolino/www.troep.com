@@ -137,15 +137,10 @@ class Meuktracker extends Controller
             'file' => 'https://go.microsoft.com/fwlink/?linkid=2171764',
         ],
 
-        'WinRAR 32' => [
+        'WinRAR 64' => [
             'download' => 'https://www.rarlab.com/download.htm',
             // 'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[3]/td[1]/a', // beta
             'xpath' => '/html/body/table/tr/td[2]/table[3]/tr[2]/td[1]/a',
-        ],
-        'WinRAR 64' => [
-            'download' => 'https://www.rarlab.com/download.htm',
-            // 'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[2]/td[1]/a', // beta
-            'xpath' => '/html/body/table/tr/td[2]/table[3]/tr[3]/td[1]/a',
         ],
     ];
 
