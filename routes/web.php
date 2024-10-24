@@ -54,6 +54,8 @@ Route::middleware('cache.headers:public;max_age=3600')->group(static function ()
 
     Route::get('belasting.html', [ProxyController::class, 'get']);
 
+    Route::get('yt.html', [ProxyController::class, 'get']);
+
     Route::apiResource('spotify', SpotifyController::class);
 });
 

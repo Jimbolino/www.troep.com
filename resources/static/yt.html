@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT iframe</title>
+    <style>
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        form {
+            margin: 10px;
+        }
+        #url {
+            width: 450px;
+        }
+        iframe {
+            width: 100%;
+            height: 90%;
+        }
+    </style>
+</head>
+<body>
+<form id="yt-form">
+    <label for="url">YT URL:</label>
+    <input id="url" type="url" name="url"
+           placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" required>
+
+    <label for="toggle">Mode:</label>
+    <select id="toggle" name="toggle">
+        <option value="embed">Embed</option>
+        <option value="no-cookie">No-Cookie</option>
+    </select>
+
+    <input id="go" type="submit" name="go" value="Go">
+</form>
+
+<iframe id="yt-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+
+<p><a href="https://www.troep.com/">troep.com</a></p>
+
+<script>
+document.getElementById('yt-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get the YouTube URL and selected embed mode
+    const ytUrl = document.getElementById('url').value;
+    const mode = document.getElementById('toggle').value;
+
+    // Extract the video ID from the YouTube URL using a regex
+    const videoId = ytUrl.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+
+    if (videoId && videoId[1]) {
+        // Choose the base URL based on the selected mode
+        const baseUrl = mode === "no-cookie" ? "https://www.youtube-nocookie.com/embed/" : "https://www.youtube.com/embed/";
+
+        // Update the iframe src with the new URL
+        document.getElementById('yt-iframe').src = baseUrl + videoId[1];
+    } else {
+        alert('Invalid YouTube URL. Please try again.');
+    }
+});
+</script>
+</body>
+</html>
