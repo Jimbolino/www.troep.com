@@ -116,25 +116,11 @@
                         <option value="nl" selected="selected">nl</option>
                         <option value="en">en</option>
                     </select>
-                    <input class="text" type="text" name="search"><input class="submit" type="submit" name="go"
-                                                                         value="W"></div>
+                    <input class="text" type="text" name="search">
+                    <input class="submit" type="submit" name="go" value="W">
+                </div>
             </form>
         </td>
-    </tr>
-    <tr>
-        <td class="zoekveld">
-            <form method="post" action="https://subscene.com/subtitles/searchbytitle">
-                <div>subscene<br>
-                    <input class="text" type="text" name="query"><input class="submit" type="submit" value="S"></div>
-            </form>
-        </td>
-        <td class="zoekveld">
-        </td>
-        <td class="zoekveld"></td>
-        <td class="zoekveld"></td>
-        <td class="zoekveld"></td>
-        <td class="zoekveld"></td>
-        <td class="zoekveld"></td>
     </tr>
     </tbody>
 </table>
@@ -302,18 +288,18 @@
     <tr>
         <td><p><a href="https://alpharatio.cc/torrents.php">alpharatio</a></p></td>
         <td><p><a href="https://1337x.to/">1337x.to</a></p></td>
-        <td><p><a href="https://player.spotify.com">spotify</a></p></td>
-        <td><p><a href="https://subscene.com/">subscene</a></p></td>
+        <td><p><a href="https://open.spotify.com/">spotify</a></p></td>
+        <td><p><a href="https://www.opensubtitles.org/">opensubtitles</a></p></td>
         <td><p><a href="https://astalavista.box.sk/">astalavista</a></p></td>
         <td><p><a href="https://www.covercentury.com/">Cover Century</a></p></td>
         <td><p><a href="https://www.bellen.com/">bellen.com</a></p></td>
         <td><p><a href="https://www.cashbacksvergelijken.nl/">CBvergelijken</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="https://torrentsurf.net/browse.php">torrentsurf</a></p></td>
+        <td><p><a href="https://xtremebytes.net/browse.php">xtremebytes</a></p></td>
         <td><p><a href="https://yts.mx/">yts.mx</a></p></td>
         <td><p><a href="https://8tracks.com/">8tracks</a></p></td>
-        <td><p></p></td>
+        <td><p><a href="https://subdl.com/">Subdl</a></p></td>
         <td><p></p></td>
         <td><p><a href="https://covertarget.com/ct/1/0.html">CoverTarget</a></p></td>
         <td><p><a href="https://www.internetten.nl/">internetten.nl</a></p></td>
@@ -323,7 +309,7 @@
         <td><p><a href="https://torrentbytes.net/browse.php">torrentbytes</a></p></td>
         <td><p><a href="https://www.limetorrents.cc/">limetorrents.cc</a></p></td>
         <td><p><a href="https://youdj.online/">YouDJ</a></p></td>
-        <td><p><a href="https://www.opensubtitles.org/">opensubtitles</a></p></td>
+        <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p><a href="https://www.pricewise.nl/internet/">Pricewise</a></p></td>
@@ -394,7 +380,7 @@
         <td><p><a href="https://www.qbittorrent.org/">qBittorrent</a></p></td>
         <td><p><a href="https://sourceforge.net/projects/qbittorrent/files/latest/download">latest</a></p></td>
         <td><p><a href="https://ubuntu.com/download/desktop">Ubuntu Desktop</a></p></td>
-        <td><p><a href="https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-desktop-amd64.iso>">22.04.3</a></p></td>
+        <td><p><a href="https://releases.ubuntu.com/24.04.1/ubuntu-24.04.1-desktop-amd64.iso">24.04.1</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
     </tr>
@@ -404,7 +390,7 @@
         <td><p><a href="https://www.reddit.com/r/software/comments/1yez7l/win_utorrent_221_last_utorrent_version_without/">uTorrent</a></p></td>
         <td><p><a href="/troep/ut221.exe">2.2.1</a></p></td>
         <td><p><a href="https://ubuntu.com/download/server">Ubuntu Server</a></p></td>
-        <td><p><a href="https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-live-server-amd64.iso">22.04.3</a></p></td>
+        <td><p><a href="https://releases.ubuntu.com/24.04.1/ubuntu-24.04.1-live-server-amd64.iso">24.04.1</a></p></td>
         <td><p><a href="https://www.intel.com/content/www/us/en/download-center/home.html">Intel chipset</a></p></td>
         <td><p></p></td>
     </tr>
