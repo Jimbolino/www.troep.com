@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "743a0bf217dd89abb315eba24945285f",
+    "content-hash": "e809cd0bac3f48af4f7b692e9d085f07",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -160,16 +160,16 @@
         },
         {
             "name": "bref/bref",
-            "version": "2.3.10",
+            "version": "2.3.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brefphp/bref.git",
-                "reference": "9985471a02816a949d72dbaaa743f0eb79147509"
+                "reference": "d36fde4264f614a5db902127411d0d4637ec0e8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brefphp/bref/zipball/9985471a02816a949d72dbaaa743f0eb79147509",
-                "reference": "9985471a02816a949d72dbaaa743f0eb79147509",
+                "url": "https://api.github.com/repos/brefphp/bref/zipball/d36fde4264f614a5db902127411d0d4637ec0e8d",
+                "reference": "d36fde4264f614a5db902127411d0d4637ec0e8d",
                 "shasum": ""
             },
             "require": {
@@ -223,7 +223,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brefphp/bref/issues",
-                "source": "https://github.com/brefphp/bref/tree/2.3.10"
+                "source": "https://github.com/brefphp/bref/tree/2.3.11"
             },
             "funding": [
                 {
@@ -235,7 +235,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-18T15:03:17+00:00"
+            "time": "2024-11-21T17:40:28+00:00"
         },
         {
             "name": "brick/math",
