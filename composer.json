@@ -16,6 +16,7 @@
         "league/flysystem-aws-s3-v3": "3.29.0"
     },
     "require-dev": {
+        "phan/phan": "5.4.4",
         "phpunit/phpunit": "11.5.2"
     },
     "autoload": {
@@ -43,8 +44,7 @@
         ],
         "update-tools": [
             "curl -sS -L https://phpmd.org/static/latest/phpmd.phar -o vendor/bin/phpmd && chmod +x vendor/bin/phpmd",
-            "curl -sS -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/latest/download/php-cs-fixer.phar -o vendor/bin/php-cs-fixer && chmod +x vendor/bin/php-cs-fixer",
-            "curl -sS -L https://github.com/phan/phan/releases/latest/download/phan.phar -o vendor/bin/phan && chmod +x vendor/bin/phan"
+            "curl -sS -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/latest/download/php-cs-fixer.phar -o vendor/bin/php-cs-fixer && chmod +x vendor/bin/php-cs-fixer"
         ]
     },
     "extra": {
