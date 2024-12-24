@@ -16,7 +16,7 @@
         "league/flysystem-aws-s3-v3": "3.29.0"
     },
     "require-dev": {
-        "phan/phan": "5.4.4",
+        "phan/phan": "5.4.5",
         "phpunit/phpunit": "11.5.2"
     },
     "autoload": {
