@@ -80,6 +80,11 @@ class Meuktracker extends Controller
             'file' => 'https://officecdn.microsoft.com/db/492350F6-3A01-4F97-B9C0-C7C6DDF67D60/media/nl-NL/ProPlus2021Retail.img',
         ],
 
+        'Office 2024 Professional Plus NL' => [
+            'download' => 'https://www.heidoc.net/joomla/technology-science/microsoft/16-office-2021-direct-download-links',
+            'file' => 'https://officecdn.microsoft.com/db/492350F6-3A01-4F97-B9C0-C7C6DDF67D60/media/nl-NL/ProPlus2024Retail.img',
+        ],
+
         'PuTTY 32' => [
             'download' => 'https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html',
             'file' => 'https://the.earth.li/~sgtatham/putty/latest/w32/putty.exe',
