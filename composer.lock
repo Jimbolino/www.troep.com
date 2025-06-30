@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee98337c7411362109b0f41134781565",
+    "content-hash": "cc9bdded28ed5e318c6b1121d349f0f9",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -6765,16 +6765,16 @@
         },
         {
             "name": "phan/phan",
-            "version": "5.4.6",
+            "version": "5.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phan/phan.git",
-                "reference": "5963ad2e55f7c4b3fd8349d25ddd7b43414d2d79"
+                "reference": "d27e93d3284d7eec9fd9647605d86cb6e6f2ea92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phan/phan/zipball/5963ad2e55f7c4b3fd8349d25ddd7b43414d2d79",
-                "reference": "5963ad2e55f7c4b3fd8349d25ddd7b43414d2d79",
+                "url": "https://api.github.com/repos/phan/phan/zipball/d27e93d3284d7eec9fd9647605d86cb6e6f2ea92",
+                "reference": "d27e93d3284d7eec9fd9647605d86cb6e6f2ea92",
                 "shasum": ""
             },
             "require": {
@@ -6839,9 +6839,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phan/phan/issues",
-                "source": "https://github.com/phan/phan/tree/5.4.6"
+                "source": "https://github.com/phan/phan/tree/5.5.0"
             },
-            "time": "2025-06-09T13:26:52+00:00"
+            "time": "2025-06-30T14:18:36+00:00"
         },
         {
             "name": "phar-io/manifest",
