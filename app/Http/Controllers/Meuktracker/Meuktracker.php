@@ -232,7 +232,7 @@ class Meuktracker extends Controller
 
     public function index()
     {
-        $indexCacheKey = sha1(json_encode($this->products));
+        $indexCacheKey = sha1((string) json_encode($this->products));
         // $this->cache->forget('meuktracker');
         $items = $this->cache->remember('meuktracker-'.$indexCacheKey, self::CACHE_TTL, function () {
             $items = $this->loopProducts();
