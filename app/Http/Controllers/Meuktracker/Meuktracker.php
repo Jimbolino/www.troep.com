@@ -241,7 +241,7 @@ class Meuktracker extends Controller
         if (!empty($product['download'])) {
             if (!empty($product['xpath'])) {
                 $file = $this->getFileFromXpath($product['download'], $product['xpath']);
-                if (!empty($product['xpath2'])) {
+                if (!empty($product['xpath2']) && !empty($file)) {
                     $file = $this->getFileFromXpath($file, $product['xpath2']);
                 }
             }
@@ -253,7 +253,7 @@ class Meuktracker extends Controller
                 'content-length' => '',
             ];
         } else {
-            $headers = $this->cacheHeaders($file);
+            $headers = @$this->cacheHeaders($file);
             if (!empty($headers['location'])) {
                 if (\is_array($headers['location'])) {
                     $headers['location'] = end($headers['location']);
