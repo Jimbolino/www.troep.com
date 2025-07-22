@@ -21,19 +21,35 @@ class Meuktracker extends Controller
             'download' => 'https://www.scootersoftware.com/download.php',
             'xpath' => '//*[@id="content"]/div[2]/div[1]/div/div[1]/a',
         ],
+
         'Foobar2000' => [
             'download' => 'https://www.foobar2000.org/download',
-            'xpath' => '/html/body/div[2]/div/div[2]/a[1]',
+            'xpath' => '/html/body/div[2]/div/div/a[1]',
+            'xpath2' => '/html/body/div[2]/div/p[2]/a',
+        ],
+        'Foobar2000 64' => [
+            'download' => 'https://www.foobar2000.org/download',
+            'xpath' => '/html/body/div[2]/div/div/a[2]',
             'xpath2' => '/html/body/div[2]/div/p[2]/a',
         ],
 
-        'Google Chrome 32' => [
+        'Google Chrome MSI 32' => [
             'download' => 'https://www.google.com/chrome/',
             'file' => 'https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi',
         ],
-        'Google Chrome 64' => [
+        'Google Chrome MSI 64' => [
             'download' => 'https://www.google.com/chrome/',
             'file' => 'https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi',
+        ],
+
+        'Google Chrome EXE 32' => [
+            'download' => 'https://www.google.com/chrome/',
+            'file' => 'https://dl.google.com/edgedl/chrome/install/ChromeStandaloneSetup.exe',
+        ],
+        'Google Chrome EXE 64' => [
+            'download' => 'https://www.google.com/chrome/',
+            'file' => 'https://dl.google.com/edgedl/chrome/install/ChromeStandaloneSetup64.exe',
+            // 'version' => 'https://versionhistory.googleapis.com/v1/chrome/platforms/win/channels/stable/versions/?pageSize=1',
         ],
 
         'KeePass 1.xx' => [
@@ -124,6 +140,11 @@ class Meuktracker extends Controller
             'json' => 'https://api.github.com/repos/transmission-remote-gui/transgui/releases/latest',
             'jpath' => 'assets.5.browser_download_url',
         ],
+        'Transmission Remote GUI 3' => [
+            'download' => 'https://github.com/lighterowl/transgui/releases/latest',
+            'json' => 'https://api.github.com/repos/lighterowl/transgui/releases/latest',
+            'jpath' => 'assets.2.browser_download_url',
+        ],
 
         'Windows 10 Media Creation Tool' => [
             'download' => 'https://www.microsoft.com/software-download/windows10',
@@ -211,8 +232,9 @@ class Meuktracker extends Controller
 
     public function index()
     {
+        $indexCacheKey = sha1(json_encode($this->products));
         // $this->cache->forget('meuktracker');
-        $items = $this->cache->remember('meuktracker', self::CACHE_TTL, function () {
+        $items = $this->cache->remember('meuktracker-'.$indexCacheKey, self::CACHE_TTL, function () {
             $items = $this->loopProducts();
 
             return array_filter($items);
