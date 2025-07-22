@@ -1,8 +1,12 @@
+<!DOCTYPE html>
 <html lang="">
 <head>
     <title>{{ $ip }}</title>
 </head>
 <body>
-<center><font size='32'>{{ $ip }}</font><br/>{{ $hostname }}</center>
+<div style="text-align: center;">
+    <div style="font-size: 3em">{{ $ip }}</div>
+    <div>{{ $hostname }}</div>
+</div>
 </body>
 </html>

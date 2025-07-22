@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="Troep.com, the worst troep on the planet"/>
-    <meta name="keywords" content="troep, jimbolino, tilburg, rommel, puinhoop"/>
+    <meta name="description" content="Troep.com, the worst troep on the planet">
+    <meta name="keywords" content="troep, jimbolino, tilburg, rommel, puinhoop">
 
     <title>Troep.com - index</title>
 </head>
 <body>
 <div>
-{!! $randomQuote !!} <br/>
-<br/>
+{!! $randomQuote !!} <br>
+<br>
 
 <h2>Troep.com</h2>
 <ul>
