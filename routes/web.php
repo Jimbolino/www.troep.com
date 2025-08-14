@@ -18,8 +18,6 @@ use App\Http\Controllers\ViewSourceController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
-// @phan-file-suppress PhanStaticCallToNonStatic
-
 Route::get('/', [WelcomeController::class, 'index']);
 Route::get('mailmij.php', [ContactController::class, 'show'])->middleware('csrf');
 Route::post('mailmij.php', [ContactController::class, 'send'])->middleware('csrf');
