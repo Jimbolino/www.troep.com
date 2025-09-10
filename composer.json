@@ -10,7 +10,7 @@
         "ext-json": "*",
         "ext-libxml": "*",
         "ext-openssl": "*",
-        "bref/bref": "2.4.11",
+        "bref/bref": "2.4.12",
         "guzzlehttp/guzzle": "7.10.0",
         "laravel/framework": "12.28.1",
         "league/flysystem-aws-s3-v3": "3.29.0"
