@@ -247,7 +247,10 @@ class Meuktracker extends Controller
     {
         $items = [];
         foreach ($this->products as $name => $product) {
-            $items[] = $this->getProduct($name, $product);
+            try {
+                $items[] = $this->getProduct($name, $product);
+            } catch (Exception) {
+            }
         }
 
         return $items;
