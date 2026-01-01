@@ -18,19 +18,17 @@ class Meuktracker extends Controller
     private const CACHE_TTL = 24 * 60 * 60;
     public array $products = [
         'Beyond Compare' => [
-            'download' => 'https://www.scootersoftware.com/download.php',
+            'download' => 'https://www.scootersoftware.com/download',
             'xpath' => '//*[@id="content"]/div[2]/div[1]/div/div[1]/a',
         ],
 
-        'Foobar2000' => [
-            'download' => 'https://www.foobar2000.org/download',
-            'xpath' => '/html/body/div[2]/div/div/a[1]',
-            'xpath2' => '/html/body/div[2]/div/p[2]/a',
+        'Foobar2000 32' => [
+            'download' => 'https://www.foobar2000.org/windows',
+            'xpath' => '/html/body/div[2]/div/div/div[2]/a[1]',
         ],
         'Foobar2000 64' => [
-            'download' => 'https://www.foobar2000.org/download',
-            'xpath' => '/html/body/div[2]/div/div/a[2]',
-            'xpath2' => '/html/body/div[2]/div/p[2]/a',
+            'download' => 'https://www.foobar2000.org/windows',
+            'xpath' => '/html/body/div[2]/div/div/div[2]/a[2]',
         ],
 
         'Google Chrome MSI 32' => [
@@ -64,11 +62,11 @@ class Meuktracker extends Controller
         ],
 
         'Mozilla Firefox 64' => [
-            'download' => 'https://www.mozilla.org/en-US/firefox/all/',
+            'download' => 'https://www.firefox.com/en-US/download/all/desktop-release/',
             'file' => 'https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=nl',
         ],
         'Mozilla Firefox 64 MSI' => [
-            'download' => 'https://www.mozilla.org/en-US/firefox/all/',
+            'download' => 'https://www.firefox.com/en-US/download/all/desktop-release/',
             'file' => 'https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=nl',
         ],
         'Mozilla Thunderbird 64' => [
@@ -116,8 +114,8 @@ class Meuktracker extends Controller
             'jpath' => 'PS.0.downloads.windows.link',
         ],
         'Popcorn Time' => [
-            'download' => 'https://github.com/popcorn-official/popcorn-desktop/releases/latest',
-            'json' => 'https://api.github.com/repos/popcorn-official/popcorn-desktop/releases/latest',
+            'download' => 'https://github.com/popcorn-time-ru/popcorn-desktop/releases/latest',
+            'json' => 'https://api.github.com/repos/popcorn-time-ru/popcorn-desktop/releases/latest',
             'jpath' => 'assets.9.browser_download_url',
         ],
 
