@@ -201,7 +201,7 @@
 </table>
 
 <div class="b5">
-    <p>Microsoft Office Updates: <a href="/meuktracker/office">64 bit</a> - <a href="/meuktracker/office?32">32 bit</a></p>
+    <p>Microsoft Office 2016 updates: <a href="/meuktracker/office">64-bit</a> - <a href="/meuktracker/office?32">32-bit</a></p>
 </div>
 <br>
 

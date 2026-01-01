@@ -137,7 +137,7 @@
             <td>{{ $kb['name'] }}</td>
             <td><a href="{{ $kb['items'][$bit]['url'] ?? null }}">{{ $kb['items'][$bit]['filename'] ?? null }}</a></td>
             <td>{{ $kb['items'][$bit]['size'] ?? null }}</td>
-            <td>{{ date('d-M-Y', $kb['items'][1]['date'] ?? null )}}</td>
+            <td>{{ date('d-M-Y', $kb['items'][$bit]['date'] ?? null )}}</td>
         </tr>
         @endforeach
 

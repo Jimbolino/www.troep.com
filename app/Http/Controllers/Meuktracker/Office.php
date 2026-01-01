@@ -32,9 +32,9 @@ class Office extends Controller
             return $items;
         }
 
-        $bit = 1;
+        $bit = 0;
         if (Request::exists('32')) {
-            $bit = 0;
+            $bit = 1;
         }
 
         return view('meuktracker/office', ['items' => $items, 'bit' => $bit]);
@@ -42,7 +42,8 @@ class Office extends Controller
 
     public function getUrlOffice2016PU(string $overviewUrl)
     {
-        $office2016listXpath = '//*[@id="main"]/table[1]/tbody/tr/td[3]/a';
+        $office2016listXpath = '/html/body/main/div[2]/div[1]/div[6]/table[1]/tbody/tr/td[3]/a';
+
         $elements = $this->meuktracker->cachePageXpath($overviewUrl, $office2016listXpath);
 
         $first = $elements->item(0);
@@ -106,7 +107,7 @@ class Office extends Controller
 
         $elements = $section->getElementsByTagName('a');
 
-        $hrefs = [];
+        $items = [];
         foreach ($elements as $element) {
             $name = $element->textContent;
             $href = $element->getAttribute('href');
@@ -122,67 +123,53 @@ class Office extends Controller
             }
 
             $downloadUrls = [
-                'http://www.microsoft.com/download/details',
-                'https://www.microsoft.com/download/details',
+                'https://www.microsoft.com/en-us/download/details.aspx',
             ];
 
             if (!Str::startsWith($href, $downloadUrls)) {
                 continue;
             }
 
-            $hrefs[] = $this->getItem($href, $name);
+            $items = $this->getItems($href, $name);
         }
 
-        return $hrefs;
+        return $items;
     }
 
-    public function getItem(string $href, string $name)
+    public function getItems(string $href, string $name)
     {
-        $url = $this->detailsToFile($href);
+        $urls = $this->detailsToFile($href);
 
-        $filename = $this->meuktracker->getFileName($url);
-        $headers = $this->meuktracker->cacheHeaders($url);
+        $items = [];
+        foreach ($urls as $url) {
+            $filename = $this->meuktracker->getFileName($url);
+            $headers = $this->meuktracker->cacheHeaders($url);
 
-        return [
-            'name' => $name,
-            'url' => $url,
-            'filename' => $filename,
-            'date' => strtotime((string) $headers['last-modified']),
-            'size' => $this->meuktracker->formatBytes((int) $headers['content-length']),
-        ];
+            $items[] = [
+                'name' => $name,
+                'url' => $url,
+                'filename' => $filename,
+                'date' => strtotime((string) $headers['last-modified']),
+                'size' => $this->meuktracker->formatBytes((int) $headers['content-length']),
+            ];
+        }
+
+        return $items;
     }
 
     public function detailsToFile(string $detailsUrl)
     {
-        $headers = $this->meuktracker->cacheHeaders($detailsUrl);
-        if (\is_array($headers['location'])) {
-            $headers['location'] = last($headers['location']);
-        }
-        $baseUrl = (string) $headers['location'];
-        $confirmUrl = str_replace('download/details.aspx', 'download/confirmation.aspx', $baseUrl);
-        $confirmUrl = str_replace('http://', 'https://', $confirmUrl);
+        $xpath = '/html/body/div[3]/div/div[2]/main/div/div[1]/div/div/script[1]';
 
-        $links = $this->getAllLinks($confirmUrl, '//download.microsoft.com/download/');
+        $section = $this->meuktracker->cachePageXpath($detailsUrl, $xpath);
+        $script = $section->item(0)->nodeValue ?? '';
 
-        return $links[0];
-    }
+        $json = str_replace('window.__DLCDetails__=', '', $script);
+        $data = json_decode($json, true);
 
-    public function getAllLinks(string $url, string $contains = '')
-    {
-        $page = $this->meuktracker->cachePage($url);
-
-        $doc = new DOMDocument();
-        $doc->loadHTML((string) $page);
         $return = [];
-        $aHrefs = $doc->getElementsByTagName('a');
-        foreach ($aHrefs as $a) {
-            $href = trim($a->getAttribute('href'));
-            if (!empty($contains)) {
-                if (!str_contains($href, $contains)) { // skip non matches
-                    continue;
-                }
-            }
-            $return[] = $href;
+        foreach ($data['dlcDetailsView']['downloadFile'] ?? [] as $file) {
+            $return[] = $file['url'];
         }
 
         return $return;
