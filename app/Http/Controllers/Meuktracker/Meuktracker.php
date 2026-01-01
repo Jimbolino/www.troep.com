@@ -22,29 +22,29 @@ class Meuktracker extends Controller
             'xpath' => '//*[@id="content"]/div[2]/div[1]/div/div[1]/a',
         ],
 
-        'Foobar2000 32' => [
+        'Foobar2000 32-bit' => [
             'download' => 'https://www.foobar2000.org/windows',
             'xpath' => '/html/body/div[2]/div/div/div[2]/a[1]',
         ],
-        'Foobar2000 64' => [
+        'Foobar2000 64-bit' => [
             'download' => 'https://www.foobar2000.org/windows',
             'xpath' => '/html/body/div[2]/div/div/div[2]/a[2]',
         ],
 
-        'Google Chrome MSI 32' => [
+        'Google Chrome MSI 32-bit' => [
             'download' => 'https://www.google.com/chrome/',
             'file' => 'https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi',
         ],
-        'Google Chrome MSI 64' => [
+        'Google Chrome MSI 64-bit' => [
             'download' => 'https://www.google.com/chrome/',
             'file' => 'https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi',
         ],
 
-        'Google Chrome EXE 32' => [
+        'Google Chrome EXE 32-bit' => [
             'download' => 'https://www.google.com/chrome/',
             'file' => 'https://dl.google.com/edgedl/chrome/install/ChromeStandaloneSetup.exe',
         ],
-        'Google Chrome EXE 64' => [
+        'Google Chrome EXE 64-bit' => [
             'download' => 'https://www.google.com/chrome/',
             'file' => 'https://dl.google.com/edgedl/chrome/install/ChromeStandaloneSetup64.exe',
             // 'version' => 'https://versionhistory.googleapis.com/v1/chrome/platforms/win/channels/stable/versions/?pageSize=1',
@@ -61,7 +61,7 @@ class Meuktracker extends Controller
             'xpath2' => '//*[@id="files_list"]/tbody/tr[1]/th/a',
         ],
 
-        'Mozilla Firefox 64' => [
+        'Mozilla Firefox 64 EXE' => [
             'download' => 'https://www.firefox.com/en-US/download/all/desktop-release/',
             'file' => 'https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=nl',
         ],
@@ -69,7 +69,7 @@ class Meuktracker extends Controller
             'download' => 'https://www.firefox.com/en-US/download/all/desktop-release/',
             'file' => 'https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=nl',
         ],
-        'Mozilla Thunderbird 64' => [
+        'Mozilla Thunderbird 64 EXE' => [
             'download' => 'https://www.thunderbird.net/en-US/thunderbird/all/',
             'file' => 'https://download.mozilla.org/?product=thunderbird-latest-ssl&os=win64&lang=nl',
         ],
@@ -78,12 +78,12 @@ class Meuktracker extends Controller
             'file' => 'https://download.mozilla.org/?product=thunderbird-msi-latest-ssl&os=win64&lang=nl',
         ],
 
-        'MPC-HC 32' => [
+        'MPC-HC 32-bit' => [
             'download' => 'https://github.com/clsid2/mpc-hc/releases/latest',
             'json' => 'https://api.github.com/repos/clsid2/mpc-hc/releases/latest',
             'jpath' => 'assets.2.browser_download_url',
         ],
-        'MPC-HC 64' => [
+        'MPC-HC 64-bit' => [
             'download' => 'https://github.com/clsid2/mpc-hc/releases/latest',
             'json' => 'https://api.github.com/repos/clsid2/mpc-hc/releases/latest',
             'jpath' => 'assets.0.browser_download_url',
@@ -99,11 +99,11 @@ class Meuktracker extends Controller
             'file' => 'https://officecdn.microsoft.com/db/492350F6-3A01-4F97-B9C0-C7C6DDF67D60/media/nl-NL/ProPlus2024Retail.img',
         ],
 
-        'PuTTY 32' => [
+        'PuTTY 32-bit' => [
             'download' => 'https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html',
             'file' => 'https://the.earth.li/~sgtatham/putty/latest/w32/putty.exe',
         ],
-        'PuTTY 64' => [
+        'PuTTY 64-bit' => [
             'download' => 'https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html',
             'file' => 'https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe',
         ],
@@ -119,11 +119,11 @@ class Meuktracker extends Controller
             'jpath' => 'assets.9.browser_download_url',
         ],
 
-        'Sumatra PDF 32' => [
+        'Sumatra PDF 32-bit' => [
             'download' => 'https://www.sumatrapdfreader.org/download-free-pdf-viewer',
             'xpath' => '/html/body/div[2]/table[2]/tbody/tr[2]/td[2]/a',
         ],
-        'Sumatra PDF 64' => [
+        'Sumatra PDF 64-bit' => [
             'download' => 'https://www.sumatrapdfreader.org/download-free-pdf-viewer',
             'xpath' => '/html/body/div[2]/table[1]/tbody/tr[2]/td[2]/a',
         ],
@@ -161,7 +161,7 @@ class Meuktracker extends Controller
             'file' => 'https://go.microsoft.com/fwlink/?linkid=2171764',
         ],
 
-        'WinRAR 64' => [
+        'WinRAR 64-bit' => [
             'download' => 'https://www.rarlab.com/download.htm',
             // 'xpath' => '/html/body/table/tr/td[2]/table[7]/tr[3]/td[1]/a', // beta
             'xpath' => '/html/body/table/tr/td[2]/table[3]/tr[2]/td[1]/a',
