@@ -6,13 +6,10 @@ use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
-$finder = Finder::create()
+$finder = (new Finder())
+    ->ignoreVCSIgnored(true)
+    ->ignoreDotFiles(false)
     ->in([__DIR__, '.phan'])
-    ->exclude([
-        'bootstrap/cache',
-        'node_modules',
-        'storage',
-    ])
     ->append([
         '.php-cs-fixer.dist.php',
         'artisan',
@@ -20,21 +17,22 @@ $finder = Finder::create()
     ])
 ;
 
-$config = new Config();
-$config->setFinder($finder)
-    ->setParallelConfig(ParallelConfigFactory::detect())
-    ->setRiskyAllowed(true)
-    ->setRules([
-        '@PHP80Migration' => true,
-        '@PHP80Migration:risky' => true,
-        '@PHPUnit84Migration:risky' => true,
-        '@PSR12:risky' => true,
-        '@PhpCsFixer' => true,
-        '@PhpCsFixer:risky' => true,
-        'global_namespace_import' => true,
-        'php_unit_internal_class' => false,
-        'php_unit_test_class_requires_covers' => false,
-    ])
-;
+$rules = [
+    '@PHP8x0Migration' => true,
+    '@PHP8x0Migration:risky' => true,
+    '@PHPUnit8x4Migration:risky' => true,
+    '@PSR12:risky' => true,
+    '@PhpCsFixer' => true,
+    '@PhpCsFixer:risky' => true,
+    'global_namespace_import' => true,
+    'php_unit_internal_class' => false,
+    'php_unit_test_class_requires_covers' => false,
+];
 
-return $config;
+return (new Config())
+    ->setParallelConfig(ParallelConfigFactory::detect())
+    ->setFinder($finder)
+    ->setRiskyAllowed(true)
+    ->setRules($rules)
+    ->setUnsupportedPhpVersionAllowed(true)
+;
