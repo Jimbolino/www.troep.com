@@ -51,7 +51,7 @@ return [
 
         'file' => [
             'driver' => 'file',
-            'path' => '/tmp/cache_'.PHP_SAPI,
+            'path' => '/tmp/cache_'.\PHP_SAPI,
         ],
 
         'memcached' => [

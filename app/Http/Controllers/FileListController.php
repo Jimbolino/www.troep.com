@@ -30,7 +30,7 @@ class FileListController extends Controller
         }
 
         $headers = [];
-        if ('html' === pathinfo($file, PATHINFO_EXTENSION)) {
+        if ('html' === pathinfo($file, \PATHINFO_EXTENSION)) {
             $headers['Content-Type'] = 'text/html';
         }
 
@@ -63,11 +63,11 @@ class FileListController extends Controller
             if ('dir' === $file['type']) {
                 $icon = 'folder';
             } else {
-                $icon = $extensionToIcon[strtolower(pathinfo($file['path'], PATHINFO_EXTENSION))] ?? 'unknown';
+                $icon = $extensionToIcon[strtolower(pathinfo($file['path'], \PATHINFO_EXTENSION))] ?? 'unknown';
             }
 
             $files[] = [
-                'basename' => pathinfo($file['path'], PATHINFO_BASENAME),
+                'basename' => pathinfo($file['path'], \PATHINFO_BASENAME),
                 'icon' => $icon,
                 'path' => $file['path'],
                 'size' => $this->niceSize($file['fileSize'] ?? null),

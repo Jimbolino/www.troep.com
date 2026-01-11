@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 $uri = urldecode(
-    (string) parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+    (string) parse_url($_SERVER['REQUEST_URI'], \PHP_URL_PATH)
 );
 
 // This file allows us to emulate Apache's "mod_rewrite" functionality from the

@@ -41,7 +41,7 @@ class DebugController extends Controller
         ksort($_SERVER);
 
         return [
-            'phpversion' => PHP_VERSION,
+            'phpversion' => \PHP_VERSION,
             'laravel_version' => app()->version(), // @phan-suppress-current-line PhanUndeclaredMethod
             'variables_order' => \ini_get('variables_order'),
             'ip' => $this->request->ip(),

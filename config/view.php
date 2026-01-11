@@ -29,5 +29,5 @@ return [
     |
     */
 
-    'compiled' => '/tmp/views_'.PHP_SAPI,
+    'compiled' => '/tmp/views_'.\PHP_SAPI,
 ];

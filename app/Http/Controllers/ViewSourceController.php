@@ -14,7 +14,7 @@ class ViewSourceController extends Controller
     {
         $url = $request->get('url', 'http://troep.com/');
 
-        if (!filter_var($url, FILTER_VALIDATE_URL)) {
+        if (!filter_var($url, \FILTER_VALIDATE_URL)) {
             throw new Exception('invalid_url filter_var');
         }
         if (!preg_match('/^https?:\/\//', $url)) {

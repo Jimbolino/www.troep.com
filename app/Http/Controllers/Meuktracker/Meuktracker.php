@@ -195,7 +195,7 @@ class Meuktracker extends Controller
                 throw new Exception('call failed: '.$url);
             }
 
-            return array_change_key_case($result, CASE_LOWER);
+            return array_change_key_case($result, \CASE_LOWER);
         });
     }
 
@@ -318,7 +318,7 @@ class Meuktracker extends Controller
         $elements = $this->cachePageXpath($url, $xpath);
         foreach ($elements as $element) {
             $file = $element->attributes->getNamedItem('href')->nodeValue;
-            if (false === filter_var($file, FILTER_VALIDATE_URL)) {
+            if (false === filter_var($file, \FILTER_VALIDATE_URL)) {
                 $baseUrl = self::getBaseUrl($url);
 
                 return $baseUrl.$file;
@@ -343,9 +343,6 @@ class Meuktracker extends Controller
 
     /**
      * preg_match is stupid.
-     *
-     * @param mixed $input
-     * @param mixed $regex
      */
     public static function pregMatch($input, $regex)
     {
@@ -356,8 +353,6 @@ class Meuktracker extends Controller
 
     /**
      * @see http://php.net/manual/en/function.parse-url.php#106731
-     *
-     * @param mixed $parsedUrl
      */
     public static function unparseUrl($parsedUrl)
     {
@@ -384,7 +379,7 @@ class Meuktracker extends Controller
 
     public static function getFileName($url)
     {
-        $urlParts = (string) parse_url($url, PHP_URL_PATH);
+        $urlParts = (string) parse_url($url, \PHP_URL_PATH);
 
         return last(explode('/', $urlParts));
     }
@@ -394,11 +389,11 @@ class Meuktracker extends Controller
      */
     private function extractVersionFromUrl(string $url)
     {
-        $filename = urldecode((string) parse_url($url, PHP_URL_PATH));
+        $filename = urldecode((string) parse_url($url, \PHP_URL_PATH));
         $parts = explode('/', $filename);
         $filename = last($parts);
 
-        parse_str((string) parse_url($url, PHP_URL_QUERY), $query);
+        parse_str((string) parse_url($url, \PHP_URL_QUERY), $query);
         if (!empty($query['response-content-disposition'])) {
             $filename = explode('filename=', $query['response-content-disposition'])[1];
         }

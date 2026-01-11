@@ -12,7 +12,7 @@ class TimeController extends Controller
     public function show(Request $request, Factory $view)
     {
         $data = [
-            'time' => date(DATE_COOKIE),
+            'time' => date(\DATE_COOKIE),
             'refresh' => max(1, abs((int) $request->input('refresh', 5))),
         ];
 
