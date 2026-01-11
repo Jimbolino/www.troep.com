@@ -18,6 +18,7 @@ class DatawebAdapter extends BaseAdapter
         $url = self::URL.'?'.http_build_query($data);
 
         return $this->getAsync($url)->then(static fn (\Psr\Http\Message\ResponseInterface $response) => [
+            'url' => $url,
             'html' => $response->getBody()->getContents(),
         ]);
     }

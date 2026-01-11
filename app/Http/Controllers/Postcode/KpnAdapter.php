@@ -28,7 +28,7 @@ class KpnAdapter extends BaseAdapter
             ];
 
             return $this->jsonPostAsync(self::URL, $data, ['cookies' => $jar]);
-        })->then(static fn ($result) => [$result]);
+        });
     }
 
     public function getName(): string

@@ -21,9 +21,7 @@ class KpnZakelijkAdapter extends KpnAdapter
             ],
         ];
 
-        return $this->jsonPostAsync(self::URL, $data, $extraOptions)->then(static fn ($result) => [
-            $result,
-        ]);
+        return $this->jsonPostAsync(self::URL, $data, $extraOptions);
     }
 
     public function getName(): string

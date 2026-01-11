@@ -23,6 +23,7 @@ class HeldenVanNuAdapter extends BaseAdapter
         ];
 
         return $this->formPostHTMLAsync(self::URL, $data, $options)->then(static fn ($html) => [
+            'url' => self::URL,
             'html' => $html,
         ]);
     }

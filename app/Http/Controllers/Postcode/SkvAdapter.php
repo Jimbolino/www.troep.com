@@ -13,6 +13,7 @@ class SkvAdapter extends BaseAdapter
         $url = self::URL.'?'.$this->postcode;
 
         return $this->getAsync($url)->then(static fn (\Psr\Http\Message\ResponseInterface $response) => [
+            'url' => $url,
             'html' => $response->getBody()->getContents(),
         ]);
     }
