@@ -4,17 +4,19 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Postcode;
 
+use GuzzleHttp\Promise\PromiseInterface;
+
 class OnlineAdapter extends BaseAdapter
 {
     public const URL = 'https://www.online.nl/actions.online.nl/m7actions/addresscheck/checkaddress/';
 
-    public function check(): array
+    public function checkAsync(): PromiseInterface
     {
         $data = [
             'PostalCode' => $this->postcode,
             'HouseNumber' => $this->houseNumber,
             'IsUnverified' => 'false',
-            'BasketId' => '6e2c353d-c3d3-4647-959d-fd35016dd33e',
+            'BasketId' => 'b21670da-d9fe-49eb-a62e-5730ff9db48c',
             'LoadCompleteAddress' => 'false',
         ];
         $options = [
@@ -23,7 +25,7 @@ class OnlineAdapter extends BaseAdapter
             ],
         ];
 
-        return $this->jsonPost(self::URL, $data, $options);
+        return $this->jsonPostAsync(self::URL, $data, $options);
     }
 
     public function getName(): string

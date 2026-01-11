@@ -9,7 +9,7 @@ class KliksafeAdapter extends BaseAdapter
     public const URL1 = 'https://www.kliksafe.nl/ajax/pakketten-zipcode-speed.php';
     public const URL2 = 'https://www.kliksafe.nl/ajax/pakketten-zipcode.php';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $options = [
             'query' => [
@@ -22,13 +22,15 @@ class KliksafeAdapter extends BaseAdapter
             ],
         ];
 
-        $response1 = $this->client->get(self::URL1, $options);
-        $response2 = $this->client->get(self::URL2, $options);
-
-        return [
-            json_decode($response1->getBody()->getContents()),
-            json_decode($response2->getBody()->getContents()),
+        $promises = [
+            'res1' => $this->getAsync(self::URL1, $options),
+            'res2' => $this->getAsync(self::URL2, $options),
         ];
+
+        return \GuzzleHttp\Promise\Utils::all($promises)->then(static fn ($responses) => [
+            json_decode($responses['res1']->getBody()->getContents()),
+            json_decode($responses['res2']->getBody()->getContents()),
+        ]);
     }
 
     public function getName(): string

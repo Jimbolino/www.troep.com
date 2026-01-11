@@ -8,7 +8,7 @@ class KabelnoordAdapter extends BaseAdapter
 {
     public const URL = 'https://www.kabelnoord.nl/bestellen';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $data = [
             'zipcode' => $this->postcode,
@@ -18,12 +18,10 @@ class KabelnoordAdapter extends BaseAdapter
             'check-zipcode' => 'check-zipcode',
         ];
 
-        $html = $this->formPostHTML(self::URL, $data);
-
-        return [
+        return $this->formPostHTMLAsync(self::URL, $data)->then(static fn ($html) => [
             'url' => self::URL,
             'html' => $html,
-        ];
+        ]);
     }
 
     public function getName(): string

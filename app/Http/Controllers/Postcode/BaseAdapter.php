@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Postcode;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Promise\PromiseInterface;
+use Psr\Http\Message\ResponseInterface;
 
 abstract class BaseAdapter implements AdapterInterface
 {
@@ -40,7 +42,27 @@ abstract class BaseAdapter implements AdapterInterface
         return $this;
     }
 
-    public function jsonPost(string $url, array $data, array $extraOptions = []): array
+    public function check(): array
+    {
+        return $this->checkAsync()->wait();
+    }
+
+    public function checkAsync(): PromiseInterface
+    {
+        return \GuzzleHttp\Promise\Create::promiseFor($this->check());
+    }
+
+    public function getAsync(string $url, array $options = []): PromiseInterface
+    {
+        return $this->client->getAsync($url, $options);
+    }
+
+    public function getJsonAsync(string $url, array $options = []): PromiseInterface
+    {
+        return $this->getAsync($url, $options)->then(static fn (ResponseInterface $response) => (array) json_decode($response->getBody()->getContents(), true));
+    }
+
+    public function jsonPostAsync(string $url, array $data, array $extraOptions = []): PromiseInterface
     {
         $options = [
             'headers' => [
@@ -52,12 +74,10 @@ abstract class BaseAdapter implements AdapterInterface
 
         $options = array_merge_recursive($options, $extraOptions);
 
-        $response = $this->client->post($url, $options);
-
-        return (array) json_decode($response->getBody()->getContents(), true);
+        return $this->client->postAsync($url, $options)->then(static fn (ResponseInterface $response) => (array) json_decode($response->getBody()->getContents(), true));
     }
 
-    public function formPost(string $url, array $data, array $extraOptions = []): array
+    public function formPostAsync(string $url, array $data, array $extraOptions = []): PromiseInterface
     {
         $options = [
             'headers' => [
@@ -69,12 +89,10 @@ abstract class BaseAdapter implements AdapterInterface
 
         $options = array_merge_recursive($options, $extraOptions);
 
-        $response = $this->client->post($url, $options);
-
-        return (array) json_decode($response->getBody()->getContents(), true);
+        return $this->client->postAsync($url, $options)->then(static fn (ResponseInterface $response) => (array) json_decode($response->getBody()->getContents(), true));
     }
 
-    public function formPostHTML(string $url, array $data, array $extraOptions = []): string
+    public function formPostHTMLAsync(string $url, array $data, array $extraOptions = []): PromiseInterface
     {
         $options = [
             'headers' => [
@@ -86,8 +104,6 @@ abstract class BaseAdapter implements AdapterInterface
 
         $options = array_merge_recursive($options, $extraOptions);
 
-        $response = $this->client->post($url, $options);
-
-        return $response->getBody()->getContents();
+        return $this->client->postAsync($url, $options)->then(static fn (ResponseInterface $response) => $response->getBody()->getContents());
     }
 }

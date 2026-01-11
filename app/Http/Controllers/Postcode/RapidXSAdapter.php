@@ -8,7 +8,7 @@ class RapidXSAdapter extends BaseAdapter
 {
     public const URL = 'https://portal.rapidxs.nl/api/zipcode/check?postNLOnly=false';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $data = [
             'zipcode' => $this->postcode,
@@ -17,7 +17,7 @@ class RapidXSAdapter extends BaseAdapter
             'extraInfo' => '',
         ];
 
-        return $this->jsonPost(self::URL, $data);
+        return $this->jsonPostAsync(self::URL, $data);
     }
 
     public function getName(): string

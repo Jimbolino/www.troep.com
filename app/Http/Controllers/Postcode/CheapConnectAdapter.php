@@ -8,7 +8,7 @@ class CheapConnectAdapter extends BaseAdapter
 {
     public const URL = 'https://www.cheapconnect.nl/ajax/getInternetCheck.php';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $data = [
             'zipcode' => $this->postcode,
@@ -16,12 +16,10 @@ class CheapConnectAdapter extends BaseAdapter
             'housenrext' => $this->extension,
         ];
 
-        $html = $this->formPostHTML(self::URL, $data);
-
-        return [
+        return $this->formPostHTMLAsync(self::URL, $data)->then(static fn ($html) => [
             'url' => self::URL,
             'html' => $html,
-        ];
+        ]);
     }
 
     public function getName(): string

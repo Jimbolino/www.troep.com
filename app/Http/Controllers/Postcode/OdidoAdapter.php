@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Postcode;
 
-class StarlinkAdapter extends BaseAdapter
+class OdidoAdapter extends BaseAdapter
 {
-    public const URL = 'https://www.starlink.com/';
+    public const URL = 'https://www.odido.nl/shop/internet/product/zelf-samenstellen';
 
     public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
@@ -17,6 +17,6 @@ class StarlinkAdapter extends BaseAdapter
 
     public function getName(): string
     {
-        return 'starlink';
+        return 'odido';
     }
 }

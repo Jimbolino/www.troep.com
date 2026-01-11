@@ -6,15 +6,15 @@ namespace App\Http\Controllers\Postcode;
 
 class KabeltexAdapter extends BaseAdapter
 {
-    public const URL = 'https://noordkop.kabeltex.nl/wp-admin/admin-ajax.php';
+    public const URL = 'https://kabeltex.nl/wp-admin/admin-ajax.php';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $data = [
-            'action' => 'inschrijving_postcode_check',
-            'inschrijving_postcode' => $this->postcode,
-            'inschrijving_huisnummer' => $this->houseNumber,
-            'inschrijving_huisnummertoevoeging' => $this->extension,
+            'action' => 'postcodecheck',
+            'postcode' => $this->postcode,
+            'huisnummer' => $this->houseNumber,
+            'huisnummertoevoeging' => $this->extension,
         ];
         $options = [
             'headers' => [
@@ -22,7 +22,7 @@ class KabeltexAdapter extends BaseAdapter
             ],
         ];
 
-        return $this->formPost(self::URL, $data, $options);
+        return $this->formPostAsync(self::URL, $data, $options);
     }
 
     public function getName(): string

@@ -6,22 +6,17 @@ namespace App\Http\Controllers\Postcode;
 
 class OnviAdapter extends BaseAdapter
 {
-    public const URL = 'https://mijn.onvi.nl/bestellen/';
+    public const URL = 'https://api-staging.qonnected.net/postal-code/public-products?brand=onvi';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $data = [
             'postalcode' => $this->postcode,
-            'housenumber' => $this->houseNumber,
-            'extension' => $this->extension,
+            'housenr' => $this->houseNumber,
+            'ext' => $this->extension,
         ];
 
-        $response = $this->client->get(self::URL, ['query' => $data]);
-        $html = $response->getBody()->getContents();
-
-        return [
-            'html' => $html,
-        ];
+        return $this->jsonPostAsync(self::URL, $data);
     }
 
     public function getName(): string

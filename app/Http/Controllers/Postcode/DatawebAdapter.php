@@ -8,7 +8,7 @@ class DatawebAdapter extends BaseAdapter
 {
     public const URL = 'https://www.dataweb.nl/postcode-check-zakelijk-glasvezel/';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $data = [
             'postcode' => $this->postcode,
@@ -17,11 +17,9 @@ class DatawebAdapter extends BaseAdapter
 
         $url = self::URL.'?'.http_build_query($data);
 
-        $response = $this->client->get($url);
-
-        return [
+        return $this->getAsync($url)->then(static fn (\Psr\Http\Message\ResponseInterface $response) => [
             'html' => $response->getBody()->getContents(),
-        ];
+        ]);
     }
 
     public function getName(): string

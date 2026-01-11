@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Postcode\BaseAdapter;
-use App\Http\Controllers\Postcode\KpnAdapter;
-use App\Http\Controllers\Postcode\OnlineAdapter;
-use App\Http\Controllers\Postcode\ZiggoAdapter;
 use GuzzleHttp\Client;
+use GuzzleHttp\Promise\Create;
+use GuzzleHttp\Promise\Utils;
 use Illuminate\Http\Request;
+use Throwable;
 
 class PostcodeCheck
 {
@@ -21,40 +21,38 @@ class PostcodeCheck
     public function __construct(Client $client)
     {
         $this->adapters = [
-            // new \App\Http\Controllers\Postcode\BudgetAdapter($client),
-            // new \App\Http\Controllers\Postcode\CaiwayAdapter($client),
-            // new \App\Http\Controllers\Postcode\CheapConnectAdapter($client),
-            // new \App\Http\Controllers\Postcode\DatawebAdapter($client),
-            // new \App\Http\Controllers\Postcode\DeltaAdapter($client),
-            // new \App\Http\Controllers\Postcode\EdpNetAdapter($client),
-            // new \App\Http\Controllers\Postcode\FiberAdapter($client),
-            // new \App\Http\Controllers\Postcode\FreedomAdapter($client),
-            // new \App\Http\Controllers\Postcode\GlasnetAdapter($client),
-            // new \App\Http\Controllers\Postcode\HeldenVanNuAdapter($client),
-            // new \App\Http\Controllers\Postcode\JonazAdapter($client),
-            // new \App\Http\Controllers\Postcode\KabelnoordAdapter($client),
-            // new \App\Http\Controllers\Postcode\KabeltexAdapter($client),
-            // new \App\Http\Controllers\Postcode\KliksafeAdapter($client),
-            new KpnAdapter($client),
-            // new \App\Http\Controllers\Postcode\KpnZakelijkAdapter($client),
-            // new \App\Http\Controllers\Postcode\MultifiberAdapter($client),
-            // new \App\Http\Controllers\Postcode\NetrebelAdapter($client),
-            new OnlineAdapter($client),
-            // new \App\Http\Controllers\Postcode\OnviAdapter($client),
-            // new \App\Http\Controllers\Postcode\PlinqAdapter($client),
-            // new \App\Http\Controllers\Postcode\RapidXSAdapter($client),
-            // new \App\Http\Controllers\Postcode\SignetAdapter($client),
-            // new \App\Http\Controllers\Postcode\SkpAdapter($client),
-            // new \App\Http\Controllers\Postcode\SkvAdapter($client),
-            // new \App\Http\Controllers\Postcode\SnlrAdapter($client),
-            // new \App\Http\Controllers\Postcode\SolconAdapter($client),
-            // new \App\Http\Controllers\Postcode\StarlinkAdapter($client),
-            // new \App\Http\Controllers\Postcode\StipteAdapter($client),
-            // new \App\Http\Controllers\Postcode\TMobileAdapter($client),
-            // new \App\Http\Controllers\Postcode\TriNedAdapter($client),
-            // new \App\Http\Controllers\Postcode\TweakAdapter($client),
-            // new \App\Http\Controllers\Postcode\YoufoneAdapter($client),
-            new ZiggoAdapter($client),
+            new Postcode\BudgetAdapter($client),
+            new Postcode\CheapConnectAdapter($client),
+            new Postcode\DatawebAdapter($client),
+            new Postcode\DeltaAdapter($client),
+            new Postcode\FiberAdapter($client),
+            new Postcode\FreedomAdapter($client),
+            new Postcode\GlasnetAdapter($client),
+            new Postcode\HeldenVanNuAdapter($client),
+            new Postcode\JonazAdapter($client),
+            new Postcode\KabelnoordAdapter($client),
+            new Postcode\KabeltexAdapter($client),
+            new Postcode\KliksafeAdapter($client),
+            new Postcode\KpnAdapter($client),
+            new Postcode\KpnZakelijkAdapter($client),
+            new Postcode\MultifiberAdapter($client),
+            new Postcode\NetrebelAdapter($client),
+            new Postcode\OnlineAdapter($client),
+            new Postcode\OnviAdapter($client),
+            new Postcode\PlinqAdapter($client),
+            new Postcode\RapidXSAdapter($client),
+            new Postcode\SignetAdapter($client),
+            new Postcode\SkpAdapter($client),
+            new Postcode\SkvAdapter($client),
+            new Postcode\SnlrAdapter($client),
+            new Postcode\SolconAdapter($client),
+            new Postcode\StarlinkAdapter($client),
+            new Postcode\StipteAdapter($client),
+            new Postcode\OdidoAdapter($client),
+            new Postcode\TriNedAdapter($client),
+            new Postcode\TweakAdapter($client),
+            new Postcode\YoufoneAdapter($client),
+            new Postcode\ZiggoAdapter($client),
         ];
     }
 
@@ -80,15 +78,20 @@ class PostcodeCheck
 
     public function check($postcode, int $houseNumber, $extension = '')
     {
-        $result = [];
+        $promises = [];
 
         foreach ($this->adapters as $adapter) {
             $adapter->setPostcode($postcode);
             $adapter->setHouseNumber($houseNumber);
             $adapter->setExtension($extension);
-            $result[$adapter->getName()] = $adapter->check();
+
+            try {
+                $promises[$adapter->getName()] = $adapter->checkAsync()->otherwise(static fn (Throwable $e) => ['error' => $e->getMessage()]);
+            } catch (Throwable $e) {
+                $promises[$adapter->getName()] = Create::promiseFor(['error' => $e->getMessage()]);
+            }
         }
 
-        return $result;
+        return Utils::unwrap($promises);
     }
 }

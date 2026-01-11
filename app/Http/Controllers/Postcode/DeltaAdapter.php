@@ -6,25 +6,19 @@ namespace App\Http\Controllers\Postcode;
 
 class DeltaAdapter extends BaseAdapter
 {
-    public const URL = 'https://www.delta.nl/bestellen/';
+    public const URL = 'https://api.delta.nl/orderstreet/v1/orderability';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $getData = [
-            'reset' => 'true',
-            'postalCode' => $this->postcode,
-            'houseNumber' => $this->houseNumber,
+            'isBusiness' => 'false',
+            'postalcode' => $this->postcode,
+            'housenumber' => $this->houseNumber,
         ];
 
         $url = self::URL.'?'.http_build_query($getData);
 
-        $request = $this->client->get($url);
-        $html = $request->getBody()->getContents();
-
-        return [
-            'url' => $url,
-            'html' => $html,
-        ];
+        return $this->getJsonAsync($url);
     }
 
     public function getName(): string

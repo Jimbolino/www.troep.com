@@ -8,7 +8,7 @@ class StipteAdapter extends BaseAdapter
 {
     public const URL = 'https://www.stipte.nl/wp-admin/admin-ajax.php';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $data = [
             'action' => 'st_order_xml_getzip',
@@ -18,7 +18,7 @@ class StipteAdapter extends BaseAdapter
             'campaign' => 'all',
         ];
 
-        return $this->formPost(self::URL, $data);
+        return $this->formPostAsync(self::URL, $data);
     }
 
     public function getName(): string

@@ -6,23 +6,17 @@ namespace App\Http\Controllers\Postcode;
 
 class FiberAdapter extends BaseAdapter
 {
-    public const URL = 'https://api.aika.fiber.nl/api/address/check';
+    public const URL = 'https://api-aika.fiber.nl/api/address/check';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $data = [
             'postalCode' => $this->postcode,
             'houseNumber' => $this->houseNumber,
-            'houseNumberExt' => $this->extension,
-        ];
-        $options = [
-            'http_errors' => false,
-            'headers' => [
-                'X-Order-App-Version' => '1.2.5',
-            ],
+            'suffix' => $this->extension,
         ];
 
-        return $this->jsonPost(self::URL, $data, $options);
+        return $this->jsonPostAsync(self::URL, $data);
     }
 
     public function getName(): string

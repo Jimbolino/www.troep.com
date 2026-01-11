@@ -8,12 +8,12 @@ class SkpAdapter extends BaseAdapter
 {
     public const URL = 'https://skpnet.nl/wp-admin/admin-ajax.php';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $data = [
             'action' => 'gfpcnlgetaddress',
-            'nonce' => '4301f30efe',
-            'form_id' => '1',
+            'nonce' => 'a4e2c62906',
+            'form_id' => '23',
             'field_id' => '83',
             'postcode' => $this->postcode,
             'huisnummer' => $this->houseNumber,
@@ -22,9 +22,7 @@ class SkpAdapter extends BaseAdapter
 
         $url = self::URL.'?'.http_build_query($data);
 
-        $response = $this->client->get($url);
-
-        return (array) json_decode($response->getBody()->getContents(), true);
+        return $this->getJsonAsync($url);
     }
 
     public function getName(): string

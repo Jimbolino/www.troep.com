@@ -8,27 +8,23 @@ use GuzzleHttp\Cookie\CookieJar;
 
 class HeldenVanNuAdapter extends BaseAdapter
 {
-    public const URL = 'https://bestel.heldenvan.nu/aansluitadres';
+    public const URL = 'https://www.heldenvan.nu/bestellen';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $data = [
-            'utf8' => '✓',
-            'address[zipcode]' => $this->postcode,
-            'address[number]' => $this->houseNumber,
-            'address[number_extra]' => $this->extension,
+            'zipCode' => $this->postcode,
+            'housenumber' => $this->houseNumber,
+            'housenumber_extension' => $this->extension,
         ];
-
         $options = [
             'verify' => false,
             'cookies' => new CookieJar(),
         ];
 
-        $html = $this->formPostHTML(self::URL, $data, $options);
-
-        return [
+        return $this->formPostHTMLAsync(self::URL, $data, $options)->then(static fn ($html) => [
             'html' => $html,
-        ];
+        ]);
     }
 
     public function getName(): string

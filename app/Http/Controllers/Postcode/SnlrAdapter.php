@@ -6,15 +6,21 @@ namespace App\Http\Controllers\Postcode;
 
 class SnlrAdapter extends BaseAdapter
 {
-    public const URL = 'https://www.snlr-glasvezel.nl/postcodecheckfeed/';
+    public const URL = 'https://bestel.snllr.nl/';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
-        $url = self::URL.$this->postcode.'/'.$this->houseNumber.'/.json';
+        $getData = [
+            'zipcode' => $this->postcode,
+            'housenumber' => $this->houseNumber,
+            'housenumberext' => $this->extension,
+        ];
+        $url = self::URL.'?'.http_build_query($getData);
 
-        $response = $this->client->get($url);
-
-        return (array) json_decode($response->getBody()->getContents(), true);
+        return $this->getAsync($url)->then(static fn (\Psr\Http\Message\ResponseInterface $response) => [
+            'url' => $url,
+            'html' => $response->getBody()->getContents(),
+        ]);
     }
 
     public function getName(): string

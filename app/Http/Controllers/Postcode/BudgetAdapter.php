@@ -6,22 +6,16 @@ namespace App\Http\Controllers\Postcode;
 
 class BudgetAdapter extends BaseAdapter
 {
-    public const URL = 'https://www.budgetthuis.nl/alles-in-1/xhr/checkAddress';
+    public const URL = 'https://api.budgetthuis.nl/internet/v1/signup-orders/addresses';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
-        $data = [
-            'address_check_form' => [
-                'address' => [
-                    'postalCode' => $this->postcode,
-                    'houseNumber' => $this->houseNumber,
-                    'houseNumberExtension' => $this->extension,
-                ],
-                'isEnergyClient' => 0,
-            ],
-        ];
+        $url = self::URL.'/'.$this->postcode.'/'.$this->houseNumber.'/availability';
+        if ($this->extension) {
+            $url .= '?houseNumberExtension='.$this->extension;
+        }
 
-        return $this->formPost(self::URL, $data);
+        return $this->getJsonAsync($url);
     }
 
     public function getName(): string

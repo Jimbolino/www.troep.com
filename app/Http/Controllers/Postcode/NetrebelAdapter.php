@@ -8,7 +8,7 @@ class NetrebelAdapter extends BaseAdapter
 {
     public const URL = 'https://netrebel.nl/';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $data = [
             'postcode' => $this->postcode,
@@ -24,7 +24,7 @@ class NetrebelAdapter extends BaseAdapter
             ],
         ];
 
-        return $this->formPost(self::URL, $data, $options);
+        return $this->formPostAsync(self::URL, $data, $options);
     }
 
     public function getName(): string

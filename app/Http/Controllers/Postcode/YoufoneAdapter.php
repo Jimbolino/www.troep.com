@@ -4,21 +4,27 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Postcode;
 
+use GuzzleHttp\Promise\PromiseInterface;
+
 class YoufoneAdapter extends BaseAdapter
 {
-    public const URL = 'https://www.youfone.nl/prov/order/PostcodeCheckCoverage';
+    public const URL = 'https://www.youfone.nl/prov/order/GetCoverage';
 
-    public function check(): array
+    public function checkAsync(): PromiseInterface
     {
         $data = [
-            'request' => [
-                'Zipcode' => $this->postcode,
-                'HouseNr' => $this->houseNumber,
-                'HouseNrExtension' => $this->extension,
+            'houseNumber' => $this->houseNumber,
+            'houseNumberExtension' => $this->extension,
+            'zipcode' => $this->postcode,
+        ];
+
+        $extraOptions = [
+            'headers' => [
+                'referer' => 'https://www.youfone.nl/thuis/bestellen',
             ],
         ];
 
-        return $this->jsonPost(self::URL, $data);
+        return $this->jsonPostAsync(self::URL, $data, $extraOptions);
     }
 
     public function getName(): string

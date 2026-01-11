@@ -8,7 +8,7 @@ class PlinqAdapter extends BaseAdapter
 {
     public const URL = 'https://www.plinq.nl/wp-admin/admin-ajax.php';
 
-    public function check(): array
+    public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
         $data = [
             'action' => 'plinqapi',
@@ -17,12 +17,11 @@ class PlinqAdapter extends BaseAdapter
             'houseno_ext' => $this->extension,
             'type' => 'thuis',
         ];
-
         $options = [
             'verify' => false,
         ];
 
-        return $this->formPost(self::URL, $data, $options);
+        return $this->formPostAsync(self::URL, $data, $options);
     }
 
     public function getName(): string
