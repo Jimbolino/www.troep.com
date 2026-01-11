@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Postcode;
 
-class SnlrAdapter extends BaseAdapter
+class SnllrAdapter extends BaseAdapter
 {
     public const URL = 'https://bestel.snllr.nl/';
 
@@ -25,6 +25,6 @@ class SnlrAdapter extends BaseAdapter
 
     public function getName(): string
     {
-        return 'snlr';
+        return 'snllr';
     }
 }

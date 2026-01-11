@@ -44,7 +44,7 @@ class PostcodeCheck
             new Postcode\SignetAdapter($client),
             new Postcode\SkpAdapter($client),
             new Postcode\SkvAdapter($client),
-            new Postcode\SnlrAdapter($client),
+            new Postcode\SnllrAdapter($client),
             new Postcode\SolconAdapter($client),
             new Postcode\StarlinkAdapter($client),
             new Postcode\StipteAdapter($client),
