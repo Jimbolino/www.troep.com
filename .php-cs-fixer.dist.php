@@ -6,7 +6,7 @@ use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
-$finder = (new Finder())
+$finder = new Finder()
     ->ignoreVCSIgnored(true)
     ->ignoreDotFiles(false)
     ->in([__DIR__, '.phan'])
@@ -18,18 +18,21 @@ $finder = (new Finder())
 ;
 
 $rules = [
-    '@PHP8x0Migration' => true,
-    '@PHP8x0Migration:risky' => true,
-    '@PHPUnit8x4Migration:risky' => true,
-    '@PSR12:risky' => true,
+    '@PER-CS' => true,
+    '@PER-CS:risky' => true,
     '@PhpCsFixer' => true,
     '@PhpCsFixer:risky' => true,
+    '@Symfony' => true,
+    '@Symfony:risky' => true,
+    '@autoPHPMigration' => true,
+    '@autoPHPMigration:risky' => true,
+    '@autoPHPUnitMigration:risky' => true,
     'global_namespace_import' => true,
     'php_unit_internal_class' => false,
     'php_unit_test_class_requires_covers' => false,
 ];
 
-return (new Config())
+return new Config()
     ->setParallelConfig(ParallelConfigFactory::detect())
     ->setFinder($finder)
     ->setRiskyAllowed(true)
