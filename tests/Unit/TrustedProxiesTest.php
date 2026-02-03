@@ -14,16 +14,16 @@ class TrustedProxiesTest extends TestCase
     public function testProxyCount(): void
     {
         $ip = $this->runWithCount(0, '9.9.9.9');
-        static::assertSame('1.1.1.1', $ip);
+        self::assertSame('1.1.1.1', $ip);
 
         $ip = $this->runWithCount(1, '2.2.2.2');
-        static::assertSame('2.2.2.2', $ip);
+        self::assertSame('2.2.2.2', $ip);
 
         $ip = $this->runWithCount(2, '3.3.3.3, 2.2.2.2');
-        static::assertSame('3.3.3.3', $ip);
+        self::assertSame('3.3.3.3', $ip);
 
         $ip = $this->runWithCount(3, '4.4.4.4, 3.3.3.3, 2.2.2.2');
-        static::assertSame('4.4.4.4', $ip);
+        self::assertSame('4.4.4.4', $ip);
 
         self::expectExceptionMessage('proxyCount mismatch: 3 !== 4');
         $this->runWithCount(4, '4.4.4.4, 3.3.3.3, 2.2.2.2');
