@@ -38,6 +38,7 @@
     <li><a rel="nofollow noreferrer" href="https://refnocode.trade.re/33dl2r75">Trade Republic - €10 gratis aandelen</a></li>
     <li><a rel="nofollow noreferrer" href="https://www.cashbackxl.nl?share=jimborst-6af2">CashbackXL - gratis €2,50 tegoed</a></li>
     <li><a rel="nofollow noreferrer" href="https://www.dropbox.com/referrals/AAC2ZevNVgJMm9f-fOct6slqjP9OS1n4qa8?src=global9">Dropbox - 500mb gratis opslag</a></li>
+    <li><a rel="nofollow noreferrer" href="https://www.hollandsnieuwe.nl/sim-only#packagetype=SIM_ONLY&brand=CONSUMER&voucher=8V446K">Hollandsnieuwe - 1 maand gratis</a></li>
     <li><a rel="nofollow noreferrer" href="https://www.raisin.nl/referral/?raf=413f3e75450ffefeecff15a2ec73288161f69aae&utm_source=transactional&utm_campaign=mandrill_customer-referral">Raisin - €50 bonus bij een nieuwe rekening</a></li>
     <li><a rel="nofollow noreferrer" href="https://www.thoorn.nl/26410/">Thoorn - beltegoed omzetten in cash</a></li>
     <li><a rel="nofollow noreferrer" href="https://www.trading212.com/invite/1ARwe6Gmpz">Trading212 - gratis aandeel</a></li>
