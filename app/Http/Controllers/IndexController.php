@@ -7,11 +7,11 @@ namespace App\Http\Controllers;
 use Exception;
 use Illuminate\View\Factory;
 
-class WelcomeController extends Controller
+class IndexController extends Controller
 {
     public function index(Factory $view)
     {
-        return $view->make('welcome', ['randomQuote' => $this->randomQuote()]);
+        return $view->make('index', ['randomQuote' => $this->randomQuote()]);
     }
 
     public function randomQuote()
