@@ -17,7 +17,7 @@
     },
     "require-dev": {
         "phan/phan": "6.0.0",
-        "phpunit/phpunit": "12.5.9"
+        "phpunit/phpunit": "12.5.10"
     },
     "autoload": {
         "psr-4": {
