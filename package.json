@@ -4,6 +4,6 @@
     "scripts": {
     },
     "devDependencies": {
-        "serverless": "4.31.2"
+        "serverless": "4.32.0"
     }
 }
