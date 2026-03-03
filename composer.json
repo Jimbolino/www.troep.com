@@ -12,12 +12,12 @@
         "ext-openssl": "*",
         "bref/bref": "3.0.0",
         "guzzlehttp/guzzle": "7.10.0",
-        "laravel/framework": "12.50.0",
+        "laravel/framework": "12.53.0",
         "league/flysystem-aws-s3-v3": "3.32.0"
     },
     "require-dev": {
         "phan/phan": "6.0.1",
-        "phpunit/phpunit": "12.5.14"
+        "phpunit/phpunit": "13.0.5"
     },
     "autoload": {
         "psr-4": {
