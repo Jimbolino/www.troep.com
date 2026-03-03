@@ -34,7 +34,7 @@ functions:
     web:
         handler: public/index.php
         timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
-        runtime: php-84-fpm
+        runtime: php-85-fpm
         events:
             -   httpApi: '*'
 
