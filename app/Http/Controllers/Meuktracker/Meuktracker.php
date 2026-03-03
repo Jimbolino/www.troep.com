@@ -11,6 +11,7 @@ use DOMXPath;
 use Exception;
 use Illuminate\Cache\CacheManager;
 use Illuminate\Http\Client\Factory;
+use Illuminate\Http\Client\Response;
 use stdClass;
 
 class Meuktracker extends Controller
@@ -199,22 +200,21 @@ class Meuktracker extends Controller
         });
     }
 
-    public function cachePage(string $url)
+    public function cachePage(string $url): string
     {
         // $this->cache->forget('page'.$url);
         return $this->cache->remember('page'.$url, self::CACHE_TTL, function () use ($url) {
             $response = $this->client->get($url);
-
-            return $response->body();
+            if ($response instanceof Response) {
+                return $response->body();
+            }
+            throw new Exception('call failed: '.$url);
         });
     }
 
     public function cachePageXpath(string $url, string $xpath): DOMNodeList
     {
         $page = $this->cachePage($url);
-        if (false === $page) {
-            throw new Exception('failed to get page: '.$url);
-        }
         $doc = new DOMDocument();
         libxml_use_internal_errors(true);
         $doc->loadHTML($page);
@@ -303,7 +303,7 @@ class Meuktracker extends Controller
     public function getFileFromJson(string $url, string $jpath)
     {
         $json = $this->cachePage($url);
-        $json = json_decode((string) $json, true);
+        $json = json_decode($json, true);
         $jpath = explode('.', $jpath);
 
         foreach ($jpath as $j) {

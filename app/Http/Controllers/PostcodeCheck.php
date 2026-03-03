@@ -58,10 +58,10 @@ class PostcodeCheck
 
     public function show(Request $request)
     {
-        if ('submit' === $request->get('submit')) {
-            $postcode = $request->get('postcode');
-            $huisnr = $request->get('huisnr');
-            $ext = $request->get('ext');
+        if ('submit' === $request->query('submit')) {
+            $postcode = $request->query('postcode');
+            $huisnr = $request->query('huisnr');
+            $ext = $request->query('ext');
 
             $url = implode('/', [
                 'postcode',

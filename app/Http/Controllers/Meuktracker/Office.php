@@ -59,7 +59,7 @@ class Office extends Controller
         $html = $this->meuktracker->cachePage($url);
 
         $doc = new DOMDocument();
-        $doc->loadHTML((string) $html);
+        $doc->loadHTML($html);
 
         $return = [];
 

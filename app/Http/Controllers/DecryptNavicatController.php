@@ -19,8 +19,10 @@ class DecryptNavicatController
             'defaultHash' => self::DEFAULT_HASH,
             'defaultVersion' => self::DEFAULT_VERSION,
         ];
-        if ($request->get('version') && $request->get('password')) {
-            $data['result'] = $this->decrypt((int) $request->get('version'), $request->get('password'));
+        $version = (int) $request->query('version');
+        $password = (string) $request->query('password');
+        if ($version && $password) {
+            $data['result'] = $this->decrypt($version, $password);
         }
 
         return view('navicat', $data);
