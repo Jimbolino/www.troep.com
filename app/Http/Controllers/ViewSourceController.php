@@ -24,7 +24,7 @@ class ViewSourceController extends Controller
         $data = [
             'url' => $url,
             'contents' => @file_get_contents($url),
-            'http_response_header' => $http_response_header,
+            'http_response_header' => http_get_last_response_headers(),
         ];
 
         return $view->make('viewsource', $data);
