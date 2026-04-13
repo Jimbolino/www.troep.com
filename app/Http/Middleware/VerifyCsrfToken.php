@@ -13,6 +13,5 @@ class VerifyCsrfToken extends PreventRequestForgery
      *
      * @var array
      */
-    protected $except = [
-    ];
+    protected $except = [];
 }
