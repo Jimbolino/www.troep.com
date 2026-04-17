@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1143fb32b79c6d803356433cb85e147",
+    "content-hash": "af709f119654dde6142c10b12c781279",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -7805,16 +7805,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "13.1.5",
+            "version": "13.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "89adcba73441b38db31d5c0473b61e2907311db0"
+                "reference": "c3c414ea438e5a37d00697eaea43e6e05e201a42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/89adcba73441b38db31d5c0473b61e2907311db0",
-                "reference": "89adcba73441b38db31d5c0473b61e2907311db0",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c3c414ea438e5a37d00697eaea43e6e05e201a42",
+                "reference": "c3c414ea438e5a37d00697eaea43e6e05e201a42",
                 "shasum": ""
             },
             "require": {
@@ -7884,7 +7884,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/13.1.5"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/13.1.6"
             },
             "funding": [
                 {
@@ -7892,7 +7892,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-04-16T04:58:40+00:00"
+            "time": "2026-04-17T12:52:50+00:00"
         },
         {
             "name": "sabre/event",
