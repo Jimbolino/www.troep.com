@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2af4bc61d832cc462bfa7e897baf5b1",
+    "content-hash": "893dee7c3e6c62ed1b51d77e00c26050",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -6979,16 +6979,16 @@
         },
         {
             "name": "phan/phan",
-            "version": "6.0.5",
+            "version": "6.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phan/phan.git",
-                "reference": "ebaecc75c999c51f7e649625b383ca8e95b45bc7"
+                "reference": "ecb8baed13c06fbae2c5c9bcb2c3e9dd3bb723c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phan/phan/zipball/ebaecc75c999c51f7e649625b383ca8e95b45bc7",
-                "reference": "ebaecc75c999c51f7e649625b383ca8e95b45bc7",
+                "url": "https://api.github.com/repos/phan/phan/zipball/ecb8baed13c06fbae2c5c9bcb2c3e9dd3bb723c4",
+                "reference": "ecb8baed13c06fbae2c5c9bcb2c3e9dd3bb723c4",
                 "shasum": ""
             },
             "require": {
@@ -7059,9 +7059,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phan/phan/issues",
-                "source": "https://github.com/phan/phan/tree/6.0.5"
+                "source": "https://github.com/phan/phan/tree/6.0.7"
             },
-            "time": "2026-03-27T15:41:19+00:00"
+            "time": "2026-06-22T20:53:52+00:00"
         },
         {
             "name": "phan/tolerant-php-parser",
