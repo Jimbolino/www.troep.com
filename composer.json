@@ -11,7 +11,7 @@
         "ext-libxml": "*",
         "ext-openssl": "*",
         "bref/bref": "3.0.6",
-        "guzzlehttp/guzzle": "7.12.3",
+        "guzzlehttp/guzzle": "7.13.1",
         "laravel/framework": "13.17.0",
         "league/flysystem-aws-s3-v3": "3.35.1"
     },
