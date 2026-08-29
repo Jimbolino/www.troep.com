@@ -49,7 +49,7 @@ abstract class BaseAdapter implements AdapterInterface
 
     public function checkAsync(): PromiseInterface
     {
-        return \GuzzleHttp\Promise\Create::promiseFor($this->check());
+        return new \GuzzleHttp\Promise\FulfilledPromise($this->check());
     }
 
     public function getAsync(string $url, array $options = []): PromiseInterface

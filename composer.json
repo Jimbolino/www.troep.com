@@ -11,13 +11,13 @@
         "ext-libxml": "*",
         "ext-openssl": "*",
         "bref/bref": "3.0.9",
-        "guzzlehttp/guzzle": "7.15.5",
-        "laravel/framework": "13.29.0",
-        "league/flysystem-aws-s3-v3": "3.35.3"
+        "guzzlehttp/guzzle": "^8.0.0",
+        "laravel/framework": "^13.29.0",
+        "league/flysystem-aws-s3-v3": "^3.35.3"
     },
     "require-dev": {
-        "phan/phan": "6.0.7",
-        "phpunit/phpunit": "13.1.14"
+        "phan/phan": "^6.0.7",
+        "phpunit/phpunit": "^13.1.14"
     },
     "autoload": {
         "psr-4": {

@@ -25,7 +25,7 @@ class TrustedProxiesTest extends TestCase
         $ip = $this->runWithCount(3, '4.4.4.4, 3.3.3.3, 2.2.2.2');
         self::assertSame('4.4.4.4', $ip);
 
-        self::expectExceptionMessage('proxyCount mismatch: 3 !== 4');
+        self::expectExceptionMessageIsOrContains('proxyCount mismatch: 3 !== 4');
         $this->runWithCount(4, '4.4.4.4, 3.3.3.3, 2.2.2.2');
     }
 

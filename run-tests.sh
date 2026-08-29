@@ -2,7 +2,10 @@
 set -e
 
 echo '[php -l]'
-find . -type f -name '*.php' ! -path './vendor/*' -exec php -l -n {} \; | (! grep -v "No syntax errors detected" )
+if find . -type f -name '*.php' ! -path './vendor/*' -exec php -l -n {} \; | grep -v "No syntax errors detected"; then
+    echo 'php -l found syntax errors'
+    exit 1
+fi
 
 echo '[phan]'
 PHAN_DISABLE_XDEBUG_WARN=1 ./vendor/bin/phan --no-progress-bar

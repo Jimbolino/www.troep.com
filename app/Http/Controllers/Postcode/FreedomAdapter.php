@@ -17,7 +17,7 @@ class FreedomAdapter extends BaseAdapter
             'huisnummer' => $this->houseNumber,
         ];
 
-        return \GuzzleHttp\Promise\Create::promiseFor([
+        return new \GuzzleHttp\Promise\FulfilledPromise([
             'data' => $data,
             'url1' => self::URL1,
             'url2' => self::URL2,

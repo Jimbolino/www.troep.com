@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Postcode\BaseAdapter;
 use GuzzleHttp\Client;
-use GuzzleHttp\Promise\Create;
+use GuzzleHttp\Promise\FulfilledPromise;
 use GuzzleHttp\Promise\Utils;
 use Illuminate\Http\Request;
 use Throwable;
@@ -88,10 +88,13 @@ class PostcodeCheck
             try {
                 $promises[$adapter->getName()] = $adapter->checkAsync()->otherwise(static fn (Throwable $e) => ['error' => $e->getMessage()]);
             } catch (Throwable $e) {
-                $promises[$adapter->getName()] = Create::promiseFor(['error' => $e->getMessage()]);
+                $promises[$adapter->getName()] = new FulfilledPromise(['error' => $e->getMessage()]);
             }
         }
 
+        // Phan cannot unify the promise template unions produced by otherwise()
+        // with unwrap()'s iterable<TKey, PromiseInterface<TValue, TReason>>.
+        // @phan-suppress-next-line PhanPartialTypeMismatchArgument
         return Utils::unwrap($promises);
     }
 }

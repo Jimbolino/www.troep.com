@@ -10,7 +10,7 @@ class TweakAdapter extends BaseAdapter
 
     public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
-        return \GuzzleHttp\Promise\Create::promiseFor([
+        return new \GuzzleHttp\Promise\FulfilledPromise([
             'url' => self::URL,
             'postcode' => $this->postcode,
             'houseNumber' => $this->houseNumber,

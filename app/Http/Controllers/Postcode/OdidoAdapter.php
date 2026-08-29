@@ -10,7 +10,7 @@ class OdidoAdapter extends BaseAdapter
 
     public function checkAsync(): \GuzzleHttp\Promise\PromiseInterface
     {
-        return \GuzzleHttp\Promise\Create::promiseFor([
+        return new \GuzzleHttp\Promise\FulfilledPromise([
             'url' => self::URL,
         ]);
     }
