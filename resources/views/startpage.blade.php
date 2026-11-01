@@ -165,7 +165,7 @@
     <tr>
         <td><p><a href="https://weareone.fm/">WeAreOne.FM</a></p></td>
         <td><p><a href="https://www.netflix.com/browse">Netflix</a></p></td>
-        <td><p><a href="https://www.tickettipper.nl/vliegticketdeals/">TicketTipper</a></p></td>
+        <td><p><a href="https://www.google.nl/travel/flights">google flights</a></p></td>
         <td><p><a href="https://frontpage.fok.nl/">FOK.nl</a></p></td>
         <td><p><a href="/tools/viewsource.php">viewsource</a></p></td>
         <td><p><a href="https://www.tweakers.net/pricewatch">t.net/pricewatch</a></p></td>
@@ -197,7 +197,7 @@
     </tr>
     <tr>
         <td><p></p></td>
-        <td><p><a href="https://www.npostart.nl/live">NPO live</a></p></td>
+        <td><p><a href="https://npo.nl/start/live">NPO live</a></p></td>
         <td><p></p></td>
         <td><p><a href="https://www.bredavandaag.nl/">Breda Vandaag</a></p></td>
         <td><p></p></td>
@@ -220,7 +220,7 @@
     </tr>
     <tr>
         <td><p></p></td>
-        <td><p><a href="https://www.nummerzoeker.com/?agreecookies=1">zoekopnummer</a></p></td>
+        <td><p></p></td>
         <td><p><a href="https://www.ns.nl/">ns.nl</a> - <a href="https://www.prorail.nl/werkzaamheden-storingen">prorail</a></p></td>
         <td><p><a href="https://www.p2000-online.net/middenenwestbrabantf.html">p2000-online</a></p></td>
         <td><p></p></td>
@@ -231,9 +231,9 @@
     </tr>
     <tr>
         <td><p></p></td>
-        <td><p><a href="https://www.goudengids.nl/">goudengids</a></p></td>
+        <td><p></p></td>
         <td><p><a href="https://www.anwb.nl/verkeer/routeplanner">anwb</a> - <a href="https://www.routenet.nl/">routenet</a></p></td>
-        <td><p><a href="https://www.watwasdieknal.nl/">wat was die knal</a></p></td>
+        <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p><a href="https://gathering.tweakers.net/forum/list_topics/10">SA</a></p></td>
@@ -254,12 +254,12 @@
     <tr>
         <td><p></p></td>
         <td><p></p></td>
-        <td><p><a href="https://flitsservice.nl/">flitsservice</a> - <a href="https://www.anwb.nl/verkeer">anwb</a></p></td>
+        <td><p><a href="https://www.anwb.nl/verkeer/flitsers">flitsers</a> - <a href="https://www.anwb.nl/verkeer">anwb</a></p></td>
         <td><p></p></td>
         <td><p><a href="/ip">ip.troep.com</a></p></td>
         <td><p><a href="https://nl.pepper.com/nieuw">pepper</a></p></td>
         <td><p><a href="https://gathering.tweakers.net/forum/list_topics/31">HK</a></p></td>
-        <td><p><a href="https://www.raisin.nl/referral/?raf=413f3e75450ffefeecff15a2ec73288161f69aae">Raisin</a></p></td>
+        <td><p></p></td>
         <td><p><a href="https://www.action.com/nl-nl/">Action</a></p></td>
     </tr>
     </tbody>
@@ -280,7 +280,7 @@
         <td><p><b>TORRENT (pub)</b></p></td>
         <td><p><b>MUSIC</b></p></td>
         <td><p><b>SUBS</b></p></td>
-        <td><p><b>SERIALS</b></p></td>
+        <td><p><b>WAREZ</b></p></td>
         <td><p><b>COVERS</b></p></td>
         <td><p><b>TELECOM</b></p></td>
         <td><p><b>CASHBACKS</b></p></td>
@@ -290,44 +290,44 @@
         <td><p><a href="https://1337x.to/">1337x.to</a></p></td>
         <td><p><a href="https://open.spotify.com/">spotify</a></p></td>
         <td><p><a href="https://www.opensubtitles.org/">opensubtitles</a></p></td>
-        <td><p><a href="https://astalavista.box.sk/">astalavista</a></p></td>
+        <td><p><a href="https://www.theisonews.com/">isonews</a></p></td>
         <td><p><a href="https://www.covercentury.com/">Cover Century</a></p></td>
         <td><p><a href="https://www.bellen.com/">bellen.com</a></p></td>
         <td><p><a href="https://www.cashbacksvergelijken.nl/">CBvergelijken</a></p></td>
     </tr>
     <tr>
         <td><p><a href="https://xtremebytes.net/browse.php">xtremebytes</a></p></td>
-        <td><p><a href="https://yts.mx/">yts.mx</a></p></td>
+        <td><p><a href="https://yts.gg/">yts.gg</a> - <a href="https://yts.bz/">yts.bz</a></p></td>
         <td><p><a href="https://8tracks.com/">8tracks</a></p></td>
         <td><p><a href="https://subdl.com/">Subdl</a></p></td>
-        <td><p></p></td>
-        <td><p><a href="https://covertarget.com/ct/1/0.html">CoverTarget</a></p></td>
+        <td><p><a href="http://www.etplanet.com/">Etplanet</a></p></td>
+        <td><p><a href="https://covertarget.com/">CoverTarget</a></p></td>
         <td><p><a href="https://www.internetten.nl/">internetten.nl</a></p></td>
         <td><p><a href="https://www.cashbackxl.nl/?share=jimborst-6af2">CashbackXL</a></p></td>
     </tr>
     <tr>
         <td><p><a href="https://torrentbytes.net/browse.php">torrentbytes</a></p></td>
-        <td><p><a href="https://www.limetorrents.cc/">limetorrents.cc</a></p></td>
+        <td><p><a href="https://www.limetorrents.fun/">limetorrents.fun</a></p></td>
         <td><p><a href="https://youdj.online/">YouDJ</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p><a href="https://www.pricewise.nl/internet/">Pricewise</a></p></td>
-        <td><p><a href="https://www.shopbuddies.nl/u/REF4ecc4fd9b16">ShopBuddies</a></p></td>
+        <td><p><a href="https://shopbuddies.nl/">ShopBuddies</a></p></td>
     </tr>
     <tr>
         <td><p><a href="https://www.torrentleech.org/torrents/browse">torrentleech</a></p></td>
         <td><p><a href="https://www.torrentfunk.com/">torrentfunk.com</a></p></td>
         <td><p><a href="https://www.audiotool.com/">audiotool</a></p></td>
         <td><p></p></td>
-        <td><p><b>WAREZ</b></p></td>
+        <td><p></p></td>
         <td><p></p></td>
         <td><p><a href="https://www.breedbandwinkel.nl/">Breedbandwinkel</a></p></td>
         <td><p><a href="https://www.wissel.nl/">wissel.nl</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
-        <td><p><a href="https://eztv.re/">eztv.re</a></p></td>
+        <td><p><a href="https://eztvx.to/">eztvx.to</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
@@ -340,17 +340,7 @@
         <td><p><a href="https://yourbittorrent.com/">yourbittorrent.com</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
-        <td><p><a href="https://www.theisonews.com/">isonews</a></p></td>
         <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-    </tr>
-    <tr>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p></p></td>
-        <td><p><a href="http://www.etplanet.com/">Etplanet</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
@@ -380,7 +370,7 @@
         <td><p><a href="https://www.qbittorrent.org/">qBittorrent</a></p></td>
         <td><p><a href="https://sourceforge.net/projects/qbittorrent/files/latest/download">latest</a></p></td>
         <td><p><a href="https://ubuntu.com/download/desktop">Ubuntu Desktop</a></p></td>
-        <td><p><a href="https://releases.ubuntu.com/24.04.1/ubuntu-24.04.1-desktop-amd64.iso">24.04.1</a></p></td>
+        <td><p><a href="https://releases.ubuntu.com/26.04/ubuntu-26.04.1-desktop-amd64.iso">26.04.1</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
     </tr>
@@ -390,7 +380,7 @@
         <td><p><a href="https://www.reddit.com/r/software/comments/1yez7l/win_utorrent_221_last_utorrent_version_without/">uTorrent</a></p></td>
         <td><p><a href="/troep/ut221.exe">2.2.1</a></p></td>
         <td><p><a href="https://ubuntu.com/download/server">Ubuntu Server</a></p></td>
-        <td><p><a href="https://releases.ubuntu.com/24.04.1/ubuntu-24.04.1-live-server-amd64.iso">24.04.1</a></p></td>
+        <td><p><a href="https://releases.ubuntu.com/26.04/ubuntu-26.04.1-live-server-amd64.iso">26.04.1</a></p></td>
         <td><p><a href="https://www.intel.com/content/www/us/en/download-center/home.html">Intel chipset</a></p></td>
         <td><p></p></td>
     </tr>
@@ -401,8 +391,8 @@
         <td><p><a href="https://www.frostwire.com/download">latest</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
-        <td><p><a href="https://www.intel.com/content/www/us/en/download-center/home.html">Intel old chipset</a></p></td>
-        <td><p><a href="ftp://aiedownload.intel.com/df-support/8177/eng/infinst_enu.zip">6.3.0.1007</a></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
     </tr>
     <tr>
         <td><p><a href="https://www.foobar2000.org/">foobar2000</a></p></td>
@@ -416,7 +406,7 @@
     </tr>
     <tr>
         <td><p><a href="https://www.scootersoftware.com/download">Beyond Compare</a></p></td>
-        <td><p><a href="https://www.scootersoftware.com/files/BCompare-4.4.7.28397.exe">4.4.7</a></p></td>
+        <td><p><a href="https://www.scootersoftware.com/files/BCompare-5.2.7.32913.exe">5.2.7</a></p></td>
         <td><p><a href="https://www.quicksfv.org/">QuickSFV</a></p></td>
         <td><p><a href="https://www.quicksfv.org/qsfv236.exe">2.36</a></p></td>
         <td><p></p></td>
@@ -426,7 +416,7 @@
     </tr>
     <tr>
         <td><p><a href="https://www.sumatrapdfreader.org/download-free-pdf-viewer">Sumatra PDF</a></p></td>
-        <td><p><a href="https://www.sumatrapdfreader.org/dl/rel/3.5.2/SumatraPDF-3.5.2-64-install.exe">3.5.2</a></p></td>
+        <td><p><a href="https://www.sumatrapdfreader.org/dl/rel/3.6.1/SumatraPDF-3.6.1-64-install.exe">3.6.1</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
@@ -435,8 +425,8 @@
         <td><p></p></td>
     </tr>
     <tr>
-        <td><p><a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a></p></td>
-        <td><p><a href="https://www.mozilla.org/en-US/firefox/new/">latest</a></p></td>
+        <td><p><a href="https://www.firefox.com/">Firefox</a></p></td>
+        <td><p><a href="https://www.firefox.com/">latest</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
@@ -447,8 +437,8 @@
     <tr>
         <td><p></p></td>
         <td><p></p></td>
-        <td><p><a href="http://noclone.net/downloadx.asp">NoClone</a></p></td>
-        <td><p><a href="http://noclone.net/noclone-enterprise.exe">2007</a></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p><a href="https://www.amd.com/en/support">Ati Catalyst</a></p></td>
@@ -493,30 +483,26 @@
 <table class="maintable">
     <tbody>
     <tr>
-        <td><p><b><a href="http://update.microsoft.com/microsoftupdate/">Microsoft Update</a></b></p></td>
         <td colspan="2"><p><b>Troubleshooters</b></p></td>
         <td><p><b>VIRUSSCAN</b></p></td>
         <td><p><b>DEVELOP</b></p></td>
         <td><p><b>WORK</b></p></td>
     </tr>
     <tr>
-        <td><p><a href="https://www.microsoft.com/downloads">microsoft.com / downloads</a></p></td>
         <td><p><a href="http://www.seagate.com/nl/nl/support/downloads/item/seatools-dos-master/">SeaTools</a></p></td>
-        <td><p><a href="http://www.seagate.com/files/www-content/support-content/downloads/seatools/_shared/downloads/SeaToolsDOS223ALL.ISO">2.33</a></p></td>
+        <td><p><a href="http://www.seagate.com/files/www-content/support-content/downloads/seatools/_shared/downloads/SeaToolsDOS223ALL.ISO">2.23</a></p></td>
         <td><p><a href="https://virusscan.jotti.org/">jotti</a></p></td>
         <td><p><a href="https://gitlab.com/">Gitlab</a></p></td>
         <td><p><a href="https://teams.microsoft.com/">Teams</a></p></td>
     </tr>
     <tr>
-        <td><p></p></td>
         <td><p><a href="https://www.memtest86.com/">memtest86</a> <a href="https://www.memtest.org/">+</a></p></td>
-        <td><p><a href="http://www.memtest86.com/downloads/memtest86-iso.zip">6.00 iso</a> - <a href="http://www.memtest86.com/downloads/memtest86-usb.zip">usb</a></p></td>
+        <td><p><a href="https://www.memtest86.com/downloads/memtest86-iso.zip">latest iso</a> - <a href="https://www.memtest86.com/downloads/memtest86-usb.zip">usb</a></p></td>
         <td><p><a href="https://www.virustotal.com/">virustotal</a></p></td>
         <td><p><a href="https://github.com/">Github</a></p></td>
-        <td><p><a href="https://outlook.office.com/mail/">Outlook</a></p></td>
+        <td><p><a href="https://outlook.cloud.microsoft/mail/">Outlook</a></p></td>
     </tr>
     <tr>
-        <td><p></p></td>
         <td><p><a href="http://www.dposoft.net/">HDD Regenerator</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
@@ -524,47 +510,41 @@
         <td><p><a href="https://app.clickup.com/">ClickUp</a></p></td>
     </tr>
     <tr>
-        <td><p></p></td>
         <td><p><a href="https://www.jam-software.com/treesize_free">treesize</a></p></td>
-        <td><p><a href="https://downloads.jam-software.de/treesize_free/TreeSizeFreeSetup.exe">4.63</a></p></td>
-        <td><p><a href="https://packetstormsecurity.com/">packetstormsecurity</a></p></td>
+        <td><p><a href="https://downloads.jam-software.de/treesize_free/TreeSizeFreeSetup.exe">latest</a></p></td>
+        <td><p><a href="https://packetstorm.news/">packetstorm</a></p></td>
         <td><p><a href="https://packagist.org/">packagist</a></p></td>
         <td><p><a href="https://sentry.io/">Sentry</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
-        <td><p><a href="https://www.netchain.com/netcps/">netcps</a></p></td>
-        <td><p><a href="https://www.netchain.com/netcps/NetCPS.exe">1.0</a></p></td>
+        <td><p></p></td>
         <td><p><a href="https://www.security.nl/">security.nl</a></p></td>
         <td><p><a href="https://3v4l.org/">3v4l</a></p></td>
         <td><p><a href="https://app.crisp.chat/">Crisp</a></p></td>
     </tr>
     <tr>
-        <td><p></p></td>
         <td><p><a href="https://www.hhdsoftware.com/free-hex-editor">hdd-hexeditor</a></p></td>
-        <td><p><a href="https://www.hhdsoftware.com/download/free-hex-editor-neo.exe">7.25</a></p></td>
+        <td><p><a href="https://www.hhdsoftware.com/download/free-hex-editor-neo.exe">latest</a></p></td>
         <td><p></p></td>
-        <td><p><a href="https://chat.openai.com/">ChatGPT</a></p></td>
+        <td><p><a href="https://chatgpt.com/">ChatGPT</a></p></td>
         <td><p><a href="https://dash.cloudflare.com/">Cloudflare</a></p></td>
     </tr>
     <tr>
-        <td><p></p></td>
         <td><p><a href="https://www.nirsoft.net/utils/web_browser_password.html">Web browser passview</a></p></td>
-        <td><p><a href="https://www.nirsoft.net/toolsdownload/webbrowserpassview.zip">1.58</a></p></td>
+        <td><p><a href="https://www.nirsoft.net/toolsdownload/webbrowserpassview.zip">latest</a></p></td>
         <td><p></p></td>
         <td><p><a href="https://laravel-news.com/blog">Laravel News</a></p></td>
         <td><p><a href="https://console.aws.amazon.com/">AWS</a></p></td>
     </tr>
     <tr>
-        <td><p></p></td>
         <td><p><a href="https://www.nirsoft.net/utils/wireless_key.html">Wireless key view</a></p></td>
-        <td><p><a href="https://www.nirsoft.net/toolsdownload/wirelesskeyview.zip">2.05</a></p></td>
+        <td><p><a href="https://www.nirsoft.net/toolsdownload/wirelesskeyview.zip">latest</a></p></td>
         <td><p></p></td>
         <td><p></p></td>
         <td><p></p></td>
     </tr>
     <tr>
-        <td><p></p></td>
         <td><p><a href="https://www.hdtune.com/download.html">HDTune</a></p></td>
         <td><p><a href="https://www.hdtune.com/files/hdtune_255.exe">2.55</a></p></td>
         <td><p></p></td>
