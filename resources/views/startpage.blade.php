@@ -147,7 +147,7 @@
     <tr>
         <td>
             <div class="smalltext">
-                {{ config('app.timezone') }}: {{ date('H:i') }} -
+                {{ date('T') }}: {{ date('H:i') }} -
                 Welcome: {{ $ip }} -
                 {{ $flag }}
             </div>
