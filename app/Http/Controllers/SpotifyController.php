@@ -34,13 +34,12 @@ class SpotifyController extends Controller
         $res = $this->getNextData($res);
 
         $general = [
-            'isEmergingMarketAssignment' => Arr::get($res, 'props.pageProps.isEmergingMarketAssignment'),
-            'language' => Arr::get($res, 'props.pageProps.isEmergingMarketAssignment.basePageProps.language'),
-            'country' => Arr::get($res, 'props.pageProps.isEmergingMarketAssignment.basePageProps.country'),
-            'market' => Arr::get($res, 'props.pageProps.isEmergingMarketAssignment.basePageProps.market'),
+            'language' => Arr::get($res, 'props.pageProps.basePageProps.language'),
+            'country' => Arr::get($res, 'props.pageProps.basePageProps.country'),
+            'market' => Arr::get($res, 'props.pageProps.basePageProps.market'),
         ];
 
-        $plans = Arr::get($res, 'props.pageProps.components.storefront.plans');
+        $plans = $this->getPlans(Arr::get($res, 'props.pageProps.components', []));
 
         $planFilter = [
             'header',
@@ -58,13 +57,29 @@ class SpotifyController extends Controller
             $filteredPlans[] = Arr::only($plan, $planFilter);
         }
 
-        $icons = Arr::get($res, 'props.pageProps.components.storefront.icons');
-
         return [
             'general' => $general,
             'plans' => $filteredPlans,
-            'icons' => $icons,
         ];
+    }
+
+    /**
+     * Spotify serves two layouts of the premium page: the old one has the plans in components.storefront,
+     * the new one (premium.voyager) has a list of components with the plans in the SpotlightSection.
+     */
+    private function getPlans(array $components): array
+    {
+        if (isset($components['storefront'])) {
+            return Arr::get($components, 'storefront.plans', []);
+        }
+
+        foreach ($components as $component) {
+            if ('SpotlightSection' === Arr::get($component, 'name')) {
+                return Arr::get($component, 'attributes.plans', []);
+            }
+        }
+
+        return [];
     }
 
     private function getNextData(string $res): array
