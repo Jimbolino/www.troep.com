@@ -311,7 +311,7 @@
         <td><p><a href="https://www.facebook.com/">facebook</a></p></td>
         <td><p><a href="https://www.bellen.com/">bellen.com</a></p></td>
         <td><p><a href="https://www.cashbacksvergelijken.nl/">CBvergelijken</a></p></td>
-        <td><p><a href="https://www.bol.com/nl/nl/">bol</a> - <a href="https://www.amazon.nl/">amazon</a></p></td>
+        <td><p><a href="https://partner.bol.com/click/click?p=2&amp;t=url&amp;s=1552730&amp;f=TXL&amp;url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2F&amp;name=startpage">bol</a> - <a href="https://www.amazon.nl/?tag=prijzennu-21">amazon</a></p></td>
     </tr>
     <tr>
         <td><p><a href="https://xtremebytes.net/browse.php">xtremebytes</a></p></td>
@@ -321,7 +321,7 @@
         <td><p><a href="https://www.instagram.com/">instagram</a></p></td>
         <td><p><a href="https://www.internetten.nl/">internetten.nl</a></p></td>
         <td><p><a href="https://www.cashbackxl.nl/?share=jimborst-6af2">CashbackXL</a></p></td>
-        <td><p><a href="https://nl.aliexpress.com/">aliexpress</a></p></td>
+        <td><p><a href="https://nl.aliexpress.com/">aliexpress</a> - <a href="https://glp8.net/c/?si=20823&amp;li=1881811&amp;wi=440794&amp;ws=&amp;dl=">joybuy</a></p></td>
     </tr>
     <tr>
         <td><p><a href="https://torrentbytes.net/browse.php">torrentbytes</a></p></td>
@@ -351,7 +351,7 @@
         <td><p><a href="https://www.linkedin.com/">linkedin</a></p></td>
         <td><p><a href="https://www.mobiel.nl/">mobiel.nl</a></p></td>
         <td><p><a href="https://www.iopanel.nl/">iopanel</a></p></td>
-        <td><p><a href="https://www.hema.nl/">hema</a> - <a href="https://www.kruidvat.nl/">kruidvat</a></p></td>
+        <td><p><a href="https://partner.hema.nl/c?c=25436&amp;m=12&amp;a=518485&amp;r=&amp;u=%2F">hema</a> - <a href="https://www.kruidvat.nl/">kruidvat</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
@@ -361,7 +361,7 @@
         <td><p><a href="https://www.tiktok.com/">tiktok</a></p></td>
         <td><p></p></td>
         <td><p><a href="https://www.unitedconsumers.com/">UnitedConsumers</a></p></td>
-        <td><p><a href="https://www.action.com/nl-nl/">Action</a> - <a href="https://www.hornbach.nl/">hornbach</a></p></td>
+        <td><p><a href="https://www.awin1.com/cread.php?awinmid=25288&amp;awinaffid=1752695&amp;ued=https%3A%2F%2Fwww.action.com%2Fnl-nl%2F">Action</a> - <a href="https://www.hornbach.nl/">hornbach</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
