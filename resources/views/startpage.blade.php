@@ -5,6 +5,10 @@
     <meta name="description" content="Jimbolinos startpage, the best way to start your surfing day">
     <meta name="keywords" content="Jimbolino, startpage, troep, tilburg">
     <style>
+        :root {
+            color-scheme: light dark;
+        }
+
         body {
             font-family: sans-serif;
             font-size: 10pt;
@@ -58,7 +62,6 @@
         option {
             border-width: 0;
             text-align: center;
-            border-color: #111111;
         }
 
         div.smalltext {
@@ -71,6 +74,21 @@
 
         td.zoekveld {
             width: 140px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #000000;
+                color: #ffffff;
+            }
+
+            table, td {
+                border-color: #666;
+            }
+
+            td.weekday a {
+                color: #000;
+            }
         }
     </style>
 </head>
@@ -148,7 +166,7 @@
         <td><p><a href="https://tweakers.net/">TWEAKERS.NET</a></p></td>
         <td><p><a href="https://gathering.tweakers.net">GoT</a></p></td>
         <td><p></p></td>
-        <td style="background-color:{{ $color }}"><p><a
+        <td class="weekday" style="background-color:{{ $color }}"><p><a
                     href="https://en.wikipedia.org/wiki/Thai_solar_calendar#Weeks">{{ date('l') }}</a></p></td>
     </tr>
     <tr>
