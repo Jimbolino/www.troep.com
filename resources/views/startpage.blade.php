@@ -402,7 +402,7 @@
         <td><p><a href="https://chatgpt.com/">ChatGPT</a></p></td>
         <td><p><a href="https://gitlab.com/">Gitlab</a></p></td>
         <td><p><a href="https://teams.microsoft.com/">Teams</a></p></td>
-        <td><p><a href="https://partner.bol.com/account/affiliate/myAccount">bol partner</a></p></td>
+        <td><p><a href="https://partner.bol.com/orders/">bol partner</a></p></td>
     </tr>
     <tr>
         <td><p><a href="https://store.steampowered.com/">Steam</a></p></td>
@@ -411,7 +411,7 @@
         <td><p><a href="https://claude.ai/">Claude</a></p></td>
         <td><p><a href="https://github.com/">Github</a></p></td>
         <td><p><a href="https://outlook.cloud.microsoft/mail/">Outlook</a></p></td>
-        <td><p><a href="https://my.daisycon.com/dashboard">Daisycon</a></p></td>
+        <td><p><a href="https://ui.awin.com/">Awin</a> - <a href="https://my.daisycon.com/dashboard">Daisycon</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
@@ -420,7 +420,7 @@
         <td><p><a href="https://www.perplexity.ai/">Perplexity</a></p></td>
         <td><p><a href="https://www.npmjs.com/">NPM</a></p></td>
         <td><p><a href="https://app.clickup.com/">ClickUp</a></p></td>
-        <td><p><a href="https://ui.awin.com/">Awin</a></p></td>
+        <td><p><a href="https://affiliate.tradetracker.com/">TradeTracker</a></p></td>
     </tr>
     <tr>
         <td><p><b>ANDROID</b></p></td>
@@ -429,7 +429,7 @@
         <td><p><a href="https://grok.com/">Grok</a></p></td>
         <td><p><a href="https://packagist.org/">packagist</a></p></td>
         <td><p><a href="https://sentry.io/">Sentry</a></p></td>
-        <td><p><a href="https://affiliate.tradetracker.com/">TradeTracker</a></p></td>
+        <td><p><a href="https://members.cj.com/">CJ</a></p></td>
     </tr>
     <tr>
         <td><p><a href="https://morphe.software/">Morphe</a></p></td>
@@ -438,7 +438,7 @@
         <td><p><a href="https://duck.ai/">duck.ai</a></p></td>
         <td><p><a href="https://3v4l.org/">3v4l</a></p></td>
         <td><p><a href="https://app.crisp.chat/">Crisp</a></p></td>
-        <td><p><a href="https://members.cj.com/">CJ</a></p></td>
+        <td><p><a href="https://publishers.tradedoubler.com/">Tradedoubler</a></p></td>
     </tr>
     <tr>
         <td><p><a href="https://www.apkmirror.com/">APKMirror</a></p></td>
@@ -447,7 +447,7 @@
         <td><p></p></td>
         <td><p><a href="https://laravel-news.com/blog">Laravel News</a></p></td>
         <td><p><a href="https://dash.cloudflare.com/">Cloudflare</a></p></td>
-        <td><p><a href="https://publishers.tradedoubler.com/">Tradedoubler</a></p></td>
+        <td><p><a href="https://console.partnerize.com/">Partnerize</a></p></td>
     </tr>
     <tr>
         <td><p></p></td>
@@ -456,7 +456,7 @@
         <td><p></p></td>
         <td><p><a href="https://regex101.com/">regex101</a></p></td>
         <td><p><a href="https://console.aws.amazon.com/">AWS</a></p></td>
-        <td><p></p></td>
+        <td><p><a href="https://platform.adtraction.com/">Adtraction</a></p></td>
     </tr>
     </tbody>
 </table>
