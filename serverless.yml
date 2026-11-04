@@ -21,6 +21,16 @@ provider:
         PROXY_COUNT: ${env:PROXY_COUNT}
         REAL_AWS_ACCESS_KEY_ID: ${env:REAL_AWS_ACCESS_KEY_ID}
         REAL_AWS_SECRET_ACCESS_KEY: ${env:REAL_AWS_SECRET_ACCESS_KEY}
+    iam:
+        role:
+            statements:
+                # From 26 April 2027 CloudWatch Logs only grants log group actions on the log group ARN,
+                # the generated policy only has the log stream ARN (ending in :*)
+                -   Effect: Allow
+                    Action:
+                        - logs:CreateLogGroup
+                        - logs:TagResource
+                    Resource: arn:aws:logs:${aws:region}:${aws:accountId}:log-group:/aws/lambda/${self:service}-${sls:stage}*
 
 package:
     patterns:
