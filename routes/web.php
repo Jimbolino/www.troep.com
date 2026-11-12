@@ -14,6 +14,7 @@ use App\Http\Controllers\PostcodeCheck;
 use App\Http\Controllers\ProxyController;
 use App\Http\Controllers\SpotifyController;
 use App\Http\Controllers\StartpageController;
+use App\Http\Controllers\ThaMusicController;
 use App\Http\Controllers\TimeController;
 use App\Http\Controllers\ViewSourceController;
 use Illuminate\Support\Facades\Route;
@@ -28,7 +29,7 @@ Route::get('startpage.php', [StartpageController::class, 'show']);
 
 // cacheable routes
 Route::middleware('cache.headers:public;max_age=3600')->group(static function (): void {
-    Route::get('tha-music.htm', [ProxyController::class, 'get']);
+    Route::get('tha-music.htm', [ThaMusicController::class, 'show']);
     Route::get('linux.htm', [ProxyController::class, 'get']);
     Route::get('bookmarks.htm', [ProxyController::class, 'get']);
     Route::get('images/{file}', [ProxyController::class, 'get'])->where('file', '.*');

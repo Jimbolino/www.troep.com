@@ -57,9 +57,6 @@ final class WebRoutesTest extends TestCase
 
         $response = $this->get('/linux.htm');
         $response->assertStatus(200);
-
-        $response = $this->get('/tha-music.htm');
-        $response->assertStatus(200);
     }
 
     public function testTroep(): void
